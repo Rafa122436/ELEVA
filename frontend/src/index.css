@@ -4,10 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 1024px) {
-  * {
-    cursor: none;
-  }
+* {
+  cursor: none !important;
 }
 
 html {
