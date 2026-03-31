@@ -181,7 +181,7 @@ const WebDevelopmentPage = () => {
             >
               <div className="relative rounded-2xl overflow-hidden border border-white/10">
                 <img
-                  src="https://images.pexels.com/photos/3861959/pexels-photo-3861959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/evhr7399_c22735fc-60ca-4ae4-a8af-c802bdc3df6b.png"
                   alt="Developer coding"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />

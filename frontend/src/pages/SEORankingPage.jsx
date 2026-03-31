@@ -150,8 +150,8 @@ const SEORankingPage = () => {
             >
               <div className="relative rounded-2xl overflow-hidden border border-white/10">
                 <img
-                  src="https://images.pexels.com/photos/7793999/pexels-photo-7793999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                  alt="Team celebrating success"
+                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ttfdn8c1_7044c72a-63f5-43e3-8838-86d18897bac5.png"
+                  alt="Google search ranking"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -217,7 +217,7 @@ const SEORankingPage = () => {
 
       {/* Strategy */}
       <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -235,45 +235,25 @@ const SEORankingPage = () => {
             We don't guess. Every decision is backed by data, competitor analysis, and proven SEO frameworks.
           </motion.p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Steps */}
-            <div className="space-y-6">
-              {strategy.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#64CEFB] flex items-center justify-center font-bold text-black">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">{step.title}</h3>
-                    <p className="text-white/60 text-sm">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden border border-white/10">
-                <img
-                  src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NzQ5Njk4OTV8MA&ixlib=rb-4.1.0&q=85"
-                  alt="Team strategizing"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
-            </motion.div>
+          <div className="space-y-6">
+            {strategy.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-start gap-4"
+              >
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#64CEFB] flex items-center justify-center font-bold text-black">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">{step.title}</h3>
+                  <p className="text-white/60 text-sm">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
