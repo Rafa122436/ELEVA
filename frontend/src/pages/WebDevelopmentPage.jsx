@@ -143,9 +143,33 @@ const WebDevelopmentPage = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
                 Performance-First <span className="text-[#64CEFB]">Approach</span>
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed">
+              <p className="text-white/70 text-lg leading-relaxed mb-8">
                 Every website we create is built with one goal: measurable results. Speed, accessibility, and conversion are not afterthoughts—they're the foundation.
               </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <Target className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-2">Strategic Design</h3>
+                    <p className="text-white/60">UX focada em guiar o olhar para o clique.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Code2 className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-2">Advanced Tech Stack</h3>
+                    <p className="text-white/60">React, Next.js ou WordPress Headless.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Zap className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-2">Conversion Optimization</h3>
+                    <p className="text-white/60">Cada pixel é testado para converter.</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -153,28 +177,15 @@ const WebDevelopmentPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="relative"
             >
-              <div className="flex items-start gap-4">
-                <Target className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-white font-bold text-lg mb-2">Strategic Design</h3>
-                  <p className="text-white/60">UX focada em guiar o olhar para o clique.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Code2 className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-white font-bold text-lg mb-2">Advanced Tech Stack</h3>
-                  <p className="text-white/60">React, Next.js ou WordPress Headless.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Zap className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-white font-bold text-lg mb-2">Conversion Optimization</h3>
-                  <p className="text-white/60">Cada pixel é testado para converter.</p>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                <img
+                  src="https://images.pexels.com/photos/3861959/pexels-photo-3861959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt="Developer coding"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
             </motion.div>
           </div>
@@ -214,7 +225,7 @@ const WebDevelopmentPage = () => {
 
       {/* Workflow */}
       <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white/[0.02]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -224,26 +235,41 @@ const WebDevelopmentPage = () => {
             Our <span className="text-[#64CEFB]">Workflow</span>
           </motion.h2>
 
-          <div className="relative">
-            {/* Progress Line */}
-            <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 bg-white/10"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NzQ5Njk4OTV8MA&ixlib=rb-4.1.0&q=85"
+                  alt="Team collaboration"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+            </motion.div>
 
-            <div className="space-y-8 md:space-y-12">
+            {/* Steps */}
+            <div className="space-y-6">
               {workflow.map((step, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative flex items-start gap-6"
+                  className="flex items-start gap-4"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#64CEFB] flex items-center justify-center font-bold text-black text-lg relative z-10">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#64CEFB] flex items-center justify-center font-bold text-black">
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-white/60">{step.description}</p>
+                    <h3 className="text-lg font-bold text-white mb-1">{step.title}</h3>
+                    <p className="text-white/60 text-sm">{step.description}</p>
                   </div>
                 </motion.div>
               ))}

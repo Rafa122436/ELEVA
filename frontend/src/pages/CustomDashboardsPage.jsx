@@ -137,29 +137,42 @@ const CustomDashboardsPage = () => {
 
       {/* The Problem */}
       <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white/[0.02]">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6"
-          >
-            Information is Everywhere.
-            <br />
-            <span className="text-[#64CEFB]">Insights are Rare.</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-white/70 leading-relaxed mb-8"
-          >
-            Your data is scattered across multiple platforms—Ads, CRM, spreadsheets. Hours wasted trying to consolidate everything manually. We turn raw data into actionable intelligence.
-          </motion.p>
-          <div className="inline-block bg-[#64CEFB]/10 border border-[#64CEFB]/30 rounded-full px-6 py-3">
-            <Activity className="w-5 h-5 text-[#64CEFB] inline mr-2" />
-            <span className="text-[#64CEFB] font-semibold">Real-time insights. Zero manual work.</span>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
+                Information is Everywhere.
+                <br />
+                <span className="text-[#64CEFB]">Insights are Rare.</span>
+              </h2>
+              <p className="text-lg text-white/70 leading-relaxed mb-6">
+                Your data is scattered across multiple platforms—Ads, CRM, spreadsheets. Hours wasted trying to consolidate everything manually. We turn raw data into actionable intelligence.
+              </p>
+              <div className="inline-block bg-[#64CEFB]/10 border border-[#64CEFB]/30 rounded-full px-6 py-3">
+                <Activity className="w-5 h-5 text-[#64CEFB] inline mr-2" />
+                <span className="text-[#64CEFB] font-semibold">Real-time insights. Zero manual work.</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHw0fHxkYXRhJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc3NDk2OTg5OXww&ixlib=rb-4.1.0&q=85"
+                  alt="Dashboard analytics"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
