@@ -29,7 +29,7 @@ const ServicesSection = () => {
         'Relatórios mensais de performance',
       ],
       image:
-        'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxTRU98ZW58MHx8fHwxNzc0OTYxNzY0fDA&ixlib=rb-4.1.0&q=85',
+        'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ashmsu3i_7044c72a-63f5-43e3-8838-86d18897bac5.png',
     },
     {
       icon: BarChart3,
@@ -43,7 +43,7 @@ const ServicesSection = () => {
         'Interface intuitiva e responsiva',
       ],
       image:
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+        'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/hmepic8r_6daf0e6f-5a1e-44f5-b8bc-a66ff964d928.png',
     },
   ];
 
