@@ -15,7 +15,7 @@ const Footer = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/e8xk7pen_Captura%20de%20ecr%C3%A3%202026-03-31%20170113.png"
                 alt="ELEVA"
-                className="h-10 md:h-12 w-auto"
+                className="h-14 md:h-16 w-auto"
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
