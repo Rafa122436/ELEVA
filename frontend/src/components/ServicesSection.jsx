@@ -15,7 +15,7 @@ const ServicesSection = () => {
         'Código limpo e escalável',
       ],
       image:
-        'https://images.unsplash.com/photo-1760548425425-e42e77fa38f1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHx3ZWIlMjBkZXZlbG9wbWVudCUyMGFic3RyYWN0fGVufDB8fHx8MTc3NDk2MTA5NXww&ixlib=rb-4.1.0&q=85',
+        'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzQ5NjE3NTd8MA&ixlib=rb-4.1.0&q=85',
     },
     {
       icon: Search,
@@ -29,7 +29,7 @@ const ServicesSection = () => {
         'Relatórios mensais de performance',
       ],
       image:
-        'https://images.pexels.com/photos/270488/pexels-photo-270488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxTRU98ZW58MHx8fHwxNzc0OTYxNzY0fDA&ixlib=rb-4.1.0&q=85',
     },
     {
       icon: Zap,
@@ -43,7 +43,7 @@ const ServicesSection = () => {
         'Chat e chatbots estratégicos',
       ],
       image:
-        'https://images.pexels.com/photos/12081657/pexels-photo-12081657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHx3b3JrZmxvd3xlbnwwfHx8fDE3NzQ5NjE3NzR8MA&ixlib=rb-4.1.0&q=85',
     },
   ];
 
