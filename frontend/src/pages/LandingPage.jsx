@@ -15,7 +15,7 @@ const LandingPage = () => {
   return (
     <div className="bg-black">
       {/* Hero Section */}
-      <div className="relative h-screen w-full bg-black overflow-hidden">
+      <div className="relative min-h-[150vh] w-full bg-black overflow-hidden">
         {/* Video Background */}
         <video
           autoPlay
