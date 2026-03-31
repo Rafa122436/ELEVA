@@ -109,27 +109,7 @@ const LandingPage = () => {
           </nav>
 
           {/* Main Content */}
-          <div className="flex-1 flex flex-col justify-between px-4 md:px-6 lg:px-8 pb-12 md:pb-16 lg:pb-20">
-            <div className="max-w-7xl mx-auto w-full">
-              {/* Top Section */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mt-8 md:mt-12 lg:mt-16">
-                {/* Left Column */}
-                <div>
-                  <p className="text-sm md:text-base text-white/80 leading-relaxed">
-                    Ajudamos empresas de serviços a escalar através de websites
-                    estratégicos e sistemas de conversão que funcionam 24/7.
-                  </p>
-                </div>
-
-                {/* Right Column */}
-                <div className="lg:text-right">
-                  <p className="text-sm md:text-base text-white/80 leading-relaxed">
-                    ROI médio de 300% no primeiro ano
-                  </p>
-                </div>
-              </div>
-            </div>
-
+          <div className="flex-1 flex flex-col justify-center px-4 md:px-6 lg:px-8 pb-12 md:pb-16 lg:pb-20">
             {/* Hero Section */}
             <div className="max-w-7xl mx-auto w-full text-center">
               <div className="space-y-6 md:space-y-8">
@@ -152,13 +132,13 @@ const LandingPage = () => {
                 </div>
 
                 {/* Sub-headline */}
-                <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed pb-8 md:pb-10">
+                <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed pb-12 md:pb-16 lg:pb-20">
                   Transformamos o seu website numa máquina de vendas que atrai,
                   qualifica e converte leads enquanto você dorme
                 </p>
 
                 {/* CTA Button */}
-                <div className="pt-8 md:pt-12 pb-16 md:pb-24">
+                <div className="pt-12 md:pt-16 lg:pt-20 pb-20 md:pb-32 lg:pb-40">
                   <button className="group bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold rounded-full px-8 md:px-10 py-4 md:py-5 flex items-center gap-2 mx-auto transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
                     <span className="text-base md:text-lg">
                       Agendar Consultoria Gratuita
@@ -168,9 +148,6 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
-
-            {/* Spacer for bottom alignment */}
-            <div></div>
           </div>
         </div>
       </div>
