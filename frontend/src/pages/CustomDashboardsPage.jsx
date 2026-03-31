@@ -70,10 +70,11 @@ const CustomDashboardsPage = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full bg-white"></div>
-              </div>
-              <span className="text-white font-semibold text-lg">DesignPro</span>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/e8xk7pen_Captura%20de%20ecr%C3%A3%202026-03-31%20170113.png"
+                alt="ELEVA"
+                className="h-8 w-auto"
+              />
             </Link>
 
             <div className="hidden lg:flex items-center gap-6">

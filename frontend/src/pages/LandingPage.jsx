@@ -47,12 +47,11 @@ const LandingPage = () => {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-2 md:gap-3">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white flex items-center justify-center">
-                  <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-white"></div>
-                </div>
-                <span className="text-white font-medium text-lg md:text-xl">
-                  DesignPro
-                </span>
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/e8xk7pen_Captura%20de%20ecr%C3%A3%202026-03-31%20170113.png"
+                  alt="ELEVA"
+                  className="h-8 md:h-10 w-auto"
+                />
               </Link>
 
               {/* Desktop Navigation */}

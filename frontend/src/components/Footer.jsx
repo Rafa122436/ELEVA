@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, Linkedin, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
@@ -10,14 +11,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2 md:gap-3">
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white flex items-center justify-center">
-                <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-white"></div>
-              </div>
-              <span className="text-white font-semibold text-lg md:text-xl">
-                DesignPro
-              </span>
-            </div>
+            <Link to="/" className="flex items-center gap-2 md:gap-3">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/e8xk7pen_Captura%20de%20ecr%C3%A3%202026-03-31%20170113.png"
+                alt="ELEVA"
+                className="h-10 md:h-12 w-auto"
+              />
+            </Link>
             <p className="text-white/60 text-sm leading-relaxed">
               Websites estratégicos que convertem visitantes em clientes de alto
               valor.
@@ -94,11 +94,11 @@ const Footer = () => {
             <ul className="space-y-3 mb-6">
               <li>
                 <a
-                  href="mailto:contato@designpro.pt"
+                  href="mailto:contato@eleva.pt"
                   className="flex items-center gap-2 text-white/60 hover:text-[#64CEFB] transition-colors duration-300 text-sm"
                 >
                   <Mail className="w-4 h-4" />
-                  contato@designpro.pt
+                  contato@eleva.pt
                 </a>
               </li>
               <li>
@@ -139,7 +139,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/50 text-xs md:text-sm">
-            © {currentYear} DesignPro. Todos os direitos reservados.
+            © {currentYear} ELEVA. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
             <a
