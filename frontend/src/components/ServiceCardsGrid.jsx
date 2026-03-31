@@ -60,7 +60,7 @@ const ServiceCardsGrid = () => {
   ];
 
   return (
-    <section className="bg-black py-8 md:py-12">
+    <section className="bg-black pt-4 md:pt-6 pb-8 md:pb-12">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {services.map((service, index) => (
