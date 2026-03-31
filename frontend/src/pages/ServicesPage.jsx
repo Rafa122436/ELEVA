@@ -121,9 +121,9 @@ const ServicesPage = () => {
         </nav>
 
         {/* Hero Content */}
-        <div className="flex items-center justify-center min-h-[40vh] px-4 md:px-6 lg:px-8 pb-4">
+        <div className="flex items-center justify-center min-h-[35vh] px-4 md:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="space-y-2 md:space-y-3">
+            <div className="space-y-2">
               {/* Main Heading */}
               <div className="space-y-1">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-none">
@@ -135,7 +135,7 @@ const ServicesPage = () => {
               </div>
 
               {/* Subtitle */}
-              <p className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed mb-6">
                 The same systems that run our business are the ones we
                 implement for clients.
               </p>
