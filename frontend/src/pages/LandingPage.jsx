@@ -7,6 +7,10 @@ import ResultsSection from '../components/ResultsSection';
 import ServicesSection from '../components/ServicesSection';
 import FAQSection from '../components/FAQSection';
 import Footer from '../components/Footer';
+import CustomCursor from '../components/CustomCursor';
+import FloatingOrbs from '../components/FloatingOrbs';
+import TextReveal from '../components/TextReveal';
+import MagneticButton from '../components/MagneticButton';
 
 const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,6 +19,8 @@ const LandingPage = () => {
 
   return (
     <div className="bg-black">
+      <CustomCursor />
+      <FloatingOrbs />
       {/* Hero Section */}
       <div className="relative min-h-[150vh] w-full bg-black overflow-hidden">
         {/* Video Background */}
