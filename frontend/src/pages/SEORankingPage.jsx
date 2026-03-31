@@ -10,6 +10,8 @@ import {
   AccordionTrigger,
 } from '../components/ui/accordion';
 import Footer from '../components/Footer';
+import CustomCursor from '../components/CustomCursor';
+import FloatingOrbs from '../components/FloatingOrbs';
 
 const SEORankingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,6 +61,8 @@ const SEORankingPage = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <CustomCursor />
+      <FloatingOrbs />
       {/* Header */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-black/80 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4">

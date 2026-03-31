@@ -7,6 +7,8 @@ import ServiceCardsGrid from '../components/ServiceCardsGrid';
 import ServicesFAQ from '../components/ServicesFAQ';
 import ServicesCTA from '../components/ServicesCTA';
 import Footer from '../components/Footer';
+import CustomCursor from '../components/CustomCursor';
+import FloatingOrbs from '../components/FloatingOrbs';
 
 const ServicesPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,6 +17,8 @@ const ServicesPage = () => {
 
   return (
     <div className="bg-black">
+      <CustomCursor />
+      <FloatingOrbs />
       {/* Hero Section */}
       <div className="relative min-h-screen bg-black">
         {/* Navigation Bar */}
