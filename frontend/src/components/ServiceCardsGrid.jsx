@@ -75,7 +75,7 @@ const ServiceCardsGrid = () => {
   {
     title: 'Website Development',
     image:
-    'https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg',
+    'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ne5jbp1j_c22735fc-60ca-4ae4-a8af-c802bdc3df6b.png',
     link: '/services/web-development'
   },
   {
@@ -86,12 +86,12 @@ const ServiceCardsGrid = () => {
   },
   {
     title: 'SEO / Ranking',
-    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43',
+    image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/0r1vs8a2_7044c72a-63f5-43e3-8838-86d18897bac5.png',
     link: '/services/seo-ranking'
   },
   {
     title: 'Custom Dashboards',
-    image: 'https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b',
+    image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/6m4zdpww_6daf0e6f-5a1e-44f5-b8bc-a66ff964d928.png',
     link: '/services/dashboards'
   }];
 
