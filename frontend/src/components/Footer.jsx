@@ -72,16 +72,16 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <span className="text-white/60 text-sm">Web Development</span>
+                <span className="text-white/60 text-sm">Desenvolvimento Web</span>
               </li>
               <li>
-                <span className="text-white/60 text-sm">SEO / Ranking</span>
+                <span className="text-white/60 text-sm">SEO / Posicionamento</span>
               </li>
               <li>
                 <span className="text-white/60 text-sm">Dashboards</span>
               </li>
               <li>
-                <span className="text-white/60 text-sm">Consultoria</span>
+                <span className="text-white/60 text-sm">Consultoria Estratégica</span>
               </li>
             </ul>
           </div>

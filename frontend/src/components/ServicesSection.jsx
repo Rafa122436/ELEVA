@@ -5,28 +5,28 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Code2,
-      title: 'Web Development',
+      title: 'Desenvolvimento Web',
       description:
-        'Websites ultra-rápidos e design exclusivo que convertem visitantes em clientes. Focado em performance e experiência de utilizador.',
+        'Websites de alto impacto que transformam visitantes em clientes pagantes. Criados para gerar resultados, não apenas para serem bonitos.',
       features: [
-        'Design personalizado e exclusivo',
-        'Otimizado para velocidade',
-        'Responsive em todos dispositivos',
-        'Código limpo e escalável',
+        'Design premium que converte',
+        'Carregamento instantâneo (velocidade Google 95+)',
+        'Perfeito em qualquer dispositivo',
+        'Preparado para crescer com o seu negócio',
       ],
       image:
         'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/2vzxwc0g_c22735fc-60ca-4ae4-a8af-c802bdc3df6b.png',
     },
     {
       icon: Search,
-      title: 'SEO / Ranking',
+      title: 'SEO / Posicionamento',
       description:
-        'Seja encontrado no Google pelos seus clientes ideais. Estratégias de SEO que geram tráfego qualificado e aumentam autoridade.',
+        'Domine o Google e seja encontrado pelos clientes que realmente pagam. Mais visibilidade = Mais leads = Mais vendas.',
       features: [
-        'Pesquisa de palavras-chave estratégica',
-        'Otimização on-page completa',
-        'Link building de qualidade',
-        'Relatórios mensais de performance',
+        'Topo do Google nas palavras certas',
+        'Tráfego orgânico qualificado todos os dias',
+        'Autoridade que afasta a concorrência',
+        'Resultados mensuráveis mês a mês',
       ],
       image:
         'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ashmsu3i_7044c72a-63f5-43e3-8838-86d18897bac5.png',
@@ -35,12 +35,12 @@ const ServicesSection = () => {
       icon: BarChart3,
       title: 'Dashboards Personalizados',
       description:
-        'Visualize o desempenho do seu negócio em tempo real. Dashboards intuitivos que transformam dados complexos em decisões estratégicas.',
+        'Tome decisões baseadas em dados reais, não em intuição. Veja exatamente de onde vêm os seus leads e quanto cada canal está a render.',
       features: [
-        'Métricas personalizadas do seu negócio',
-        'Visualização de dados em tempo real',
-        'Relatórios automatizados e insights',
-        'Interface intuitiva e responsiva',
+        'Todas as métricas do negócio num só lugar',
+        'Dados atualizados em tempo real',
+        'Relatórios que se geram sozinhos',
+        'Tão simples que qualquer pessoa usa',
       ],
       image:
         'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/hmepic8r_6daf0e6f-5a1e-44f5-b8bc-a66ff964d928.png',

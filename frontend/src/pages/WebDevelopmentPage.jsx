@@ -17,47 +17,47 @@ const WebDevelopmentPage = () => {
   const pillars = [
     {
       icon: Code2,
-      title: 'Custom Code',
-      description: 'Sites feitos sob medida, sem templates pesados.',
+      title: 'Código à Medida',
+      description: 'Zero templates. Cada linha de código é criada especificamente para o seu negócio.',
     },
     {
       icon: Gauge,
-      title: 'Ultra-Fast Loading',
-      description: 'Otimização para atingir 90+ no Google PageSpeed.',
+      title: 'Velocidade Extrema',
+      description: 'Carregamento instantâneo. 95+ no Google PageSpeed ou refazemos.',
     },
     {
       icon: SearchIcon,
-      title: 'SEO Infrastructure',
-      description: 'Semântica de código impecável desde o dia 1.',
+      title: 'SEO Integrado',
+      description: 'Construído para ser encontrado. Estrutura otimizada desde a primeira linha de código.',
     },
     {
       icon: Smartphone,
-      title: 'Responsive Perfection',
-      description: 'Adaptabilidade fluida em todas as resoluções.',
+      title: 'Perfeito em Qualquer Ecrã',
+      description: 'Do iPhone ao desktop 4K. Experiência impecável em todos os dispositivos.',
     },
   ];
 
   const workflow = [
-    { title: 'Discovery', description: 'Imersão no modelo de negócio do cliente' },
-    { title: 'Wireframing', description: 'Arquitetura de informação e fluxos' },
-    { title: 'UI Design', description: 'Interface de alta fidelidade no Figma' },
-    { title: 'Development', description: 'Codificação limpa e integração' },
-    { title: 'Quality Assurance', description: 'Testes rigorosos cross-browser' },
-    { title: 'Deployment', description: 'Lançamento seguro e monitorado' },
+    { title: 'Descoberta', description: 'Imersão profunda no seu negócio e objetivos' },
+    { title: 'Estrutura', description: 'Arquitetura de informação focada em conversão' },
+    { title: 'Design UI', description: 'Interface de alta fidelidade e exclusiva' },
+    { title: 'Desenvolvimento', description: 'Código limpo, rápido e escalável' },
+    { title: 'Testes', description: 'Verificação rigorosa em todos os dispositivos' },
+    { title: 'Lançamento', description: 'Deploy seguro e monitorização 24/7' },
   ];
 
   const faqs = [
     {
-      question: 'How do you ensure my site will rank on Google?',
-      answer: 'Implementamos SEO on-page desde o início: código semântico, meta tags otimizadas, URLs amigáveis, sitemap XML, schema markup e Core Web Vitals otimizados. Tudo é construído seguindo as melhores práticas do Google.',
+      question: 'Como garantem que o site vai aparecer no Google?',
+      answer: 'Implementamos SEO desde o primeiro dia: código semântico, meta tags otimizadas, URLs amigáveis, sitemap XML, schema markup e Core Web Vitals no verde. Tudo construído seguindo as melhores práticas do Google para ranking orgânico.',
     },
     {
-      question: 'Can I manage the content myself?',
-      answer: 'Sim! Fornecemos um CMS intuitivo (WordPress ou sistema custom) com interface simples. Também oferecemos treinamento completo para sua equipe editar conteúdo, imagens e páginas sem conhecimento técnico.',
+      question: 'Posso gerir o conteúdo sozinho?',
+      answer: 'Absolutamente! Entregamos um CMS intuitivo (WordPress ou sistema personalizado) com interface simples. Também damos formação completa para editar conteúdo, imagens e páginas sem precisar de conhecimento técnico.',
     },
     {
-      question: 'Is hosting and security included?',
-      answer: 'Oferecemos hosting premium otimizado, SSL certificate, backups automáticos diários, proteção contra malware e DDoS, além de monitoramento 24/7. Sua infraestrutura fica em mãos seguras.',
+      question: 'Hosting e segurança estão incluídos?',
+      answer: 'Sim. Oferecemos hosting premium otimizado, certificado SSL, backups automáticos diários, proteção contra malware e ataques DDoS, além de monitorização 24/7. A sua infraestrutura fica em mãos seguras.',
     },
   ];
 
@@ -76,10 +76,10 @@ const WebDevelopmentPage = () => {
 
             <div className="hidden lg:flex items-center gap-6">
               <Link to="/services" className="text-white/80 hover:text-white transition-colors text-sm">
-                Services
+                Serviços
               </Link>
               <Link to="/#resultados" className="text-white/80 hover:text-white transition-colors text-sm">
-                About
+                Resultados
               </Link>
               <Link to="/#resultados" className="text-white/80 hover:text-white transition-colors text-sm">
                 Portfolio
@@ -87,7 +87,7 @@ const WebDevelopmentPage = () => {
             </div>
 
             <button className="hidden lg:block bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all duration-300">
-              Get In Touch
+              Falar Connosco
             </button>
 
             <button className="lg:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -106,9 +106,9 @@ const WebDevelopmentPage = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight"
           >
-            Transforming Ideas into
+            O Seu Website Não é Custo.
             <br />
-            <span className="text-[#64CEFB]">Digital Realities.</span>
+            <span className="text-[#64CEFB]">É o Melhor Vendedor</span> que Nunca Tira Férias.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ const WebDevelopmentPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            We don't just build websites; we engineer high-performance digital assets that drive conversions and scale your brand.
+            Websites premium que trabalham 24/7 a gerar leads qualificados e fechar negócios enquanto dorme. Cada pixel criado para converter.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -124,7 +124,7 @@ const WebDevelopmentPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <button className="bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
-              Start Your Transformation
+              Começar a Minha Transformação
             </button>
           </motion.div>
         </div>
@@ -141,32 +141,32 @@ const WebDevelopmentPage = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-                Performance-First <span className="text-[#64CEFB]">Approach</span>
+                Foco em <span className="text-[#64CEFB]">Resultados</span>, Não em Prémios de Design
               </h2>
               <p className="text-white/70 text-lg leading-relaxed mb-8">
-                Every website we create is built with one goal: measurable results. Speed, accessibility, and conversion are not afterthoughts—they're the foundation.
+                Cada website que criamos tem um único objetivo: gerar resultados mensuráveis. Velocidade, acessibilidade e conversão não são extras — são a base de tudo.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <Target className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-2">Strategic Design</h3>
-                    <p className="text-white/60">UX focada em guiar o olhar para o clique.</p>
+                    <h3 className="text-white font-bold text-lg mb-2">Design Estratégico</h3>
+                    <p className="text-white/60">UX desenhada para guiar o visitante até à ação.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Code2 className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-2">Advanced Tech Stack</h3>
-                    <p className="text-white/60">React, Next.js ou WordPress Headless.</p>
+                    <h3 className="text-white font-bold text-lg mb-2">Tecnologia de Ponta</h3>
+                    <p className="text-white/60">React, Next.js ou WordPress Headless — o que funcionar melhor.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Zap className="w-6 h-6 text-[#64CEFB] flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-2">Conversion Optimization</h3>
-                    <p className="text-white/60">Cada pixel é testado para converter.</p>
+                    <h3 className="text-white font-bold text-lg mb-2">Otimização de Conversão</h3>
+                    <p className="text-white/60">Cada elemento testado para maximizar vendas.</p>
                   </div>
                 </div>
               </div>
@@ -201,7 +201,7 @@ const WebDevelopmentPage = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white text-center mb-16"
           >
-            The Development <span className="text-[#64CEFB]">Pillars</span>
+            Os <span className="text-[#64CEFB]">4 Pilares</span> do Nosso Desenvolvimento
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -232,7 +232,7 @@ const WebDevelopmentPage = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white text-center mb-16"
           >
-            Our <span className="text-[#64CEFB]">Workflow</span>
+            O Nosso <span className="text-[#64CEFB]">Processo</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
@@ -282,7 +282,7 @@ const WebDevelopmentPage = () => {
       <section className="py-20 px-4 md:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Seamlessly integrated with your <span className="text-[#64CEFB]">favorite tools</span>
+            Integração perfeita com as <span className="text-[#64CEFB]">suas ferramentas favoritas</span>
           </h2>
         </div>
         <div className="flex gap-12 items-center justify-center flex-wrap grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
@@ -298,7 +298,7 @@ const WebDevelopmentPage = () => {
       <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white/[0.02]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12">
-            Frequently Asked <span className="text-[#64CEFB]">Questions</span>
+            Perguntas <span className="text-[#64CEFB]">Frequentes</span>
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
@@ -329,9 +329,9 @@ const WebDevelopmentPage = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
           >
-            Your Competitors are Growing.
+            A Sua Concorrência Está a Crescer.
             <br />
-            <span className="text-[#64CEFB]">Are You?</span>
+            <span className="text-[#64CEFB]">E Você?</span>
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -344,10 +344,10 @@ const WebDevelopmentPage = () => {
               to="/qualify"
               className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
             >
-              Book Your FREE Strategy Call
+              Agendar Consultoria GRATUITA
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <p className="text-white/50 text-sm">Only 2 spots available for this month.</p>
+            <p className="text-white/50 text-sm">Apenas 2 vagas disponíveis este mês.</p>
           </motion.div>
         </div>
       </section>

@@ -164,7 +164,7 @@ const ServicesPage = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-none"
                 >
-                  Services Built to Drive:
+                  Serviços Criados para Gerar:
                 </motion.h1>
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ const ServicesPage = () => {
                     textShadow: '0 0 30px rgba(100, 206, 251, 0.3)',
                   }}
                 >
-                  Leads, Sales, and Growth
+                  Leads, Vendas e Crescimento
                 </motion.h1>
               </div>
 
@@ -186,8 +186,7 @@ const ServicesPage = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed mb-6"
               >
-                The same systems that run our business are the ones we
-                implement for clients.
+                Os mesmos sistemas que usamos no nosso negócio são os que implementamos para os nossos clientes.
               </motion.p>
             </motion.div>
           </div>

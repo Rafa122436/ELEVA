@@ -58,7 +58,7 @@ const ServiceCard = ({ title, image, link, index }) => {
             {title}
           </motion.h3>
           <div className="flex items-center gap-2 text-white/80 group-hover:text-[#64CEFB] transition-colors duration-300">
-            <span className="text-sm md:text-base">Learn more</span>
+            <span className="text-sm md:text-base">Saber mais</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
           </div>
         </div>
