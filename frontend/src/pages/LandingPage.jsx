@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import ShinyText from '../components/ShinyText';
 import SocialProofBar from '../components/SocialProofBar';
 import ResultsSection from '../components/ResultsSection';
@@ -39,26 +40,41 @@ const LandingPage = () => {
           <nav className="w-full px-4 md:px-6 lg:px-8 py-4 md:py-6">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               {/* Logo */}
-              <div className="flex items-center gap-2 md:gap-3">
+              <Link to="/" className="flex items-center gap-2 md:gap-3">
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white flex items-center justify-center">
                   <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-white"></div>
                 </div>
                 <span className="text-white font-medium text-lg md:text-xl">
                   DesignPro
                 </span>
-              </div>
+              </Link>
 
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center gap-1 border border-gray-700 rounded-full px-4 py-2">
-                {navLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={`#${link.toLowerCase()}`}
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                  >
-                    {link}
-                  </a>
-                ))}
+                <Link
+                  to="/"
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                >
+                  Início
+                </Link>
+                <Link
+                  to="/services"
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                >
+                  Serviços
+                </Link>
+                <a
+                  href="#resultados"
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                >
+                  Resultados
+                </a>
+                <a
+                  href="#faq"
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                >
+                  FAQ
+                </a>
                 <a
                   href="#contato"
                   className="flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
@@ -85,18 +101,36 @@ const LandingPage = () => {
             {mobileMenuOpen && (
               <div className="lg:hidden mt-4 bg-black/90 backdrop-blur-lg rounded-2xl border border-gray-700 p-4">
                 <div className="flex flex-col gap-2">
-                  {navLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={`#${link.toLowerCase()}`}
-                      className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {link}
-                    </a>
-                  ))}
+                  <Link
+                    to="/"
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Início
+                  </Link>
+                  <Link
+                    to="/services"
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Serviços
+                  </Link>
                   <a
-                    href="#contato"
+                    href="/#resultados"
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Resultados
+                  </a>
+                  <a
+                    href="/#faq"
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    FAQ
+                  </a>
+                  <a
+                    href="/#contato"
                     className="flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
