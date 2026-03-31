@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Search, Zap, ArrowRight } from 'lucide-react';
+import { Code2, Search, BarChart3, ArrowRight } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
@@ -32,18 +32,18 @@ const ServicesSection = () => {
         'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxTRU98ZW58MHx8fHwxNzc0OTYxNzY0fDA&ixlib=rb-4.1.0&q=85',
     },
     {
-      icon: Zap,
-      title: 'Sistemas de Automação',
+      icon: BarChart3,
+      title: 'Dashboards Personalizados',
       description:
-        'O seu website não é um panfleto. É uma máquina de vendas que trabalha 24/7, qualifica leads e agenda reuniões automaticamente.',
+        'Visualize o desempenho do seu negócio em tempo real. Dashboards intuitivos que transformam dados complexos em decisões estratégicas.',
       features: [
-        'Formulários inteligentes',
-        'Integração com CRM',
-        'Email marketing automatizado',
-        'Chat e chatbots estratégicos',
+        'Métricas personalizadas do seu negócio',
+        'Visualização de dados em tempo real',
+        'Relatórios automatizados e insights',
+        'Interface intuitiva e responsiva',
       ],
       image:
-        'https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHx3b3JrZmxvd3xlbnwwfHx8fDE3NzQ5NjE3NzR8MA&ixlib=rb-4.1.0&q=85',
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
     },
   ];
 

@@ -78,7 +78,7 @@ const Footer = () => {
                 <span className="text-white/60 text-sm">SEO / Ranking</span>
               </li>
               <li>
-                <span className="text-white/60 text-sm">Automação</span>
+                <span className="text-white/60 text-sm">Dashboards</span>
               </li>
               <li>
                 <span className="text-white/60 text-sm">Consultoria</span>
