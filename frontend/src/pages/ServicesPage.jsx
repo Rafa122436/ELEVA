@@ -121,21 +121,21 @@ const ServicesPage = () => {
         </nav>
 
         {/* Hero Content */}
-        <div className="flex items-center justify-center min-h-[calc(100vh-100px)] px-4 md:px-6 lg:px-8">
+        <div className="flex items-center justify-center min-h-[70vh] px-4 md:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-4 md:space-y-6">
               {/* Main Heading */}
-              <div className="space-y-2">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white tracking-tighter leading-none">
+              <div className="space-y-1">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-none">
                   Services Built to Drive:
                 </h1>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-[#64CEFB] tracking-tighter leading-none">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#64CEFB] tracking-tighter leading-none">
                   Leads, Sales, and Growth
                 </h1>
               </div>
 
               {/* Subtitle */}
-              <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
                 The same systems that run our business are the ones we
                 implement for clients.
               </p>
