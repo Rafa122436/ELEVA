@@ -19,43 +19,43 @@ const SEORankingPage = () => {
   const pillars = [
     {
       icon: Code,
-      title: 'Technical SEO',
-      subtitle: 'The Foundation',
-      description: 'Otimização de código, velocidade (Core Web Vitals), sitemaps XML e arquitetura de rastreamento para bots.',
+      title: 'SEO Técnico',
+      subtitle: 'A Fundação',
+      description: 'Otimização de código, velocidade (Core Web Vitals), sitemaps XML e arquitetura perfeita para bots do Google.',
     },
     {
       icon: FileSearch,
-      title: 'On-Page Optimization',
-      subtitle: '',
-      description: 'Estratégia de palavras-chave, hierarquia H1-H4, otimização de imagens e meta-descrições focadas em CTR.',
+      title: 'Otimização On-Page',
+      subtitle: 'Conteúdo Estratégico',
+      description: 'Estratégia de palavras-chave, hierarquia H1-H4, otimização de imagens e meta-descrições focadas em cliques.',
     },
     {
       icon: Link2Icon,
-      title: 'Authority Building',
+      title: 'Construção de Autoridade',
       subtitle: 'Backlinks',
-      description: 'Estratégia de link building de alta qualidade para aumentar relevância do domínio no algoritmo do Google.',
+      description: 'Estratégia de link building de alta qualidade para aumentar relevância do domínio no Google.',
     },
   ];
 
   const strategy = [
-    { title: 'Keyword Research', description: 'Identificação de termos com alto volume e baixa dificuldade' },
-    { title: 'Competitor Analysis', description: 'Desconstrução do que os concorrentes fazem para superá-los' },
-    { title: 'Content Strategy', description: 'Criação de conteúdo que responde às intenções de busca' },
-    { title: 'Monthly Reporting', description: 'Transparência com KPIs de posição, tráfego e conversão' },
+    { title: 'Pesquisa de Palavras-Chave', description: 'Identificação de termos com alto volume e baixa dificuldade' },
+    { title: 'Análise da Concorrência', description: 'Desconstrução do que os concorrentes fazem para os superar' },
+    { title: 'Estratégia de Conteúdo', description: 'Criação de conteúdo que responde às intenções de pesquisa' },
+    { title: 'Relatórios Mensais', description: 'Transparência total com KPIs de posição, tráfego e conversão' },
   ];
 
   const faqs = [
     {
-      question: 'How long until I see results?',
+      question: 'Quanto tempo até ver resultados?',
       answer: 'SEO é uma estratégia de médio a longo prazo. Resultados iniciais aparecem em 3-6 meses, mas o verdadeiro crescimento composto acontece após 6-12 meses de trabalho consistente. É uma maratona, não um sprint.',
     },
     {
-      question: 'Do you guarantee #1 ranking?',
+      question: 'Garantem a posição #1 no Google?',
       answer: 'Nenhuma agência séria pode garantir posição #1 porque os algoritmos mudam constantemente. O que garantimos é melhoria contínua, domínio de nicho e aumento mensurável de tráfego orgânico qualificado.',
     },
     {
-      question: 'Will you optimize my existing content?',
-      answer: 'Sim! Fazemos auditoria completa do conteúdo existente e revitalizamos páginas com potencial inexplorado. Muitas vezes, o melhor ROI vem de otimizar o que você já tem antes de criar novo conteúdo.',
+      question: 'Vão otimizar o meu conteúdo existente?',
+      answer: 'Sim! Fazemos auditoria completa do conteúdo existente e revitalizamos páginas com potencial inexplorado. Muitas vezes, o melhor ROI vem de otimizar o que já tem antes de criar novo conteúdo.',
     },
   ];
 
@@ -77,10 +77,10 @@ const SEORankingPage = () => {
 
             <div className="hidden lg:flex items-center gap-6">
               <Link to="/services" className="text-white/80 hover:text-white transition-colors text-sm">
-                Services
+                Serviços
               </Link>
               <Link to="/#resultados" className="text-white/80 hover:text-white transition-colors text-sm">
-                About
+                Resultados
               </Link>
               <Link to="/#resultados" className="text-white/80 hover:text-white transition-colors text-sm">
                 Portfolio
@@ -88,7 +88,7 @@ const SEORankingPage = () => {
             </div>
 
             <button className="hidden lg:block bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all duration-300">
-              Get In Touch
+              Falar Connosco
             </button>
 
             <button className="lg:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -119,9 +119,9 @@ const SEORankingPage = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight"
           >
-            Own the
+            Domine os
             <br />
-            <span className="text-[#64CEFB]">Search Results.</span>
+            <span className="text-[#64CEFB]">Resultados do Google.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -129,7 +129,7 @@ const SEORankingPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            Beautiful design is useless if no one finds it. We combine technical SEO with strategic content to put your brand in front of customers ready to buy.
+            Design bonito é inútil se ninguém o encontra. Combinamos SEO técnico com conteúdo estratégico para colocar a sua marca na frente de clientes prontos a comprar.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,7 +137,7 @@ const SEORankingPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <button className="bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
-              Audit My Website
+              Auditar o Meu Website
             </button>
           </motion.div>
         </div>
@@ -170,16 +170,16 @@ const SEORankingPage = () => {
               className="lg:order-1"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-                Paid Ads Stop When
+                Os Anúncios Param Quando
                 <br />
-                <span className="text-[#64CEFB]">the Money Stops.</span>
+                <span className="text-[#64CEFB]">o Dinheiro Acaba.</span>
               </h2>
               <p className="text-lg text-white/70 leading-relaxed mb-6">
-                SEO is an asset that grows in value over time. While competitors burn cash on ads, you're building sustainable organic traffic.
+                SEO é um ativo que cresce em valor ao longo do tempo. Enquanto a concorrência queima dinheiro em anúncios, você está a construir tráfego orgânico sustentável.
               </p>
               <div className="inline-block bg-[#64CEFB]/10 border border-[#64CEFB]/30 rounded-full px-6 py-3">
                 <TrendingUp className="w-5 h-5 text-[#64CEFB] inline mr-2" />
-                <span className="text-[#64CEFB] font-semibold">Authority Digital. Not just keywords.</span>
+                <span className="text-[#64CEFB] font-semibold">Autoridade Digital. Não apenas palavras-chave.</span>
               </div>
             </motion.div>
           </div>
@@ -195,7 +195,7 @@ const SEORankingPage = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white text-center mb-16"
           >
-            The 3 Pillars of <span className="text-[#64CEFB]">SEO</span>
+            Os 3 Pilares do <span className="text-[#64CEFB]">SEO</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -306,7 +306,7 @@ const SEORankingPage = () => {
       <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white/[0.02]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12">
-            Common <span className="text-[#64CEFB]">Questions</span>
+            Perguntas <span className="text-[#64CEFB]">Frequentes</span>
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
@@ -337,9 +337,9 @@ const SEORankingPage = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
           >
-            Stop Hiding on
+            Pare de se Esconder na
             <br />
-            <span className="text-[#64CEFB]">Page 2.</span>
+            <span className="text-[#64CEFB]">Página 2.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -348,13 +348,13 @@ const SEORankingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-white/70 text-lg mb-8"
           >
-            Your customers are searching for you right now. Let's make sure they find you first.
+            Os seus clientes estão a procurar por si agora mesmo. Vamos garantir que o encontram primeiro.
           </motion.p>
           <Link
             to="/qualify"
             className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
           >
-            Start Ranking Now
+            Começar a Rankear Agora
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

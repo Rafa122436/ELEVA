@@ -73,7 +73,7 @@ const ServiceCard = ({ title, image, link, index }) => {
 const ServiceCardsGrid = () => {
   const services = [
   {
-    title: 'Website Development',
+    title: 'Desenvolvimento Web',
     image:
     'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ne5jbp1j_c22735fc-60ca-4ae4-a8af-c802bdc3df6b.png',
     link: '/services/web-development'
@@ -85,12 +85,12 @@ const ServiceCardsGrid = () => {
     link: '/services/branding-digital'
   },
   {
-    title: 'SEO / Ranking',
+    title: 'SEO / Posicionamento',
     image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/0r1vs8a2_7044c72a-63f5-43e3-8838-86d18897bac5.png',
     link: '/services/seo-ranking'
   },
   {
-    title: 'Custom Dashboards',
+    title: 'Dashboards Personalizados',
     image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/6m4zdpww_6daf0e6f-5a1e-44f5-b8bc-a66ff964d928.png',
     link: '/services/dashboards'
   }];
