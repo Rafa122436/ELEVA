@@ -67,8 +67,8 @@ const SEORankingPage = () => {
   const pillars = [
     {
       icon: Code,
-      title: 'TECHNICAL SEO',
-      subtitle: 'The Foundation',
+      title: 'SEO TÉCNICO',
+      subtitle: 'A Fundação',
       description: 'Otimização de código, velocidade de carregamento (Core Web Vitals), mapas de site XML e arquitetura de rastreamento perfeita para bots.',
       gradient: 'from-yellow-600/20 to-green-600/20',
       iconColor: 'text-yellow-400',
@@ -76,8 +76,8 @@ const SEORankingPage = () => {
     },
     {
       icon: FileSearch,
-      title: 'ON-PAGE OPTIMIZATION',
-      subtitle: 'Content Strategy',
+      title: 'OTIMIZAÇÃO ON-PAGE',
+      subtitle: 'Estratégia Conteúdo',
       description: 'Estratégia de palavras-chave, hierarquia de cabeçalhos (H1-H4), otimização de imagens e meta-descrições focadas em CTR (taxa de clique).',
       gradient: 'from-green-600/20 to-emerald-600/20',
       iconColor: 'text-green-400',
@@ -85,8 +85,8 @@ const SEORankingPage = () => {
     },
     {
       icon: Link2Icon,
-      title: 'AUTHORITY BUILDING',
-      subtitle: 'Backlink Dominance',
+      title: 'CONSTRUÇÃO AUTORIDADE',
+      subtitle: 'Domínio Backlink',
       description: 'Estratégia de link building de alta qualidade para aumentar a relevância do domínio perante o algoritmo do Google.',
       gradient: 'from-emerald-600/20 to-green-600/20',
       iconColor: 'text-emerald-400',
@@ -96,22 +96,22 @@ const SEORankingPage = () => {
 
   const strategy = [
     { 
-      title: 'KEYWORD RESEARCH', 
+      title: 'PESQUISA PALAVRAS-CHAVE', 
       description: 'Identificação de termos com alto volume e baixa dificuldade.',
       icon: Search,
     },
     { 
-      title: 'COMPETITOR ANALYSIS', 
+      title: 'ANÁLISE CONCORRÊNCIA', 
       description: 'Desconstrução do que os concorrentes estão a fazer para os superar.',
       icon: Target,
     },
     { 
-      title: 'CONTENT STRATEGY', 
+      title: 'ESTRATÉGIA CONTEÚDO', 
       description: 'Criação de conteúdo que responde às intenções de busca do utilizador.',
       icon: Zap,
     },
     { 
-      title: 'MONTHLY REPORTING', 
+      title: 'RELATÓRIOS MENSAIS', 
       description: 'Transparência total com KPIs de posição, tráfego e conversão.',
       icon: BarChart3,
     },
@@ -119,15 +119,15 @@ const SEORankingPage = () => {
 
   const faqs = [
     {
-      question: 'How long until I see results?',
+      question: 'Quanto tempo até ver resultados?',
       answer: 'SEO é uma estratégia de médio a longo prazo. Os primeiros resultados visíveis aparecem normalmente em 3-6 meses, mas o verdadeiro crescimento composto e ROI substancial acontecem após 6-12 meses de trabalho consistente e otimização contínua. Não é uma solução rápida — é uma maratona estratégica que constrói ativos duradouros.',
     },
     {
-      question: 'Do you guarantee #1 ranking?',
+      question: 'Garantem a posição #1?',
       answer: 'Nenhuma agência séria pode garantir posição #1 porque os algoritmos do Google mudam constantemente e existem centenas de variáveis fora do nosso controlo. O que garantimos é melhoria contínua mensurável, domínio de nicho específico e aumento consistente de tráfego orgânico qualificado que converte. Focamo-nos em resultados reais, não em promessas vazias.',
     },
     {
-      question: 'Will you optimize my existing content?',
+      question: 'Vão otimizar o meu conteúdo existente?',
       answer: 'Sim, absolutamente! A nossa primeira ação é uma auditoria completa do conteúdo existente para identificar páginas com potencial inexplorado. Revitalizamos, otimizamos e melhoramos o que já existe antes de criar novo conteúdo. Muitas vezes, o melhor ROI vem de maximizar os ativos que já possui — é mais rápido e mais eficiente do que começar do zero.',
     },
   ];
@@ -275,7 +275,7 @@ const SEORankingPage = () => {
             className="mb-6"
           >
             <span className="inline-block px-6 py-2 bg-gradient-to-r from-yellow-600/20 to-green-600/20 border border-yellow-500/30 rounded-full text-yellow-400 text-sm font-bold tracking-widest uppercase mb-8">
-              SEO · Ranking · Dominance
+              SEO · Ranking · Domínio
             </span>
           </motion.div>
 
@@ -285,10 +285,10 @@ const SEORankingPage = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-[1.1] tracking-tight"
           >
-            OWN THE
+            DOMINE OS
             <br />
             <span className="bg-gradient-to-r from-yellow-400 via-green-400 to-emerald-400 bg-clip-text text-transparent">
-              SEARCH RESULTS.
+              RESULTADOS.
             </span>
           </motion.h1>
 
@@ -298,10 +298,10 @@ const SEORankingPage = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg md:text-xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Beautiful design is useless if no one finds it. We combine{' '}
-            <span className="text-green-400 font-semibold">technical SEO</span> with{' '}
-            <span className="text-yellow-400 font-semibold">strategic content</span>{' '}
-            to put your brand in front of customers ready to buy.
+            Design bonito é inútil se ninguém o encontra. Combinamos{' '}
+            <span className="text-green-400 font-semibold">SEO técnico</span> com{' '}
+            <span className="text-yellow-400 font-semibold">conteúdo estratégico</span>{' '}
+            para colocar a sua marca na frente de clientes prontos a comprar.
           </motion.p>
 
           <motion.div
@@ -313,7 +313,7 @@ const SEORankingPage = () => {
               to="/#contato"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-green-500 hover:from-yellow-400 hover:to-green-400 text-black font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50 text-lg"
             >
-              Audit My Website
+              Auditar Meu Website
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
@@ -341,15 +341,15 @@ const SEORankingPage = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block px-4 py-1.5 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-400 text-xs font-bold tracking-widest uppercase mb-6">
-                THE REALITY CHECK
+                A REALIDADE
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight uppercase">
-                Paid Ads Stop
+                Anúncios Param
                 <br />
-                When the
+                Quando o
                 <br />
                 <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
-                  Money Stops.
+                  Dinheiro Acaba.
                 </span>
               </h2>
               <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
@@ -415,7 +415,7 @@ const SEORankingPage = () => {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-xs font-bold tracking-widest uppercase mb-6">
-              THE SEO ATTACK FRAMEWORK
+              FRAMEWORK DE ATAQUE SEO
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight">
               Os 3 Pilares do{' '}
@@ -477,18 +477,18 @@ const SEORankingPage = () => {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-400 text-xs font-bold tracking-widest uppercase mb-6">
-              STRATEGIC VISIBILITY
+              VISIBILIDADE ESTRATÉGICA
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase leading-tight">
-              Strategy over{' '}
+              Estratégia Sobre{' '}
               <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
-                Luck
+                Sorte
               </span>
             </h2>
             <p className="text-white/70 text-lg max-w-3xl mx-auto">
-              We don't guess. Every decision is backed by{' '}
-              <span className="text-green-400 font-semibold">data</span>,{' '}
-              <span className="text-yellow-400 font-semibold">competitor analysis</span>, and proven SEO frameworks.
+              Não adivinhamos. Cada decisão é baseada em{' '}
+              <span className="text-green-400 font-semibold">dados</span>,{' '}
+              <span className="text-yellow-400 font-semibold">análise da concorrência</span> e frameworks SEO comprovados.
             </p>
           </motion.div>
 
@@ -542,17 +542,17 @@ const SEORankingPage = () => {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-xs font-bold tracking-widest uppercase mb-6">
-              ADAPTIVE STRATEGIES
+              ESTRATÉGIAS ADAPTATIVAS
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-white uppercase leading-tight">
-              Local{' '}
               <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
-                Dominance
+                Domínio
               </span>{' '}
-              vs Global{' '}
+              Local vs{' '}
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Attack
-              </span>
+                Ataque
+              </span>{' '}
+              Global
             </h2>
           </motion.div>
 
@@ -620,9 +620,9 @@ const SEORankingPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-black text-white uppercase mb-4">
-              Breaking{' '}
+              Quebrando{' '}
               <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
-                Objections
+                Objeções
               </span>
             </h2>
           </motion.div>
@@ -673,7 +673,7 @@ const SEORankingPage = () => {
             viewport={{ once: true }}
           >
             <span className="inline-block px-6 py-2 bg-gradient-to-r from-yellow-600/20 to-green-600/20 border border-yellow-500/30 rounded-full text-yellow-400 text-sm font-bold tracking-widest uppercase mb-8">
-              TAKE ACTION NOW
+              TOME AÇÃO AGORA
             </span>
           </motion.div>
 
@@ -684,11 +684,11 @@ const SEORankingPage = () => {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 uppercase leading-tight"
           >
-            Stop Hiding
+            Pare de Se Esconder
             <br />
-            on{' '}
+            na{' '}
             <span className="bg-gradient-to-r from-yellow-400 via-green-400 to-emerald-400 bg-clip-text text-transparent">
-              Page 2.
+              Página 2.
             </span>
           </motion.h2>
 
@@ -699,8 +699,8 @@ const SEORankingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-white/70 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Your customers are searching for you <span className="text-green-400 font-semibold">right now</span>. 
-            Let's make sure they find <span className="text-yellow-400 font-semibold">you first</span>.
+            Os seus clientes estão a procurar por si <span className="text-green-400 font-semibold">agora mesmo</span>. 
+            Vamos garantir que o encontram <span className="text-yellow-400 font-semibold">primeiro</span>.
           </motion.p>
 
           <motion.div
@@ -713,7 +713,7 @@ const SEORankingPage = () => {
               to="/#contato"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 via-green-500 to-emerald-500 hover:from-yellow-400 hover:via-green-400 hover:to-emerald-400 text-black font-black px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 shadow-2xl shadow-green-500/30 hover:shadow-green-500/50 text-lg uppercase tracking-wide"
             >
-              Start Ranking Now
+              Começar a Rankear Agora
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>
@@ -728,15 +728,15 @@ const SEORankingPage = () => {
           >
             <div className="flex items-center gap-2">
               <Award className="w-5 h-5 text-green-400" />
-              <span>Certified SEO Experts</span>
+              <span>Especialistas SEO Certificados</span>
             </div>
             <div className="flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-yellow-400" />
-              <span>Proven Track Record</span>
+              <span>Historial Comprovado</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-5 h-5 text-emerald-400" />
-              <span>Fast Implementation</span>
+              <span>Implementação Rápida</span>
             </div>
           </motion.div>
         </div>
