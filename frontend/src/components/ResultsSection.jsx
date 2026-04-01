@@ -21,6 +21,24 @@ const ResultsSection = () => {
       result: 'De 5 para 45 clientes em 6 meses',
       image: 'https://images.unsplash.com/photo-1758518729912-bf3a84c400e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHN1Y2Nlc3N8ZW58MHx8fHwxNzc0OTYxMTAwfDA&ixlib=rb-4.1.0&q=85',
     },
+    {
+      name: 'Maria Rodrigues',
+      company: 'Rodrigues Imobiliária',
+      result: '€120k em vendas diretas via website',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&q=85',
+    },
+    {
+      name: 'João Ferreira',
+      company: 'Ferreira Advocacia',
+      result: 'ROI de 420% no primeiro ano',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85',
+    },
+    {
+      name: 'Sofia Almeida',
+      company: 'Almeida Marketing Digital',
+      result: 'Agenda cheia por 4 meses seguidos',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&q=85',
+    },
   ];
 
   return (
