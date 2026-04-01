@@ -79,10 +79,10 @@ const ServiceCardsGrid = () => {
     link: '/services/web-development'
   },
   {
-    title: 'Paid Ads',
+    title: 'Branding Digital',
     image:
-    'https://images.pexels.com/photos/6476805/pexels-photo-6476805.jpeg',
-    link: '/services/paid-ads'
+    'https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=srgb&fm=jpg&q=85',
+    link: '/services/branding-digital'
   },
   {
     title: 'SEO / Ranking',

@@ -49,6 +49,21 @@ const ServicesSection = () => {
         'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/hmepic8r_6daf0e6f-5a1e-44f5-b8bc-a66ff964d928.png',
       link: '/services/dashboards',
     },
+    {
+      icon: Code2,
+      title: 'Branding Digital',
+      description:
+        'Construa uma marca que se destaca da concorrência. Identidade visual profissional que comunica autoridade e gera confiança instantânea.',
+      features: [
+        'Logo e identidade visual única',
+        'Guidelines de marca profissionais',
+        'Presença digital coerente',
+        'Materiais de marketing prontos a usar',
+      ],
+      image:
+        'https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=srgb&fm=jpg&q=85',
+      link: '/services/branding-digital',
+    },
   ];
 
   return (
