@@ -314,7 +314,7 @@ const BrandingDigitalPage = () => {
             >
               <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/20 shadow-2xl shadow-cyan-500/10">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/kbg1kj72_6d949569-c35c-48ce-9d39-da1d8e2bb0e8.png"
+                  src="https://images.pexels.com/photos/7598069/pexels-photo-7598069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                   alt="Brand design process"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />

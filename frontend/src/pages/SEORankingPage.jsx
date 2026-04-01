@@ -372,7 +372,7 @@ const SEORankingPage = () => {
             >
               <div className="relative rounded-3xl overflow-hidden border-2 border-blue-500/20 shadow-2xl shadow-blue-500/10">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ttfdn8c1_7044c72a-63f5-43e3-8838-86d18897bac5.png"
+                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxTRU8lMjBhbmFseXRpY3MlMjBkYXNoYm9hcmQlMjBjb21wdXRlciUyMHNjcmVlbnxlbnwwfHx8fDE3NzUwNTg0Mjl8MA&ixlib=rb-4.1.0&q=85"
                   alt="Google search ranking dominance"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />

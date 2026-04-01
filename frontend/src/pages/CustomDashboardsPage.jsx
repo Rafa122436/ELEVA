@@ -313,7 +313,7 @@ const CustomDashboardsPage = () => {
             >
               <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/20 shadow-2xl shadow-cyan-500/10">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/kfmlnxr0_4a11d7a2-9d3c-4e79-84e9-34d8a6e1e29f.png"
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzJTIwZGFzaGJvYXJkJTIwZ3JhcGhzfGVufDB8fHx8MTc3NTA1ODQzMnww&ixlib=rb-4.1.0&q=85"
                   alt="Dashboard analytics"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />

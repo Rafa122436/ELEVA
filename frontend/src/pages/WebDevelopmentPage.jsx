@@ -307,7 +307,7 @@ const WebDevelopmentPage = () => {
             >
               <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/20 shadow-2xl shadow-cyan-500/10">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/evhr7399_c22735fc-60ca-4ae4-a8af-c802bdc3df6b.png"
+                  src="https://images.unsplash.com/photo-1763568258535-fa1066506571?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wZXIlMjBjb2RpbmclMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzc1MDU4NDMxfDA&ixlib=rb-4.1.0&q=85"
                   alt="Developer coding"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />
