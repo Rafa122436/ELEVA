@@ -147,6 +147,12 @@ const BrandingDigitalPage = () => {
                 Serviços
               </Link>
               <Link to="/sobre" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5">
+                <Link to="/portfolio" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2" onClick={() => setMobileMenuOpen(false)}>
+                  Portfolio
+                </Link>
+              <Link to="/portfolio" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5">
+                Portfolio
+              </Link>
                 Sobre
               </Link>
               <a href="/#resultados" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5">
@@ -176,6 +182,12 @@ const BrandingDigitalPage = () => {
                   Serviços
                 </Link>
                 <Link to="/sobre" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/portfolio" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2" onClick={() => setMobileMenuOpen(false)}>
+                  Portfolio
+                </Link>
+              <Link to="/portfolio" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5">
+                Portfolio
+              </Link>
                   Sobre
                 </Link>
                 <a href="/#resultados" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2" onClick={() => setMobileMenuOpen(false)}>
