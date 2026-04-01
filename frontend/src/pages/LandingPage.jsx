@@ -54,46 +54,27 @@ const LandingPage = () => {
                 />
               </Link>
 
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center gap-1 border border-gray-700 rounded-full px-4 py-2">
-                <Link
-                  to="/"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                >
-                  Início
-                </Link>
-                <Link
-                  to="/services"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                >
-                  Serviços
-                </Link>
+              {/* Desktop Navigation - Left Aligned Next to Logo */}
+              <div className="hidden lg:flex items-center gap-8">
                 <Link
                   to="/sobre"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                  className="group relative text-white/70 hover:text-white font-medium text-[15px] tracking-wide transition-all duration-300"
+                  style={{ fontWeight: 500 }}
                 >
                   Sobre
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"></span>
                 </Link>
-                <a
-                  href="#resultados"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                <Link
+                  to="/portfolio"
+                  className="group relative text-white/70 hover:text-white font-medium text-[15px] tracking-wide transition-all duration-300"
+                  style={{ fontWeight: 500 }}
                 >
-                  Resultados
-                </a>
-                <a
-                  href="#faq"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                >
-                  FAQ
-                </a>
-                <a
-                  href="#contato"
-                  className="flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                >
-                  Contato
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                  Portfolio
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"></span>
+                </Link>
               </div>
+
+              <div className="flex-1"></div>
 
               {/* Mobile Menu Button */}
               <button
@@ -110,51 +91,22 @@ const LandingPage = () => {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-              <div className="lg:hidden mt-4 bg-black/90 backdrop-blur-lg rounded-2xl border border-gray-700 p-4">
-                <div className="flex flex-col gap-2">
-                  <Link
-                    to="/"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Início
-                  </Link>
-                  <Link
-                    to="/services"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Serviços
-                  </Link>
+              <div className="lg:hidden mt-4 bg-black/90 backdrop-blur-lg rounded-2xl border border-gray-700 p-6">
+                <div className="flex flex-col gap-4">
                   <Link
                     to="/sobre"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
+                    className="text-white text-xl font-semibold hover:text-white/70 transition-colors py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Sobre
                   </Link>
-                  <a
-                    href="/#resultados"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
+                  <Link
+                    to="/portfolio"
+                    className="text-white text-xl font-semibold hover:text-white/70 transition-colors py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Resultados
-                  </a>
-                  <a
-                    href="/#faq"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    FAQ
-                  </a>
-                  <a
-                    href="/#contato"
-                    className="flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Contato
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                    Portfolio
+                  </Link>
                 </div>
               </div>
             )}
