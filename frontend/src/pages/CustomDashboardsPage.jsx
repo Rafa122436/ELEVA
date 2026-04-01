@@ -323,9 +323,9 @@ const CustomDashboardsPage = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
           >
-            Master Your Data.
+            Pronto para Elevar
             <br />
-            <span className="text-[#64CEFB]">Scale Your Business.</span>
+            <span className="text-[#64CEFB]">o Seu Negócio?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -334,13 +334,13 @@ const CustomDashboardsPage = () => {
             transition={{ delay: 0.2 }}
             className="text-white/70 text-lg mb-8"
           >
-            Join the elite businesses using data to outpace their competition.
+            Vamos conversar sobre como podemos transformar a sua presença digital em resultados concretos.
           </motion.p>
           <Link
             to="/qualify"
             className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
           >
-            Book a Demo / Strategy Call
+            Agendar uma Chamada Estratégica Gratuita
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

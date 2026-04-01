@@ -27,22 +27,21 @@ const ServicesCTA = () => {
         <div className="space-y-8 md:space-y-10">
           {/* Desktop Title */}
           <h2 className="hidden md:block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight">
-            Each Project we Undertake is a
+            Pronto para Elevar
             <br />
-            <span className="text-[#64CEFB]">Unique Opportunity.</span>
+            <span className="text-[#64CEFB]">o Seu Negócio?</span>
           </h2>
 
           {/* Mobile Title */}
           <h2 className="md:hidden text-4xl sm:text-5xl font-extrabold text-white leading-tight">
-            Each Project, Our Design is
+            Pronto para Elevar
             <br />
-            <span className="text-[#64CEFB]">Great.</span>
+            <span className="text-[#64CEFB]">o Seu Negócio?</span>
           </h2>
 
           {/* Subtitle */}
           <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Ready to take the next step? Join us now and start transforming
-            your vision into reality with expert support.
+            Vamos conversar sobre como podemos transformar a sua presença digital em resultados concretos.
           </p>
 
           {/* CTA Button */}
@@ -52,7 +51,7 @@ const ServicesCTA = () => {
               className="inline-flex items-center gap-3 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold rounded-full px-8 md:px-12 py-4 md:py-5 transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25 group"
             >
               <span className="text-base md:text-lg">
-                Book FREE Strategy Call
+                Agendar uma Chamada Estratégica Gratuita
               </span>
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>

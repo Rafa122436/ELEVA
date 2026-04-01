@@ -308,9 +308,9 @@ const AboutPage = () => {
           </motion.p>
           <Link
             to="/qualify"
-            className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
+            className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
           >
-            Agendar Consultoria Gratuita
+            Agendar uma Chamada Estratégica Gratuita
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

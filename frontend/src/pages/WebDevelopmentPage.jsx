@@ -334,9 +334,9 @@ const WebDevelopmentPage = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
           >
-            A Sua Concorrência Está a Crescer.
+            Pronto para Elevar
             <br />
-            <span className="text-[#64CEFB]">E Você?</span>
+            <span className="text-[#64CEFB]">o Seu Negócio?</span>
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -345,11 +345,14 @@ const WebDevelopmentPage = () => {
             transition={{ delay: 0.2 }}
             className="space-y-4"
           >
+            <p className="text-white/70 text-lg mb-8">
+              Vamos conversar sobre como podemos transformar a sua presença digital em resultados concretos.
+            </p>
             <Link
               to="/qualify"
               className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
             >
-              Agendar Consultoria GRATUITA
+              Agendar uma Chamada Estratégica Gratuita
               <ArrowRight className="w-5 h-5" />
             </Link>
             <p className="text-white/50 text-sm">Apenas 2 vagas disponíveis este mês.</p>

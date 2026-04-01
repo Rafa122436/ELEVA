@@ -298,26 +298,26 @@ const BrandingDigitalPage = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
           >
-            Pronto para Construir uma Marca
+            Pronto para Elevar
             <br />
-            <span className="text-[#64CEFB]">Memorável?</span>
+            <span className="text-[#64CEFB]">o Seu Negócio?</span>
           </motion.h2>
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="space-y-4"
+            className="text-white/70 text-lg mb-8"
           >
-            <Link
-              to="/qualify"
-              className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
-            >
-              Agendar Consultoria GRATUITA
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <p className="text-white/50 text-sm">Apenas 2 vagas disponíveis este mês.</p>
-          </motion.div>
+            Vamos conversar sobre como podemos transformar a sua presença digital em resultados concretos.
+          </motion.p>
+          <Link
+            to="/qualify"
+            className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25"
+          >
+            Agendar uma Chamada Estratégica Gratuita
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
 

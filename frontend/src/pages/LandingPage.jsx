@@ -193,7 +193,7 @@ const LandingPage = () => {
                 <div className="pt-8 md:pt-10">
                   <button className="group bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold rounded-full px-8 md:px-10 py-4 md:py-5 flex items-center gap-2 mx-auto transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
                     <span className="text-base md:text-lg">
-                      Agendar Consultoria Gratuita
+                      Agendar uma Chamada Estratégica Gratuita
                     </span>
                     <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
