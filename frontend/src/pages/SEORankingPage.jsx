@@ -19,11 +19,11 @@ const RisingBarChart = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   const bars = [
-    { height: 40, delay: 0, color: 'bg-gradient-to-t from-yellow-600/80 to-yellow-400' },
-    { height: 65, delay: 0.1, color: 'bg-gradient-to-t from-yellow-600/80 to-yellow-400' },
-    { height: 52, delay: 0.2, color: 'bg-gradient-to-t from-yellow-600/80 to-yellow-400' },
-    { height: 85, delay: 0.3, color: 'bg-gradient-to-t from-green-600/80 to-green-400' },
-    { height: 100, delay: 0.4, color: 'bg-gradient-to-t from-green-500 to-emerald-400' },
+    { height: 40, delay: 0, color: 'bg-gradient-to-t from-cyan-600/80 to-cyan-400' },
+    { height: 65, delay: 0.1, color: 'bg-gradient-to-t from-cyan-600/80 to-cyan-400' },
+    { height: 52, delay: 0.2, color: 'bg-gradient-to-t from-blue-600/80 to-blue-400' },
+    { height: 85, delay: 0.3, color: 'bg-gradient-to-t from-blue-600/80 to-cyan-400' },
+    { height: 100, delay: 0.4, color: 'bg-gradient-to-t from-cyan-500 to-blue-400' },
   ];
 
   return (
@@ -35,7 +35,7 @@ const RisingBarChart = () => {
           animate={isInView ? { height: `${bar.height}%`, opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: bar.delay, ease: "easeOut" }}
           className={`w-8 ${bar.color} rounded-t-lg relative`}
-          style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)' }}
+          style={{ boxShadow: '0 0 20px rgba(100, 206, 251, 0.3)' }}
         >
           {i === bars.length - 1 && (
             <motion.div
@@ -44,7 +44,7 @@ const RisingBarChart = () => {
               transition={{ delay: 0.8, duration: 0.3 }}
               className="absolute -top-8 left-1/2 -translate-x-1/2"
             >
-              <TrendingUp className="w-6 h-6 text-emerald-400" />
+              <TrendingUp className="w-6 h-6 text-cyan-400" />
             </motion.div>
           )}
         </motion.div>
@@ -70,27 +70,27 @@ const SEORankingPage = () => {
       title: 'SEO TÉCNICO',
       subtitle: 'A Fundação',
       description: 'Otimização de código, velocidade de carregamento (Core Web Vitals), mapas de site XML e arquitetura de rastreamento perfeita para bots.',
-      gradient: 'from-yellow-600/20 to-green-600/20',
-      iconColor: 'text-yellow-400',
-      borderColor: 'border-yellow-500/30',
+      gradient: 'from-cyan-600/20 to-blue-600/20',
+      iconColor: 'text-cyan-400',
+      borderColor: 'border-cyan-500/30',
     },
     {
       icon: FileSearch,
       title: 'OTIMIZAÇÃO ON-PAGE',
       subtitle: 'Estratégia Conteúdo',
       description: 'Estratégia de palavras-chave, hierarquia de cabeçalhos (H1-H4), otimização de imagens e meta-descrições focadas em CTR (taxa de clique).',
-      gradient: 'from-green-600/20 to-emerald-600/20',
-      iconColor: 'text-green-400',
-      borderColor: 'border-green-500/30',
+      gradient: 'from-blue-600/20 to-cyan-600/20',
+      iconColor: 'text-blue-400',
+      borderColor: 'border-blue-500/30',
     },
     {
       icon: Link2Icon,
       title: 'CONSTRUÇÃO AUTORIDADE',
       subtitle: 'Domínio Backlink',
       description: 'Estratégia de link building de alta qualidade para aumentar a relevância do domínio perante o algoritmo do Google.',
-      gradient: 'from-emerald-600/20 to-green-600/20',
-      iconColor: 'text-emerald-400',
-      borderColor: 'border-emerald-500/30',
+      gradient: 'from-cyan-600/20 to-blue-600/20',
+      iconColor: 'text-cyan-400',
+      borderColor: 'border-cyan-500/30',
     },
   ];
 
@@ -252,7 +252,7 @@ const SEORankingPage = () => {
         className="relative pt-32 md:pt-40 pb-32 md:pb-40 px-4 md:px-6 lg:px-8 overflow-hidden"
       >
         {/* Animated Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-900/10 via-black to-yellow-900/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-black to-cyan-900/10"></div>
         
         {/* Floating Search Icon with Glow */}
         <motion.div
@@ -262,8 +262,8 @@ const SEORankingPage = () => {
           className="absolute top-32 right-10 md:right-20"
         >
           <div className="relative">
-            <Search className="w-32 h-32 md:w-48 md:h-48 text-emerald-400" strokeWidth={0.5} />
-            <div className="absolute inset-0 blur-3xl bg-emerald-400/20 rounded-full"></div>
+            <Search className="w-32 h-32 md:w-48 md:h-48 text-cyan-400" strokeWidth={0.5} />
+            <div className="absolute inset-0 blur-3xl bg-cyan-400/20 rounded-full"></div>
           </div>
         </motion.div>
 
@@ -274,7 +274,7 @@ const SEORankingPage = () => {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-yellow-600/20 to-green-600/20 border border-yellow-500/30 rounded-full text-yellow-400 text-sm font-bold tracking-widest uppercase mb-8">
+            <span className="inline-block px-6 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-bold tracking-widest uppercase mb-8">
               SEO · Ranking · Domínio
             </span>
           </motion.div>
@@ -287,7 +287,7 @@ const SEORankingPage = () => {
           >
             DOMINE OS
             <br />
-            <span className="bg-gradient-to-r from-yellow-400 via-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
               RESULTADOS.
             </span>
           </motion.h1>
@@ -299,8 +299,8 @@ const SEORankingPage = () => {
             className="text-lg md:text-xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             Design bonito é inútil se ninguém o encontra. Combinamos{' '}
-            <span className="text-green-400 font-semibold">SEO técnico</span> com{' '}
-            <span className="text-yellow-400 font-semibold">conteúdo estratégico</span>{' '}
+            <span className="text-cyan-400 font-semibold">SEO técnico</span> com{' '}
+            <span className="text-blue-400 font-semibold">conteúdo estratégico</span>{' '}
             para colocar a sua marca na frente de clientes prontos a comprar.
           </motion.p>
 
@@ -311,7 +311,7 @@ const SEORankingPage = () => {
           >
             <Link
               to="/#contato"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-green-500 hover:from-yellow-400 hover:to-green-400 text-black font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50 text-lg"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 text-lg"
             >
               Auditar Meu Website
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -331,7 +331,7 @@ const SEORankingPage = () => {
       </motion.section>
 
       {/* The Reality Check - Organic Value */}
-      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-black via-green-950/5 to-black">
+      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-black via-blue-950/5 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -340,7 +340,7 @@ const SEORankingPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-1.5 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-400 text-xs font-bold tracking-widest uppercase mb-6">
+              <span className="inline-block px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-bold tracking-widest uppercase mb-6">
                 A REALIDADE
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight uppercase">
@@ -348,18 +348,18 @@ const SEORankingPage = () => {
                 <br />
                 Quando o
                 <br />
-                <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   Dinheiro Acaba.
                 </span>
               </h2>
               <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
-                SEO é um <span className="text-green-400 font-semibold">ativo que cresce em valor</span> ao longo do tempo. 
+                SEO é um <span className="text-cyan-400 font-semibold">ativo que cresce em valor</span> ao longo do tempo. 
                 Enquanto a concorrência queima milhares em anúncios todos os meses, você está a construir{' '}
-                <span className="text-yellow-400 font-semibold">tráfego orgânico sustentável</span> que não desaparece quando o orçamento acaba.
+                <span className="text-blue-400 font-semibold">tráfego orgânico sustentável</span> que não desaparece quando o orçamento acaba.
               </p>
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border border-green-500/30 rounded-2xl px-6 py-4 backdrop-blur-sm">
-                <Award className="w-6 h-6 text-green-400" />
-                <span className="text-green-400 font-bold text-lg">Autoridade Digital. Não apenas palavras-chave.</span>
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-2xl px-6 py-4 backdrop-blur-sm">
+                <Award className="w-6 h-6 text-cyan-400" />
+                <span className="text-cyan-400 font-bold text-lg">Autoridade Digital. Não apenas palavras-chave.</span>
               </div>
             </motion.div>
 
@@ -370,7 +370,7 @@ const SEORankingPage = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden border-2 border-green-500/20 shadow-2xl shadow-green-500/10">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-blue-500/20 shadow-2xl shadow-blue-500/10">
                 <img
                   src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ttfdn8c1_7044c72a-63f5-43e3-8838-86d18897bac5.png"
                   alt="Google search ranking dominance"
@@ -384,20 +384,20 @@ const SEORankingPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
-                  className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md border border-green-500/30 rounded-2xl p-6"
+                  className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md border border-blue-500/30 rounded-2xl p-6"
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-green-400 text-sm font-semibold mb-1">Organic Traffic Growth</p>
+                      <p className="text-blue-400 text-sm font-semibold mb-1">Organic Traffic Growth</p>
                       <p className="text-white text-3xl font-black">+247%</p>
                     </div>
-                    <TrendingUp className="w-12 h-12 text-green-400" />
+                    <TrendingUp className="w-12 h-12 text-blue-400" />
                   </div>
                 </motion.div>
               </div>
 
               {/* Decorative Glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-green-500/10 to-yellow-500/10 blur-3xl -z-10 rounded-full"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 blur-3xl -z-10 rounded-full"></div>
             </motion.div>
           </div>
         </div>
@@ -405,7 +405,7 @@ const SEORankingPage = () => {
 
       {/* 3 Pillars - Premium Grid */}
       <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-yellow-950/5 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-950/5 to-black"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -414,12 +414,12 @@ const SEORankingPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-xs font-bold tracking-widest uppercase mb-6">
+            <span className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 text-xs font-bold tracking-widest uppercase mb-6">
               FRAMEWORK DE ATAQUE SEO
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight">
               Os 3 Pilares do{' '}
-              <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Domínio
               </span>
             </h2>
@@ -468,7 +468,7 @@ const SEORankingPage = () => {
       </section>
 
       {/* Strategy over Luck - The Method */}
-      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-black via-green-950/5 to-black">
+      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-black via-blue-950/5 to-black">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -476,19 +476,19 @@ const SEORankingPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-400 text-xs font-bold tracking-widest uppercase mb-6">
+            <span className="inline-block px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-bold tracking-widest uppercase mb-6">
               VISIBILIDADE ESTRATÉGICA
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase leading-tight">
               Estratégia Sobre{' '}
-              <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Sorte
               </span>
             </h2>
             <p className="text-white/70 text-lg max-w-3xl mx-auto">
               Não adivinhamos. Cada decisão é baseada em{' '}
-              <span className="text-green-400 font-semibold">dados</span>,{' '}
-              <span className="text-yellow-400 font-semibold">análise da concorrência</span> e frameworks SEO comprovados.
+              <span className="text-blue-400 font-semibold">dados</span>,{' '}
+              <span className="text-cyan-400 font-semibold">análise da concorrência</span> e frameworks SEO comprovados.
             </p>
           </motion.div>
 
@@ -501,18 +501,18 @@ const SEORankingPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 whileHover={{ scale: 1.03, y: -5 }}
-                className="group relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm border border-white/10 hover:border-green-500/30 rounded-2xl p-8 transition-all duration-500 overflow-hidden"
+                className="group relative bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm border border-white/10 hover:border-blue-500/30 rounded-2xl p-8 transition-all duration-500 overflow-hidden"
               >
                 {/* Glow Effect on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-yellow-500/0 group-hover:from-green-500/5 group-hover:to-yellow-500/5 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500"></div>
                 
                 <div className="relative z-10">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-green-500/20 flex items-center justify-center border border-green-500/30 group-hover:scale-110 transition-transform duration-300">
-                      <step.icon className="w-6 h-6 text-green-400" />
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-blue-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <step.icon className="w-6 h-6 text-blue-400" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-black text-white mb-2 uppercase tracking-tight group-hover:text-green-400 transition-colors">
+                      <h3 className="text-xl font-black text-white mb-2 uppercase tracking-tight group-hover:text-blue-400 transition-colors">
                         {step.title}
                       </h3>
                       <p className="text-white/60 text-sm leading-relaxed">
@@ -541,15 +541,15 @@ const SEORankingPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 bg-green-500/10 border border-green-500/30 rounded-full text-green-400 text-xs font-bold tracking-widest uppercase mb-6">
+            <span className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 text-xs font-bold tracking-widest uppercase mb-6">
               ESTRATÉGIAS ADAPTATIVAS
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-white uppercase leading-tight">
-              <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Domínio
               </span>{' '}
               Local vs{' '}
-              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Ataque
               </span>{' '}
               Global
@@ -562,24 +562,24 @@ const SEORankingPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="group relative bg-gradient-to-br from-yellow-900/10 to-yellow-600/5 border-2 border-yellow-500/20 hover:border-yellow-500/50 rounded-3xl p-10 transition-all duration-500 overflow-hidden"
+              className="group relative bg-gradient-to-br from-cyan-900/10 to-cyan-600/5 border-2 border-cyan-500/20 hover:border-cyan-500/50 rounded-3xl p-10 transition-all duration-500 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/0 to-transparent group-hover:from-yellow-500/5 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-transparent group-hover:from-cyan-500/5 transition-all duration-500"></div>
               
               <div className="relative z-10">
-                <MapPin className="w-16 h-16 text-yellow-400 mb-6" strokeWidth={1.5} />
+                <MapPin className="w-16 h-16 text-cyan-400 mb-6" strokeWidth={1.5} />
                 <h3 className="text-3xl font-black text-white mb-4 uppercase">Local SEO</h3>
                 <p className="text-white/70 leading-relaxed mb-6 text-lg">
                   Domine sua cidade com Google My Business otimizado, citações locais estratégicas e reviews que convertem.
                 </p>
-                <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full px-4 py-2">
-                  <span className="text-yellow-400 text-sm font-bold uppercase tracking-wide">
+                <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2">
+                  <span className="text-cyan-400 text-sm font-bold uppercase tracking-wide">
                     Restaurantes · Clínicas · Lojas Físicas
                   </span>
                 </div>
               </div>
 
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl"></div>
             </motion.div>
 
             <motion.div
@@ -587,31 +587,31 @@ const SEORankingPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="group relative bg-gradient-to-br from-green-900/10 to-emerald-600/5 border-2 border-green-500/20 hover:border-green-500/50 rounded-3xl p-10 transition-all duration-500 overflow-hidden"
+              className="group relative bg-gradient-to-br from-blue-900/10 to-cyan-600/5 border-2 border-blue-500/20 hover:border-blue-500/50 rounded-3xl p-10 transition-all duration-500 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-transparent group-hover:from-green-500/5 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-transparent group-hover:from-blue-500/5 transition-all duration-500"></div>
               
               <div className="relative z-10">
-                <Globe className="w-16 h-16 text-green-400 mb-6" strokeWidth={1.5} />
+                <Globe className="w-16 h-16 text-blue-400 mb-6" strokeWidth={1.5} />
                 <h3 className="text-3xl font-black text-white mb-4 uppercase">Global SEO</h3>
                 <p className="text-white/70 leading-relaxed mb-6 text-lg">
                   Conquiste mercados internacionais com estratégias multi-idioma e autoridade de domínio absoluta.
                 </p>
-                <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2">
-                  <span className="text-green-400 text-sm font-bold uppercase tracking-wide">
+                <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-2">
+                  <span className="text-blue-400 text-sm font-bold uppercase tracking-wide">
                     E-commerce · SaaS · Serviços Online
                   </span>
                 </div>
               </div>
 
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-green-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-black via-yellow-950/5 to-black">
+      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-black via-cyan-950/5 to-black">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -621,7 +621,7 @@ const SEORankingPage = () => {
           >
             <h2 className="text-4xl md:text-5xl font-black text-white uppercase mb-4">
               Quebrando{' '}
-              <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Objeções
               </span>
             </h2>
@@ -638,9 +638,9 @@ const SEORankingPage = () => {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm border-2 border-white/10 rounded-2xl px-6 hover:border-green-500/30 transition-all duration-300 data-[state=open]:border-green-500/50 data-[state=open]:shadow-xl data-[state=open]:shadow-green-500/10"
+                  className="bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm border-2 border-white/10 rounded-2xl px-6 hover:border-blue-500/30 transition-all duration-300 data-[state=open]:border-blue-500/50 data-[state=open]:shadow-xl data-[state=open]:shadow-blue-500/10"
                 >
-                  <AccordionTrigger className="text-white hover:text-green-400 py-6 text-lg font-bold hover:no-underline uppercase tracking-tight">
+                  <AccordionTrigger className="text-white hover:text-blue-400 py-6 text-lg font-bold hover:no-underline uppercase tracking-tight">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-white/70 pb-6 leading-relaxed text-base">
@@ -656,14 +656,14 @@ const SEORankingPage = () => {
       {/* Final CTA - Stop Hiding on Page 2 */}
       <section className="relative py-32 md:py-40 px-4 md:px-6 lg:px-8 overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-green-950/10 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/10 to-black"></div>
         <motion.div
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-green-500/20 to-yellow-500/20 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"
         ></motion.div>
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -672,7 +672,7 @@ const SEORankingPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-yellow-600/20 to-green-600/20 border border-yellow-500/30 rounded-full text-yellow-400 text-sm font-bold tracking-widest uppercase mb-8">
+            <span className="inline-block px-6 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-bold tracking-widest uppercase mb-8">
               TOME AÇÃO AGORA
             </span>
           </motion.div>
@@ -687,7 +687,7 @@ const SEORankingPage = () => {
             Pare de Se Esconder
             <br />
             na{' '}
-            <span className="bg-gradient-to-r from-yellow-400 via-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Página 2.
             </span>
           </motion.h2>
@@ -699,8 +699,8 @@ const SEORankingPage = () => {
             transition={{ delay: 0.2 }}
             className="text-white/70 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Os seus clientes estão a procurar por si <span className="text-green-400 font-semibold">agora mesmo</span>. 
-            Vamos garantir que o encontram <span className="text-yellow-400 font-semibold">primeiro</span>.
+            Os seus clientes estão a procurar por si <span className="text-blue-400 font-semibold">agora mesmo</span>. 
+            Vamos garantir que o encontram <span className="text-cyan-400 font-semibold">primeiro</span>.
           </motion.p>
 
           <motion.div
@@ -711,7 +711,7 @@ const SEORankingPage = () => {
           >
             <Link
               to="/#contato"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 via-green-500 to-emerald-500 hover:from-yellow-400 hover:via-green-400 hover:to-emerald-400 text-black font-black px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 shadow-2xl shadow-green-500/30 hover:shadow-green-500/50 text-lg uppercase tracking-wide"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 hover:from-cyan-400 hover:via-blue-400 hover:to-cyan-400 text-black font-black px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 text-lg uppercase tracking-wide"
             >
               Começar a Rankear Agora
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
@@ -727,15 +727,15 @@ const SEORankingPage = () => {
             className="mt-16 flex flex-wrap items-center justify-center gap-8 text-white/40 text-sm"
           >
             <div className="flex items-center gap-2">
-              <Award className="w-5 h-5 text-green-400" />
+              <Award className="w-5 h-5 text-blue-400" />
               <span>Especialistas SEO Certificados</span>
             </div>
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-yellow-400" />
+              <TrendingUp className="w-5 h-5 text-cyan-400" />
               <span>Historial Comprovado</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-emerald-400" />
+              <Zap className="w-5 h-5 text-cyan-400" />
               <span>Implementação Rápida</span>
             </div>
           </motion.div>
