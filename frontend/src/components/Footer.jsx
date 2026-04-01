@@ -99,19 +99,6 @@ const Footer = () => {
                   Sobre
                 </Link>
               </li>
-              <li>
-                <a
-                  href="/#resultados"
-                  className="text-[15px] text-white/70 hover:text-white transition-colors duration-300"
-                >
-                  Resultados
-                </a>
-              </li>
-              <li>
-                <span className="text-[15px] text-white/70 hover:text-white transition-colors duration-300 cursor-pointer">
-                  Política de Privacidade
-                </span>
-              </li>
             </ul>
           </div>
 
