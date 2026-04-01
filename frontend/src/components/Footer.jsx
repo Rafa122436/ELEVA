@@ -14,17 +14,21 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-black text-white overflow-hidden">
-      {/* Skyline Background Image */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-full opacity-20"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2000)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center bottom',
-            filter: 'brightness(0.3)',
-          }}
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20"
+          style={{ filter: 'brightness(0.3)' }}
+        >
+          <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
       </div>
 
