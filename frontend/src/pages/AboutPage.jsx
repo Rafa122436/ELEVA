@@ -11,8 +11,8 @@ const AboutPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const stats = [
-    { number: '150+', label: 'Projetos Entregues' },
-    { number: '€2.5M+', label: 'Gerados para Clientes' },
+    { number: '50+', label: 'Projetos Entregues' },
+    { number: '100%', label: 'Projetos no Prazo' },
     { number: '5 Anos', label: 'de Experiência' },
     { number: '98%', label: 'Taxa de Satisfação' },
   ];
