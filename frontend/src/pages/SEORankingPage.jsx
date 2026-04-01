@@ -87,10 +87,6 @@ const SEORankingPage = () => {
               </Link>
             </div>
 
-            <button className="hidden lg:block bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all duration-300">
-              Falar Connosco
-            </button>
-
             <button className="lg:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -131,15 +127,6 @@ const SEORankingPage = () => {
           >
             Design bonito é inútil se ninguém o encontra. Combinamos SEO técnico com conteúdo estratégico para colocar a sua marca na frente de clientes prontos a comprar.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <button className="bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
-              Auditar o Meu Website
-            </button>
-          </motion.div>
         </div>
       </section>
 

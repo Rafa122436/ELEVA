@@ -128,15 +128,6 @@ const CustomDashboardsPage = () => {
           >
             Pare de adivinhar. Comece a saber. Construímos ecossistemas de dados personalizados que lhe dão uma visão 360° do desempenho do seu negócio em tempo real.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <button className="bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
-              Criar o Meu Dashboard Personalizado
-            </button>
-          </motion.div>
         </div>
       </section>
 

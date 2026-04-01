@@ -91,10 +91,6 @@ const BrandingDigitalPage = () => {
               </Link>
             </div>
 
-            <button className="hidden lg:block bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-semibold px-6 py-2.5 rounded-full transition-all duration-300">
-              Falar Connosco
-            </button>
-
             <button className="lg:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -123,15 +119,6 @@ const BrandingDigitalPage = () => {
           >
             Construa uma identidade visual que comunica autoridade, profissionalismo e diferencia o seu negócio da concorrência desde o primeiro olhar.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <button className="bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
-              Criar a Minha Marca
-            </button>
-          </motion.div>
         </div>
       </section>
 
