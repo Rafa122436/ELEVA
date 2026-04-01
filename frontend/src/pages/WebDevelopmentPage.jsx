@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Menu, X, Code2, Zap, Target, Smartphone, Gauge, Search as SearchIcon, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X, Code2, Zap, Target, Smartphone, Gauge, Search as SearchIcon, ArrowRight, Award, TrendingUp, Rocket } from 'lucide-react';
+import { useState, useRef } from 'react';
 import {
   Accordion,
   AccordionContent,
