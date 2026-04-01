@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ShinyText from '../components/ShinyText';
@@ -14,6 +15,15 @@ import MagneticButton from '../components/MagneticButton';
 
 const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const heroRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
 
   const navLinks = ['Início', 'Serviços', 'Resultados', 'FAQ', 'Contato'];
 
@@ -22,9 +32,13 @@ const LandingPage = () => {
       <CustomCursor />
       <FloatingOrbs />
       {/* Hero Section */}
-      <div className="relative min-h-[150vh] w-full bg-black overflow-hidden">
+      <motion.div 
+        ref={heroRef}
+        className="relative min-h-[150vh] w-full bg-black overflow-hidden"
+      >
         {/* Video Background */}
-        <video
+        <motion.video
+          style={{ scale }}
           autoPlay
           loop
           muted
@@ -35,7 +49,7 @@ const LandingPage = () => {
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
             type="video/mp4"
           />
-        </video>
+        </motion.video>
 
         {/* Dark overlay for better text visibility */}
         <div className="absolute inset-0 bg-black/40 z-[1]"></div>
@@ -159,48 +173,75 @@ const LandingPage = () => {
           </nav>
 
           {/* Main Content */}
-          <div className="flex-1 flex flex-col justify-center items-center px-4 md:px-6 lg:px-8 pt-32 md:pt-40 lg:pt-48">
+          <motion.div 
+            style={{ opacity }}
+            className="flex-1 flex flex-col justify-center items-center px-4 md:px-6 lg:px-8 pt-32 md:pt-40 lg:pt-48"
+          >
             {/* Hero Section */}
             <div className="max-w-7xl mx-auto w-full text-center">
               <div className="space-y-6 md:space-y-8">
-                {/* Small uppercase text */}
-                <p className="text-xs md:text-sm text-white/80 uppercase tracking-tight">
-                  Website Estratégico + SEO + Automação
-                </p>
+                {/* Badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <span className="inline-block px-6 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-bold tracking-widest uppercase">
+                    Website Estratégico · SEO · Automação
+                  </span>
+                </motion.div>
 
                 {/* Main Heading */}
-                <div className="space-y-2">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white tracking-tighter leading-none">
+                <motion.div 
+                  className="space-y-2"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-none uppercase">
                     Angarie Clientes de
                   </h1>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tighter leading-none">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-none uppercase">
                     <ShinyText text="Alto Valor em" />
                   </h1>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white tracking-tighter leading-none">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-none uppercase">
                     Piloto Automático
                   </h1>
-                </div>
+                </motion.div>
 
                 {/* Sub-headline */}
-                <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed pt-4 md:pt-6">
-                  Transformamos o seu website numa máquina de vendas que atrai,
-                  qualifica e converte leads enquanto você dorme
-                </p>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed pt-4 md:pt-6"
+                >
+                  Transformamos o seu website numa <span className="text-cyan-400 font-semibold">máquina de vendas</span> que atrai,
+                  qualifica e converte leads enquanto você dorme.
+                </motion.p>
 
                 {/* CTA Button */}
-                <div className="pt-8 md:pt-10">
-                  <button className="group bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold rounded-full px-8 md:px-10 py-4 md:py-5 flex items-center gap-2 mx-auto transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
-                    <span className="text-base md:text-lg">
+                <motion.div 
+                  className="pt-8 md:pt-10"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                >
+                  <a 
+                    href="#contato"
+                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-full px-10 py-5 transition-all duration-300 hover:scale-105 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 text-lg"
+                  >
+                    <span>
                       Agendar uma Chamada Estratégica Gratuita
                     </span>
-                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
-                </div>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                  </a>
+                </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Social Proof Bar */}
       <SocialProofBar />
