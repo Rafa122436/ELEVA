@@ -1,160 +1,152 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { Linkedin, Instagram, Facebook } from 'lucide-react';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
   const currentYear = new Date().getFullYear();
 
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    console.log('Subscribed:', email);
+    setEmail('');
+  };
+
   return (
-    <footer className="bg-black border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
-          {/* Brand */}
-          <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2 md:gap-3">
-              <img 
+    <footer className="relative bg-black text-white overflow-hidden">
+      {/* Skyline Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="w-full h-full opacity-20"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2000)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center bottom',
+            filter: 'brightness(0.3)',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-16">
+          {/* Column 1: Branding */}
+          <div className="space-y-6">
+            <Link to="/">
+              <img
                 src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/e8xk7pen_Captura%20de%20ecr%C3%A3%202026-03-31%20170113.png"
                 alt="ELEVA"
-                className="h-14 md:h-16 w-auto"
+                className="h-14 w-auto mb-4"
               />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed">
-              Websites estratégicos que convertem visitantes em clientes de alto
-              valor.
+            <p className="text-[15px] text-white/60 leading-relaxed max-w-sm">
+              Websites estratégicos que convertem visitantes em clientes de alto valor.
             </p>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-4 pt-4">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 hover:bg-white/5 transition-all duration-300"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 hover:bg-white/5 transition-all duration-300"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 hover:bg-white/5 transition-all duration-300"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Column 2: Navigation */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm md:text-base">
-              Links Rápidos
+            <h3 className="text-[13px] font-bold uppercase tracking-[2px] text-white/50 mb-6">
+              Navigation
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#servicos"
-                  className="text-white/60 hover:text-[#64CEFB] transition-colors duration-300 text-sm"
+                <Link
+                  to="/services"
+                  className="text-[15px] text-white/70 hover:text-white transition-colors duration-300"
                 >
                   Serviços
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sobre"
+                  className="text-[15px] text-white/70 hover:text-white transition-colors duration-300"
+                >
+                  Sobre
+                </Link>
               </li>
               <li>
                 <a
-                  href="#resultados"
-                  className="text-white/60 hover:text-[#64CEFB] transition-colors duration-300 text-sm"
+                  href="/#resultados"
+                  className="text-[15px] text-white/70 hover:text-white transition-colors duration-300"
                 >
                   Resultados
                 </a>
               </li>
               <li>
-                <a
-                  href="#faq"
-                  className="text-white/60 hover:text-[#64CEFB] transition-colors duration-300 text-sm"
-                >
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contato"
-                  className="text-white/60 hover:text-[#64CEFB] transition-colors duration-300 text-sm"
-                >
-                  Contato
-                </a>
+                <span className="text-[15px] text-white/70 hover:text-white transition-colors duration-300 cursor-pointer">
+                  Política de Privacidade
+                </span>
               </li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Column 3: Newsletter */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm md:text-base">
-              Serviços
+            <h3 className="text-[13px] font-bold uppercase tracking-[2px] text-white/50 mb-6">
+              Stay Connected
             </h3>
-            <ul className="space-y-3">
-              <li>
-                <span className="text-white/60 text-sm">Desenvolvimento Web</span>
-              </li>
-              <li>
-                <span className="text-white/60 text-sm">SEO / Posicionamento</span>
-              </li>
-              <li>
-                <span className="text-white/60 text-sm">Dashboards</span>
-              </li>
-              <li>
-                <span className="text-white/60 text-sm">Consultoria Estratégica</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 text-sm md:text-base">
-              Contato
-            </h3>
-            <ul className="space-y-3 mb-6">
-              <li>
-                <a
-                  href="mailto:contato@eleva.pt"
-                  className="flex items-center gap-2 text-white/60 hover:text-[#64CEFB] transition-colors duration-300 text-sm"
-                >
-                  <Mail className="w-4 h-4" />
-                  contato@eleva.pt
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+351912345678"
-                  className="flex items-center gap-2 text-white/60 hover:text-[#64CEFB] transition-colors duration-300 text-sm"
-                >
-                  <Phone className="w-4 h-4" />
-                  +351 912 345 678
-                </a>
-              </li>
-            </ul>
-
-            {/* Social Links */}
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#64CEFB] hover:border-[#64CEFB] transition-all duration-300 group"
+            <p className="text-[14px] text-white/60 mb-6">
+              Receba insights exclusivos e novidades sobre web design.
+            </p>
+            
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="O seu email"
+                required
+                className="flex-1 bg-white/5 border-b-2 border-white/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-white focus:outline-none transition-colors duration-300 text-[14px]"
+              />
+              <button
+                type="submit"
+                className="bg-white text-black px-6 py-3 font-semibold rounded-md hover:bg-white/90 transition-all duration-300 whitespace-nowrap text-[14px]"
               >
-                <Linkedin className="w-4 h-4 text-white/60 group-hover:text-black transition-colors duration-300" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#64CEFB] hover:border-[#64CEFB] transition-all duration-300 group"
-              >
-                <Instagram className="w-4 h-4 text-white/60 group-hover:text-black transition-colors duration-300" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#64CEFB] hover:border-[#64CEFB] transition-all duration-300 group"
-              >
-                <Twitter className="w-4 h-4 text-white/60 group-hover:text-black transition-colors duration-300" />
-              </a>
-            </div>
+                Subscrever
+              </button>
+            </form>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/50 text-xs md:text-sm">
-            © {currentYear} ELEVA. Todos os direitos reservados.
+        {/* Divider */}
+        <div className="h-[1px] bg-white/10 mb-8"></div>
+
+        {/* Copyright */}
+        <div className="text-center">
+          <p className="text-[13px] text-white/40">
+            © {currentYear} ELEVA Web Design. Todos os direitos reservados.
           </p>
-          <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-white/50 hover:text-[#64CEFB] transition-colors duration-300 text-xs md:text-sm"
-            >
-              Política de Privacidade
-            </a>
-            <a
-              href="#"
-              className="text-white/50 hover:text-[#64CEFB] transition-colors duration-300 text-xs md:text-sm"
-            >
-              Termos de Serviço
-            </a>
-          </div>
         </div>
       </div>
     </footer>
