@@ -42,15 +42,15 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: 'Designers & Estrategistas',
+      name: 'Designers',
       description: 'Especialistas em criar experiências visuais que convertem e comunicam a essência da sua marca.',
     },
     {
-      name: 'Developers & Engenheiros',
+      name: 'Developers',
       description: 'Código limpo, performance otimizada e soluções técnicas que funcionam perfeitamente em qualquer dispositivo.',
     },
     {
-      name: 'Marketing & SEO Experts',
+      name: 'Marketing',
       description: 'Profissionais dedicados a garantir que o seu negócio é encontrado pelos clientes certos no momento certo.',
     },
   ];
