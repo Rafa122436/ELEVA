@@ -19,45 +19,45 @@ const CustomDashboardsPage = () => {
   const features = [
     {
       icon: RefreshCw,
-      title: 'Real-Time Sync',
-      description: 'Conexão direta com APIs para dados atualizados ao segundo.',
+      title: 'Sincronização em Tempo Real',
+      description: 'Conexão direta com APIs para dados atualizados a cada segundo.',
     },
     {
       icon: Link2,
-      title: 'Multi-Platform Integration',
-      description: 'Unificação de Google Ads, Meta, Shopify, Stripe e CRMs.',
+      title: 'Integração Multi-Plataforma',
+      description: 'Unificação de Google Ads, Meta, Shopify, Stripe e CRMs num único lugar.',
     },
     {
       icon: BarChart3,
-      title: 'Custom KPIs',
-      description: 'Gráficos específicos para as métricas do seu negócio.',
+      title: 'KPIs Personalizados',
+      description: 'Gráficos específicos para as métricas que realmente importam no seu negócio.',
     },
     {
       icon: FileText,
-      title: 'Automated Reporting',
-      description: 'Relatórios automáticos que eliminam trabalho manual.',
+      title: 'Relatórios Automáticos',
+      description: 'Relatórios que se geram sozinhos e eliminam trabalho manual repetitivo.',
     },
   ];
 
   const timeline = [
-    { title: 'Audit', description: 'Mapeamento de todas as fontes de dados atuais' },
-    { title: 'Architecture', description: 'Estruturação de como os dados serão conectados' },
-    { title: 'Design', description: 'Criação da interface focada na experiência' },
-    { title: 'Deployment', description: 'Integração final e treinamento da equipe' },
+    { title: 'Auditoria', description: 'Mapeamento de todas as fontes de dados atuais do negócio' },
+    { title: 'Arquitetura', description: 'Estruturação de como os dados serão conectados e processados' },
+    { title: 'Design', description: 'Criação da interface focada na experiência e usabilidade' },
+    { title: 'Implementação', description: 'Integração final e formação completa da equipa' },
   ];
 
   const faqs = [
     {
-      question: 'Can you integrate with my specific CRM?',
-      answer: 'Sim! Trabalhamos com APIs personalizadas para integrar qualquer CRM, ERP ou sistema proprietário. Se tem uma API, conseguimos conectar.',
+      question: 'Conseguem integrar com o meu CRM específico?',
+      answer: 'Sim! Trabalhamos com APIs personalizadas para integrar qualquer CRM, ERP ou sistema proprietário. Se tem uma API, conseguimos conectar e extrair os dados necessários.',
     },
     {
-      question: 'Is my data secure?',
-      answer: 'Absolutamente. Utilizamos criptografia end-to-end, protocolos HTTPS, tokens de autenticação seguros e conformidade com GDPR. Seus dados nunca são armazenados ou compartilhados.',
+      question: 'Os meus dados estão seguros?',
+      answer: 'Absolutamente. Utilizamos criptografia end-to-end, protocolos HTTPS, tokens de autenticação seguros e conformidade total com GDPR. Os seus dados nunca são armazenados nos nossos servidores ou partilhados com terceiros.',
     },
     {
-      question: 'How often do the charts update?',
-      answer: 'Dependendo da fonte de dados, atualizações podem ser em tempo real (segundos) ou em intervalos configuráveis (minutos/horas). Você define o que faz sentido para seu negócio.',
+      question: 'Com que frequência os gráficos atualizam?',
+      answer: 'Dependendo da fonte de dados, as atualizações podem ser em tempo real (segundos) ou em intervalos configuráveis (minutos/horas). Você define o que faz mais sentido para o ritmo do seu negócio.',
     },
   ];
 
@@ -116,9 +116,9 @@ const CustomDashboardsPage = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight"
           >
-            Data-Driven Decisions
+            Decisões Baseadas em Dados
             <br />
-            <span className="text-[#64CEFB]">Made Simple.</span>
+            <span className="text-[#64CEFB]">Feitas Simples.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ const CustomDashboardsPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-white/70 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            Stop guessing. Start knowing. We build custom data ecosystems that give you a 360-degree view of your business performance in real-time.
+            Pare de adivinhar. Comece a saber. Construímos ecossistemas de dados personalizados que lhe dão uma visão 360° do desempenho do seu negócio em tempo real.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ const CustomDashboardsPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <button className="bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-xl shadow-[#64CEFB]/25">
-              Get Your Custom Dashboard
+              Criar o Meu Dashboard Personalizado
             </button>
           </motion.div>
         </div>
@@ -150,16 +150,16 @@ const CustomDashboardsPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-                Information is Everywhere.
+                Informação Está em Todo o Lado.
                 <br />
-                <span className="text-[#64CEFB]">Insights are Rare.</span>
+                <span className="text-[#64CEFB]">Insights São Raros.</span>
               </h2>
               <p className="text-lg text-white/70 leading-relaxed mb-6">
-                Your data is scattered across multiple platforms—Ads, CRM, spreadsheets. Hours wasted trying to consolidate everything manually. We turn raw data into actionable intelligence.
+                Os seus dados estão espalhados por múltiplas plataformas — Anúncios, CRM, folhas de cálculo. Horas desperdiçadas a tentar consolidar tudo manualmente. Nós transformamos dados brutos em inteligência acionável.
               </p>
               <div className="inline-block bg-[#64CEFB]/10 border border-[#64CEFB]/30 rounded-full px-6 py-3">
                 <Activity className="w-5 h-5 text-[#64CEFB] inline mr-2" />
-                <span className="text-[#64CEFB] font-semibold">Real-time insights. Zero manual work.</span>
+                <span className="text-[#64CEFB] font-semibold">Insights em tempo real. Zero trabalho manual.</span>
               </div>
             </motion.div>
 
@@ -214,23 +214,23 @@ const CustomDashboardsPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-                Design meets <span className="text-[#64CEFB]">Data</span>
+                Design encontra <span className="text-[#64CEFB]">Dados</span>
               </h2>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
-                Our dashboards are not just functional; they are beautiful, intuitive, and designed to be understood in seconds, not hours.
+                Os nossos dashboards não são apenas funcionais — são bonitos, intuitivos e desenhados para serem compreendidos em segundos, não em horas.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-white/80">
                   <div className="w-2 h-2 rounded-full bg-[#64CEFB]"></div>
-                  Dark mode optimized for long sessions
+                  Dark mode otimizado para sessões longas
                 </li>
                 <li className="flex items-center gap-3 text-white/80">
                   <div className="w-2 h-2 rounded-full bg-[#64CEFB]"></div>
-                  Color-coded metrics (green/red for instant clarity)
+                  Métricas com código de cores (verde/vermelho para clareza instantânea)
                 </li>
                 <li className="flex items-center gap-3 text-white/80">
                   <div className="w-2 h-2 rounded-full bg-[#64CEFB]"></div>
-                  Mobile responsive for decisions on-the-go
+                  Responsivo mobile para decisões em qualquer lugar
                 </li>
               </ul>
             </motion.div>
@@ -262,7 +262,7 @@ const CustomDashboardsPage = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-extrabold text-white text-center mb-16"
           >
-            Implementation <span className="text-[#64CEFB]">Timeline</span>
+            Cronograma de <span className="text-[#64CEFB]">Implementação</span>
           </motion.h2>
 
           <div className="space-y-8">
@@ -292,7 +292,7 @@ const CustomDashboardsPage = () => {
       <section className="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white/[0.02]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12">
-            Common <span className="text-[#64CEFB]">Questions</span>
+            Perguntas <span className="text-[#64CEFB]">Frequentes</span>
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (

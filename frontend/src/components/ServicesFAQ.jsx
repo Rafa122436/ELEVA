@@ -10,24 +10,24 @@ import { HelpCircle } from 'lucide-react';
 const ServicesFAQ = () => {
   const faqs = [
     {
-      question: 'Why should I get a website for my business?',
+      question: 'Porque devo ter um website para o meu negócio?',
       answer:
-        'A website is your 24/7 digital storefront. It builds credibility, reaches customers worldwide, and serves as the foundation of your digital marketing. Without one, you\'re invisible to the 97% of consumers who search online before buying. A professional website isn\'t an expense—it\'s an investment that pays for itself through increased visibility and sales.',
+        'Um website é a sua montra digital 24/7. Constrói credibilidade, alcança clientes em todo o mundo e serve como a base do seu marketing digital. Sem um, é invisível aos 97% de consumidores que pesquisam online antes de comprar. Um website profissional não é uma despesa — é um investimento que se paga através de maior visibilidade e vendas.',
     },
     {
-      question: 'How long does it take to develop?',
+      question: 'Quanto tempo demora o desenvolvimento?',
       answer:
-        'Most websites are completed in 4-8 weeks, depending on complexity. We work in phases: Strategy & Planning (1 week), Design (1-2 weeks), Development (2-3 weeks), Testing & Launch (1 week). Rush projects can be accommodated. Throughout the process, you\'ll have full visibility and input at each milestone.',
+        'A maioria dos websites fica concluída em 4-8 semanas, dependendo da complexidade. Trabalhamos por fases: Estratégia & Planeamento (1 semana), Design (1-2 semanas), Desenvolvimento (2-3 semanas), Testes & Lançamento (1 semana). Projetos urgentes podem ser acomodados. Durante todo o processo, terá total visibilidade e participação em cada marco.',
     },
     {
-      question: 'What makes you different to other web design agencies?',
+      question: 'O que vos diferencia de outras agências de web design?',
       answer:
-        'We don\'t just build websites—we build revenue-generating systems. Every site includes conversion optimization, performance tuning, and growth-focused features. We use the same strategies for our own business that we implement for clients. Plus, you get direct access to senior developers, not junior staff. No templates, no cookie-cutter solutions—just custom work that delivers ROI.',
+        'Não construímos apenas websites — construímos sistemas geradores de receita. Cada site inclui otimização de conversão, afinação de performance e funcionalidades focadas em crescimento. Usamos as mesmas estratégias no nosso negócio que implementamos para clientes. Além disso, tem acesso direto a developers seniores, não a staff júnior. Sem templates, sem soluções genéricas — apenas trabalho personalizado que entrega ROI.',
     },
     {
-      question: 'Will my website be mobile-friendly?',
+      question: 'O meu website vai ser mobile-friendly?',
       answer:
-        'Absolutely. Every website we build is mobile-first, meaning it\'s designed for smartphones first, then adapted for tablets and desktops. With 60%+ of web traffic coming from mobile devices, this isn\'t optional—it\'s essential. We test on dozens of devices and screen sizes to ensure flawless performance everywhere.',
+        'Absolutamente. Cada website que construímos é mobile-first, o que significa que é desenhado primeiro para smartphones e depois adaptado para tablets e desktops. Com mais de 60% do tráfego web a vir de dispositivos móveis, isto não é opcional — é essencial. Testamos em dezenas de dispositivos e tamanhos de ecrã para garantir performance impecável em todo o lado.',
     },
   ];
 
@@ -49,11 +49,10 @@ const ServicesFAQ = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6">
-            Frequently Asked Questions
+            Perguntas Frequentes
           </h2>
           <p className="text-base md:text-lg text-white/70">
-            Have questions? Our FAQ section has you covered with quick answers
-            to the most common inquiries.
+            Tem dúvidas? A nossa secção de FAQ tem as respostas rápidas às perguntas mais comuns.
           </p>
         </div>
 
