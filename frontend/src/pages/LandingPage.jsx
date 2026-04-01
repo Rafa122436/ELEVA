@@ -68,6 +68,12 @@ const LandingPage = () => {
                 >
                   Serviços
                 </Link>
+                <Link
+                  to="/sobre"
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                >
+                  Sobre
+                </Link>
                 <a
                   href="#resultados"
                   className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
@@ -119,6 +125,13 @@ const LandingPage = () => {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Serviços
+                  </Link>
+                  <Link
+                    to="/sobre"
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Sobre
                   </Link>
                   <a
                     href="/#resultados"

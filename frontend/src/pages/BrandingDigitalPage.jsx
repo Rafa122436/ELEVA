@@ -83,11 +83,11 @@ const BrandingDigitalPage = () => {
               <Link to="/services" className="text-white/80 hover:text-white transition-colors text-sm">
                 Serviços
               </Link>
-              <Link to="/#resultados" className="text-white/80 hover:text-white transition-colors text-sm">
-                Resultados
+              <Link to="/sobre" className="text-white/80 hover:text-white transition-colors text-sm">
+                Sobre
               </Link>
               <Link to="/#resultados" className="text-white/80 hover:text-white transition-colors text-sm">
-                Portfolio
+                Resultados
               </Link>
             </div>
 

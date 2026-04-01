@@ -47,6 +47,12 @@ const ServicesPage = () => {
               >
                 Serviços
               </Link>
+              <Link
+                to="/sobre"
+                className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+              >
+                Sobre
+              </Link>
               <a
                 href="/#resultados"
                 className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"

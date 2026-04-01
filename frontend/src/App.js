@@ -6,6 +6,7 @@ import WebDevelopmentPage from "./pages/WebDevelopmentPage";
 import CustomDashboardsPage from "./pages/CustomDashboardsPage";
 import SEORankingPage from "./pages/SEORankingPage";
 import BrandingDigitalPage from "./pages/BrandingDigitalPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/services/dashboards" element={<CustomDashboardsPage />} />
           <Route path="/services/seo-ranking" element={<SEORankingPage />} />
           <Route path="/services/branding-digital" element={<BrandingDigitalPage />} />
+          <Route path="/sobre" element={<AboutPage />} />
         </Routes>
       </BrowserRouter>
     </div>
