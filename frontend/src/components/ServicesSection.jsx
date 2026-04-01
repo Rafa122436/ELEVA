@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Code2, Search, BarChart3, ArrowRight } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -16,6 +17,7 @@ const ServicesSection = () => {
       ],
       image:
         'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/2vzxwc0g_c22735fc-60ca-4ae4-a8af-c802bdc3df6b.png',
+      link: '/services/web-development',
     },
     {
       icon: Search,
@@ -30,6 +32,7 @@ const ServicesSection = () => {
       ],
       image:
         'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ashmsu3i_7044c72a-63f5-43e3-8838-86d18897bac5.png',
+      link: '/services/seo-ranking',
     },
     {
       icon: BarChart3,
@@ -44,6 +47,7 @@ const ServicesSection = () => {
       ],
       image:
         'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/hmepic8r_6daf0e6f-5a1e-44f5-b8bc-a66ff964d928.png',
+      link: '/services/dashboards',
     },
   ];
 
@@ -108,30 +112,33 @@ const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
-
-                {/* CTA */}
-                <div className="pt-4">
-                  <button className="group/btn inline-flex items-center gap-2 text-[#64CEFB] hover:text-white transition-colors duration-300">
-                    <span className="text-sm md:text-base font-semibold">
-                      Saber mais
-                    </span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </button>
-                </div>
               </div>
 
               {/* Image */}
               <div
                 className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}
               >
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 group-hover:border-[#64CEFB]/30 transition-colors duration-500">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-64 md:h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <Link to={service.link} className="block">
+                  <div className="relative rounded-2xl overflow-hidden border border-white/10 group-hover:border-[#64CEFB]/30 transition-colors duration-500 cursor-pointer">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-64 md:h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+                </Link>
+
+                {/* Botão Saber Mais */}
+                <div className="mt-6">
+                  <Link
+                    to={service.link}
+                    className="inline-flex items-center gap-2 bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-[#64CEFB]/25"
+                  >
+                    <span className="text-sm md:text-base">Saber mais</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
 
                 {/* Floating badge */}
