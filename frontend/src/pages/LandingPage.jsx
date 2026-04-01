@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 import ShinyText from '../components/ShinyText';
 import SocialProofBar from '../components/SocialProofBar';
 import ResultsSection from '../components/ResultsSection';
 import ServicesSection from '../components/ServicesSection';
 import FAQSection from '../components/FAQSection';
-import Footer from '../components/Footer';
+import PremiumFooter from '../components/PremiumFooter';
 import CustomCursor from '../components/CustomCursor';
 import FloatingOrbs from '../components/FloatingOrbs';
 import TextReveal from '../components/TextReveal';
 import MagneticButton from '../components/MagneticButton';
+import PremiumHeader from '../components/PremiumHeader';
 
 const LandingPage = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navLinks = ['Início', 'Serviços', 'Resultados', 'FAQ', 'Contato'];
-
   return (
     <div className="bg-black">
       <CustomCursor />
