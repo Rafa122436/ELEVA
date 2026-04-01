@@ -152,7 +152,7 @@ const AboutPage = () => {
                   Começámos como uma pequena equipa de 3 pessoas obcecadas por uma missão: criar presenças digitais que realmente geram receita. Não queríamos ser mais uma agência que cria "sites bonitos" — queríamos ser a agência que transforma websites em máquinas de vendas.
                 </p>
                 <p>
-                  Hoje, 5 anos depois, já ajudámos mais de 150 empresas a multiplicar a sua presença online e a gerar milhões em receita através de estratégias digitais focadas em resultados, não em vaidade.
+                  Hoje, 5 anos depois, já ajudámos mais de 40+ negócios a multiplicar a sua presença online e a gerar milhões em receita através de estratégias digitais focadas em resultados, não em vaidade.
                 </p>
                 <p className="text-[#64CEFB] font-semibold">
                   O nosso compromisso mantém-se o mesmo: o seu sucesso é o nosso sucesso.
