@@ -56,7 +56,7 @@ const WebDevelopmentPage = () => {
   const pillars = [
     {
       icon: Code2,
-      title: 'CUSTOM CODE',
+      title: 'CÓDIGO PERSONALIZADO',
       subtitle: 'Zero Templates',
       description: 'Zero templates. Cada linha de código é criada especificamente para o seu negócio.',
       gradient: 'from-cyan-900/10 to-blue-900/10',
@@ -65,8 +65,8 @@ const WebDevelopmentPage = () => {
     },
     {
       icon: Gauge,
-      title: 'EXTREME SPEED',
-      subtitle: 'Lightning Fast',
+      title: 'VELOCIDADE EXTREMA',
+      subtitle: 'Ultra Rápido',
       description: 'Carregamento instantâneo. 95+ no Google PageSpeed ou refazemos.',
       gradient: 'from-blue-900/10 to-cyan-900/10',
       iconColor: 'text-blue-400',
@@ -74,8 +74,8 @@ const WebDevelopmentPage = () => {
     },
     {
       icon: SearchIcon,
-      title: 'SEO BUILT-IN',
-      subtitle: 'Organic Ready',
+      title: 'SEO INTEGRADO',
+      subtitle: 'Pronto para Orgânico',
       description: 'Construído para ser encontrado. Estrutura otimizada desde a primeira linha de código.',
       gradient: 'from-cyan-900/10 to-blue-900/10',
       iconColor: 'text-cyan-400',
@@ -83,8 +83,8 @@ const WebDevelopmentPage = () => {
     },
     {
       icon: Smartphone,
-      title: 'PIXEL PERFECT',
-      subtitle: 'All Devices',
+      title: 'PIXEL PERFEITO',
+      subtitle: 'Todos Dispositivos',
       description: 'Do iPhone ao desktop 4K. Experiência impecável em todos os dispositivos.',
       gradient: 'from-blue-900/10 to-cyan-900/10',
       iconColor: 'text-blue-400',
@@ -93,10 +93,10 @@ const WebDevelopmentPage = () => {
   ];
 
   const workflow = [
-    { title: 'DISCOVERY', description: 'Imersão profunda no seu negócio e objetivos', icon: Target },
-    { title: 'ARCHITECTURE', description: 'Arquitetura de informação focada em conversão', icon: Code2 },
-    { title: 'UI DESIGN', description: 'Interface de alta fidelidade e exclusiva', icon: Zap },
-    { title: 'DEVELOPMENT', description: 'Código limpo, rápido e escalável', icon: Rocket },
+    { title: 'DESCOBERTA', description: 'Imersão profunda no seu negócio e objetivos', icon: Target },
+    { title: 'ARQUITETURA', description: 'Arquitetura de informação focada em conversão', icon: Code2 },
+    { title: 'DESIGN UI', description: 'Interface de alta fidelidade e exclusiva', icon: Zap },
+    { title: 'DESENVOLVIMENTO', description: 'Código limpo, rápido e escalável', icon: Rocket },
   ];
 
   const faqs = [
@@ -225,10 +225,10 @@ const WebDevelopmentPage = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-[1.1] tracking-tight"
           >
-            BUILD TO
+            FEITO PARA
             <br />
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              CONVERT.
+              CONVERTER.
             </span>
           </motion.h1>
 
@@ -251,7 +251,7 @@ const WebDevelopmentPage = () => {
               to="/#contato"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 text-lg"
             >
-              Start Your Project
+              Iniciar Projeto
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
@@ -279,13 +279,13 @@ const WebDevelopmentPage = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-bold tracking-widest uppercase mb-6">
-                OUR PHILOSOPHY
+                A NOSSA FILOSOFIA
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight uppercase">
-                Results Over
+                Resultados Acima de
                 <br />
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Awards.
+                  Prémios.
                 </span>
               </h2>
               <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8">
@@ -294,7 +294,7 @@ const WebDevelopmentPage = () => {
               </p>
               <div className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-2xl px-6 py-4 backdrop-blur-sm">
                 <Award className="w-6 h-6 text-cyan-400" />
-                <span className="text-cyan-400 font-bold text-lg">Code That Converts. Not Just Looks Good.</span>
+                <span className="text-cyan-400 font-bold text-lg">Código Que Converte. Não Apenas Bonito.</span>
               </div>
             </motion.div>
 
@@ -323,7 +323,7 @@ const WebDevelopmentPage = () => {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-cyan-400 text-sm font-semibold mb-1">Conversion Rate Increase</p>
+                      <p className="text-cyan-400 text-sm font-semibold mb-1">Aumento da Taxa de Conversão</p>
                       <p className="text-white text-3xl font-black">+185%</p>
                     </div>
                     <TrendingUp className="w-12 h-12 text-cyan-400" />
@@ -350,7 +350,7 @@ const WebDevelopmentPage = () => {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 text-xs font-bold tracking-widest uppercase mb-6">
-              DEVELOPMENT FRAMEWORK
+              FRAMEWORK DE DESENVOLVIMENTO
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight">
               Os 4 Pilares do{' '}
@@ -412,12 +412,12 @@ const WebDevelopmentPage = () => {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-bold tracking-widest uppercase mb-6">
-              PROVEN PROCESS
+              PROCESSO COMPROVADO
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase leading-tight">
-              From Idea to{' '}
+              Da Ideia ao{' '}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Launch
+                Lançamento
               </span>
             </h2>
           </motion.div>
@@ -470,9 +470,9 @@ const WebDevelopmentPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-black text-white uppercase mb-4">
-              Breaking{' '}
+              Quebrando{' '}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Doubts
+                Dúvidas
               </span>
             </h2>
           </motion.div>
@@ -522,7 +522,7 @@ const WebDevelopmentPage = () => {
             viewport={{ once: true }}
           >
             <span className="inline-block px-6 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-bold tracking-widest uppercase mb-8">
-              READY TO START
+              PRONTO PARA COMEÇAR
             </span>
           </motion.div>
 
@@ -533,11 +533,11 @@ const WebDevelopmentPage = () => {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 uppercase leading-tight"
           >
-            Let's Build
+            Vamos Construir
             <br />
-            Something{' '}
+            Algo{' '}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Epic.
+              Épico.
             </span>
           </motion.h2>
 
@@ -576,15 +576,15 @@ const WebDevelopmentPage = () => {
           >
             <div className="flex items-center gap-2">
               <Award className="w-5 h-5 text-cyan-400" />
-              <span>Premium Development</span>
+              <span>Desenvolvimento Premium</span>
             </div>
             <div className="flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-blue-400" />
-              <span>Proven Results</span>
+              <span>Resultados Comprovados</span>
             </div>
             <div className="flex items-center gap-2">
               <Rocket className="w-5 h-5 text-cyan-400" />
-              <span>Fast Delivery</span>
+              <span>Entrega Rápida</span>
             </div>
           </motion.div>
         </div>
