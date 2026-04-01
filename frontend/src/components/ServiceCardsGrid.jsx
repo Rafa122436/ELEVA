@@ -81,7 +81,7 @@ const ServiceCardsGrid = () => {
   {
     title: 'Branding Digital',
     image:
-    'https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=srgb&fm=jpg&q=85',
+    'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/m9jyne7e_7abe4745-8bc5-4d51-8ec1-ea5e3590a7c7.png',
     link: '/services/branding-digital'
   },
   {
