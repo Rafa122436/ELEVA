@@ -266,7 +266,7 @@ const LandingPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <span className="inline-block px-4 md:px-6 py-1.5 md:py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs md:text-sm font-bold tracking-widest uppercase">
+                  <span className="inline-block px-5 md:px-6 py-2 md:py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm md:text-sm font-bold tracking-widest uppercase">
                     Website Estratégico · SEO · Automação
                   </span>
                 </motion.div>
@@ -278,13 +278,13 @@ const LandingPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
                     Angarie Clientes de
                   </h1>
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight md:leading-none uppercase">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight md:leading-none uppercase">
                     <ShinyText text="Alto Valor em" />
                   </h1>
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
                     Piloto Automático
                   </h1>
                 </motion.div>
@@ -294,7 +294,7 @@ const LandingPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-sm md:text-lg lg:text-xl text-white/70 max-w-3xl md:mx-auto leading-relaxed pt-2 md:pt-6"
+                  className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl md:mx-auto leading-relaxed pt-2 md:pt-6"
                 >
                   Transformamos o seu website numa <span className="text-cyan-400 font-semibold">máquina de vendas</span> que atrai,
                   qualifica e converte leads enquanto você dorme.
@@ -309,12 +309,12 @@ const LandingPage = () => {
                 >
                   <a 
                     href="#contato"
-                    className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-full px-6 py-3 md:px-10 md:py-5 transition-all duration-300 hover:scale-105 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 text-sm md:text-lg"
+                    className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-full px-8 py-4 md:px-10 md:py-5 transition-all duration-300 hover:scale-105 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 text-base md:text-lg"
                   >
-                    <span className="text-xs md:text-base">
+                    <span>
                       Agendar Chamada Gratuita
                     </span>
-                    <ArrowRight className="w-4 h-4 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                   </a>
                 </motion.div>
               </div>
