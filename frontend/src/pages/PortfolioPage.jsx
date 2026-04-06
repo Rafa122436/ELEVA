@@ -333,26 +333,39 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Projects Horizontal Carousel - Premium Showcase Style */}
+      {/* Projects Horizontal Carousel with Auto-Scroll */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
-        <div className="max-w-[1800px] mx-auto">
-          {/* Horizontal Scrolling Container */}
-          <div 
-            className="flex gap-6 px-8 overflow-x-auto scrollbar-hide scroll-smooth"
-            style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch'
+        <div className="max-w-[1600px] mx-auto px-8">
+          {/* Auto-Scrolling Container */}
+          <motion.div 
+            className="flex gap-8"
+            animate={{
+              x: [0, -2400], // Scroll through all 6 projects (400px width + 32px gap) * 6
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 30,
+                ease: "linear",
+              },
             }}
           >
+            {/* Original Projects */}
             {projects.map((project, index) => (
-              <div key={project.id} className="flex-shrink-0 w-[500px]">
+              <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
                 <ProjectCard project={project} index={index} />
               </div>
             ))}
-          </div>
+            {/* Duplicate Projects for seamless loop */}
+            {projects.map((project, index) => (
+              <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
+                <ProjectCard project={project} index={index} />
+              </div>
+            ))}
+          </motion.div>
 
-          {/* Scroll Indicator */}
+          {/* Auto-Scroll Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -360,9 +373,9 @@ const PortfolioPage = () => {
             className="mt-12 text-center"
           >
             <div className="flex items-center justify-center gap-3 text-white/40 text-sm">
-              <ArrowRight className="w-4 h-4 rotate-180" />
-              <span className="uppercase tracking-wider">Deslize para ver mais projetos</span>
-              <ArrowRight className="w-4 h-4" />
+              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+              <span className="uppercase tracking-wider">Auto-Scroll Ativo</span>
+              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
             </div>
           </motion.div>
         </div>
