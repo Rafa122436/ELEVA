@@ -7,6 +7,17 @@ import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 import FloatingOrbs from '../components/FloatingOrbs';
 
+// Custom CSS for hiding scrollbar
+const scrollbarHideCSS = `
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+`;
+
 // Project Card Component with Browser Mockup & Auto-Scroll Effect
 const ProjectCard = ({ project, index }) => {
   const ref = useRef(null);
@@ -180,6 +191,7 @@ const PortfolioPage = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <style>{scrollbarHideCSS}</style>
       <CustomCursor />
       <FloatingOrbs />
       
@@ -321,26 +333,37 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Projects Grid - Modern Showcase Style */}
-      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Projects Horizontal Carousel - Premium Showcase Style */}
+      <section className="py-24 md:py-32 bg-black overflow-hidden">
+        <div className="max-w-[1800px] mx-auto">
+          {/* Horizontal Scrolling Container */}
+          <div 
+            className="flex gap-6 px-8 overflow-x-auto scrollbar-hide scroll-smooth"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
             {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+              <div key={project.id} className="flex-shrink-0 w-[500px]">
+                <ProjectCard project={project} index={index} />
+              </div>
             ))}
           </div>
 
-          {/* View All Projects Button */}
+          {/* Scroll Indicator */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="mt-12 text-center"
           >
-            <button className="group inline-flex items-center gap-3 px-10 py-5 border-2 border-white hover:bg-white hover:text-black text-white font-black rounded-full transition-all duration-300 hover:scale-105 uppercase tracking-wide">
-              Ver Todos os Projetos
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </button>
+            <div className="flex items-center justify-center gap-3 text-white/40 text-sm">
+              <ArrowRight className="w-4 h-4 rotate-180" />
+              <span className="uppercase tracking-wider">Deslize para ver mais projetos</span>
+              <ArrowRight className="w-4 h-4" />
+            </div>
           </motion.div>
         </div>
       </section>
