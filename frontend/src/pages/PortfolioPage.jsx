@@ -146,6 +146,15 @@ const PortfolioPage = () => {
     },
     {
       id: 4,
+      title: 'Terapias de Luz',
+      category: 'Bem-Estar & Terapias',
+      description: 'Plataforma de cura energética e transformação com 500+ sessões realizadas, oferecendo equilíbrio entre corpo, mente e espírito.',
+      image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/2niijwsl_Captura%20de%20ecr%C3%A3%202026-04-06%20152635.png',
+      tags: ['Wellness', 'Booking'],
+      isNew: true,
+    },
+    {
+      id: 5,
       title: 'LuxeStore Premium',
       category: 'E-commerce',
       description: 'E-commerce de moda de luxo com taxa de conversão de 8.5% - três vezes acima da média do setor de moda online.',
@@ -154,7 +163,7 @@ const PortfolioPage = () => {
       isNew: false,
     },
     {
-      id: 5,
+      id: 6,
       title: 'RealEstate Hub',
       category: 'Corporate Website',
       description: 'Portal imobiliário de alto padrão gerando consistentemente 120+ leads qualificados por mês através de SEO orgânico.',
@@ -163,7 +172,7 @@ const PortfolioPage = () => {
       isNew: false,
     },
     {
-      id: 6,
+      id: 7,
       title: 'CloudSync Dashboard',
       category: 'SaaS Platform',
       description: 'Dashboard de gestão cloud com interface intuitiva, tempos de resposta inferiores a 100ms e 99.9% de uptime.',
@@ -317,20 +326,20 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Projects Horizontal Carousel with Auto-Scroll - 6 Projects */}
+      {/* Projects Horizontal Carousel with Auto-Scroll - 7 Projects */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-8">
-          {/* Auto-Scrolling Container - 6 Projects */}
+          {/* Auto-Scrolling Container - 7 Projects */}
           <motion.div 
             className="flex gap-8"
             animate={{
-              x: [0, -2748], // 6 projects: (450px width + 8px gap) * 6 = 2748px
+              x: [0, -3206], // 7 projects: (450px width + 8px gap) * 7 = 3206px
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 55, // Adjusted: 55 seconds for 6 projects
+                duration: 60, // Adjusted: 60 seconds for 7 projects
                 ease: "linear",
               },
             }}
