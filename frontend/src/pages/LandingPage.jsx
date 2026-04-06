@@ -79,12 +79,12 @@ const PortfolioCard = ({ project, index }) => {
       transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group"
+      className="group h-full"
     >
       <motion.div
         animate={{ scale: isHovered ? 1.02 : 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="bg-[#111111] rounded-[24px] overflow-hidden"
+        className="bg-[#111111] rounded-[24px] overflow-hidden h-full flex flex-col"
         style={{
           boxShadow: isHovered 
             ? '0 20px 60px rgba(100, 206, 251, 0.15), 0 0 0 1px rgba(100, 206, 251, 0.1)'
@@ -92,37 +92,36 @@ const PortfolioCard = ({ project, index }) => {
         }}
       >
         {/* Top Half - Full Image */}
-        <div className="relative h-[350px] overflow-hidden bg-black">
+        <div className="relative h-[280px] md:h-[350px] overflow-hidden bg-black flex-shrink-0">
           <motion.img
             ref={imageRef}
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover object-top"
-            animate={{ 
-              scale: isHovered ? 1.05 : 1,
-            }}
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             style={{ filter: 'brightness(0.95)' }}
           />
         </div>
 
         {/* Bottom Half - Content */}
-        <div className="px-8 py-6 space-y-3">
+        <div className="px-6 md:px-8 py-5 md:py-6 space-y-2 md:space-y-3 flex-1 flex flex-col">
           {project.isNew && (
             <span className="inline-block w-fit px-3 py-1.5 bg-[#222222] text-white text-xs font-semibold rounded-full">
               New Addition
             </span>
           )}
 
-          <h3 className="text-2xl font-bold text-white leading-tight">
+          <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
             {project.title}
           </h3>
 
-          <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider">
+          <p className="text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider">
             {project.category}
           </p>
 
-          <p className="text-[#A1A1A1] text-sm leading-relaxed line-clamp-2">
+          <p className="text-[#A1A1A1] text-sm leading-relaxed line-clamp-2 flex-1">
             {project.description}
           </p>
 
@@ -265,36 +264,36 @@ const LandingPage = () => {
           {/* Main Content */}
           <motion.div 
             style={{ opacity }}
-            className="flex-1 flex flex-col justify-center items-center px-4 md:px-6 lg:px-8 pt-32 md:pt-40 lg:pt-48"
+            className="flex-1 flex flex-col justify-center items-start md:items-center px-4 md:px-6 lg:px-8 pt-24 md:pt-40 lg:pt-48"
           >
             {/* Hero Section */}
-            <div className="max-w-7xl mx-auto w-full text-center">
-              <div className="space-y-6 md:space-y-8">
+            <div className="max-w-7xl mx-auto w-full text-left md:text-center">
+              <div className="space-y-4 md:space-y-8">
                 {/* Badge */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <span className="inline-block px-6 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-bold tracking-widest uppercase">
+                  <span className="inline-block px-4 md:px-6 py-1.5 md:py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs md:text-sm font-bold tracking-widest uppercase">
                     Website Estratégico · SEO · Automação
                   </span>
                 </motion.div>
 
                 {/* Main Heading */}
                 <motion.div 
-                  className="space-y-2"
+                  className="space-y-1 md:space-y-2"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-none uppercase">
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
                     Angarie Clientes de
                   </h1>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-none uppercase">
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight md:leading-none uppercase">
                     <ShinyText text="Alto Valor em" />
                   </h1>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-none uppercase">
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
                     Piloto Automático
                   </h1>
                 </motion.div>
@@ -304,7 +303,7 @@ const LandingPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-base md:text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed pt-4 md:pt-6"
+                  className="text-sm md:text-lg lg:text-xl text-white/70 max-w-3xl md:mx-auto leading-relaxed pt-2 md:pt-6"
                 >
                   Transformamos o seu website numa <span className="text-cyan-400 font-semibold">máquina de vendas</span> que atrai,
                   qualifica e converte leads enquanto você dorme.
@@ -312,19 +311,19 @@ const LandingPage = () => {
 
                 {/* CTA Button */}
                 <motion.div 
-                  className="pt-8 md:pt-10"
+                  className="pt-4 md:pt-10"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
                   <a 
                     href="#contato"
-                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-full px-10 py-5 transition-all duration-300 hover:scale-105 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 text-lg"
+                    className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-full px-6 py-3 md:px-10 md:py-5 transition-all duration-300 hover:scale-105 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 text-sm md:text-lg"
                   >
-                    <span>
-                      Agendar uma Chamada Estratégica Gratuita
+                    <span className="text-xs md:text-base">
+                      Agendar Chamada Gratuita
                     </span>
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="w-4 h-4 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                   </a>
                 </motion.div>
               </div>
@@ -378,23 +377,24 @@ const LandingPage = () => {
             {/* Mobile: Swipeable, Desktop: Auto-scroll */}
             <div className="block md:hidden">
               {/* Mobile - Manual Swipe */}
-              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6"
                 style={{
                   WebkitOverflowScrolling: 'touch',
-                  scrollPaddingLeft: '16px'
+                  scrollPaddingLeft: '32px',
+                  scrollPaddingRight: '32px'
                 }}
               >
                 {portfolioProjects.map((project, index) => (
-                  <div key={project.id} className="flex-shrink-0 w-[85vw] sm:w-[400px] snap-center">
+                  <div key={project.id} className="flex-shrink-0 w-[90vw] max-w-[400px] snap-center first:ml-4 last:mr-4">
                     <PortfolioCard project={project} index={index} />
                   </div>
                 ))}
               </div>
               
               {/* Swipe Indicator */}
-              <div className="text-center mt-4">
+              <div className="text-center mt-2">
                 <div className="flex items-center justify-center gap-2 text-white/40 text-xs">
-                  <span>← Deslize →</span>
+                  <span>← Deslize para ver mais →</span>
                 </div>
               </div>
             </div>

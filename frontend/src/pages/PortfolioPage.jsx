@@ -33,12 +33,12 @@ const ProjectCard = ({ project, index }) => {
       transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group"
+      className="group h-full"
     >
       <motion.div
         animate={{ scale: isHovered ? 1.02 : 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="bg-[#111111] rounded-[24px] overflow-hidden"
+        className="bg-[#111111] rounded-[24px] overflow-hidden h-full flex flex-col"
         style={{
           boxShadow: isHovered 
             ? '0 20px 60px rgba(100, 206, 251, 0.15), 0 0 0 1px rgba(100, 206, 251, 0.1)'
@@ -46,22 +46,21 @@ const ProjectCard = ({ project, index }) => {
         }}
       >
         {/* Top Half - Full Image (No Frame) - Increased height to show first section */}
-        <div className="relative h-[350px] overflow-hidden bg-black">
+        <div className="relative h-[280px] md:h-[350px] overflow-hidden bg-black flex-shrink-0">
           <motion.img
             ref={imageRef}
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover object-top"
-            animate={{ 
-              scale: isHovered ? 1.05 : 1,
-            }}
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             style={{ filter: 'brightness(0.95)' }}
           />
         </div>
 
         {/* Bottom Half - Content Section */}
-        <div className="px-8 py-6 space-y-3">
+        <div className="px-6 md:px-8 py-5 md:py-6 space-y-2 md:space-y-3 flex-1 flex flex-col">
           {/* New Addition Badge */}
           {project.isNew && (
             <span className="inline-block w-fit px-3 py-1.5 bg-[#222222] text-white text-xs font-semibold rounded-full">
@@ -70,17 +69,17 @@ const ProjectCard = ({ project, index }) => {
           )}
 
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white leading-tight">
+          <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
             {project.title}
           </h3>
 
           {/* Category */}
-          <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider">
+          <p className="text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider">
             {project.category}
           </p>
 
           {/* Description - 2 lines max */}
-          <p className="text-[#A1A1A1] text-sm leading-relaxed line-clamp-2">
+          <p className="text-[#A1A1A1] text-sm leading-relaxed line-clamp-2 flex-1">
             {project.description}
           </p>
 
@@ -256,49 +255,76 @@ const PortfolioPage = () => {
 
       {/* Projects Horizontal Carousel with Auto-Scroll - 4 Projects */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
-        <div className="max-w-[1600px] mx-auto px-8">
-          {/* Auto-Scrolling Container - 4 Real Projects Only */}
-          <motion.div 
-            className="flex gap-8"
-            animate={{
-              x: [0, -1832], // 4 projects: (450px width + 8px gap) * 4 = 1832px
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 45, // Adjusted: 45 seconds for 4 projects
-                ease: "linear",
-              },
-            }}
-          >
-            {/* Original Projects */}
-            {projects.map((project, index) => (
-              <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
-                <ProjectCard project={project} index={index} />
-              </div>
-            ))}
-            {/* Duplicate Projects for seamless loop */}
-            {projects.map((project, index) => (
-              <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
-                <ProjectCard project={project} index={index} />
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Auto-Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="mt-12 text-center"
-          >
-            <div className="flex items-center justify-center gap-3 text-white/40 text-sm">
-              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
-              <span className="uppercase tracking-wider">Auto-Scroll Ativo</span>
-              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+        <style>{scrollbarHideCSS}</style>
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
+          {/* Mobile - Manual Swipe */}
+          <div className="block md:hidden">
+            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6"
+              style={{
+                WebkitOverflowScrolling: 'touch',
+                scrollPaddingLeft: '32px',
+                scrollPaddingRight: '32px'
+              }}
+            >
+              {projects.map((project, index) => (
+                <div key={project.id} className="flex-shrink-0 w-[90vw] max-w-[400px] snap-center first:ml-4 last:mr-4">
+                  <ProjectCard project={project} index={index} />
+                </div>
+              ))}
             </div>
-          </motion.div>
+            
+            {/* Swipe Indicator */}
+            <div className="text-center mt-2">
+              <div className="flex items-center justify-center gap-2 text-white/40 text-xs">
+                <span>← Deslize para ver mais →</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop - Auto-Scrolling Container - 4 Real Projects Only */}
+          <div className="hidden md:block">
+            <motion.div 
+              className="flex gap-8"
+              animate={{
+                x: [0, -1832], // 4 projects: (450px width + 8px gap) * 4 = 1832px
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 45, // Adjusted: 45 seconds for 4 projects
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* Original Projects */}
+              {projects.map((project, index) => (
+                <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
+                  <ProjectCard project={project} index={index} />
+                </div>
+              ))}
+              {/* Duplicate Projects for seamless loop */}
+              {projects.map((project, index) => (
+                <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
+                  <ProjectCard project={project} index={index} />
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Auto-Scroll Indicator */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="mt-12 text-center"
+            >
+              <div className="flex items-center justify-center gap-3 text-white/40 text-sm">
+                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+                <span className="uppercase tracking-wider">Auto-Scroll Ativo</span>
+                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
