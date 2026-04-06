@@ -18,10 +18,9 @@ const scrollbarHideCSS = `
   }
 `;
 
-// Project Card Component with Browser Mockup & Auto-Scroll Effect
+// Project Card Component with 50/50 Split Layout
 const ProjectCard = ({ project, index }) => {
   const ref = useRef(null);
-  const imageRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -38,78 +37,61 @@ const ProjectCard = ({ project, index }) => {
       <motion.div
         animate={{ scale: isHovered ? 1.02 : 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="bg-[#111111] rounded-[24px] overflow-hidden"
+        className="bg-[#111111] rounded-[24px] overflow-hidden h-[500px] flex"
         style={{
           boxShadow: isHovered 
             ? '0 20px 60px rgba(100, 206, 251, 0.15), 0 0 0 1px rgba(100, 206, 251, 0.1)'
             : '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
         }}
       >
-        {/* Browser/Tablet Mockup Frame */}
-        <div className="relative bg-[#1A1A1A] px-8 pt-8 pb-4">
-          {/* Browser Chrome */}
-          <div className="bg-[#0D0D0D] rounded-t-xl overflow-hidden border border-white/5">
-            {/* Browser Top Bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-[#0A0A0A] border-b border-white/5">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
-              </div>
-              <div className="flex-1 ml-4 bg-[#1A1A1A] rounded-md px-3 py-1.5 text-[10px] text-white/30 border border-white/5">
-                https://{project.title.toLowerCase().replace(/\s+/g, '')}.com
-              </div>
-            </div>
-            
-            {/* Website Screenshot with Auto-Scroll */}
-            <div className="relative h-[280px] overflow-hidden bg-black">
-              <motion.img
-                ref={imageRef}
-                src={project.image}
-                alt={project.title}
-                className="w-full h-auto min-h-[400px] object-cover object-top"
-                animate={{ 
-                  y: isHovered ? -120 : 0,
-                }}
-                transition={{ duration: 2.5, ease: "easeInOut" }}
-                style={{ filter: 'brightness(0.95)' }}
-              />
-            </div>
-          </div>
+        {/* Left Half - Image Only */}
+        <div className="w-1/2 relative overflow-hidden bg-black">
+          <motion.img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            animate={{ 
+              scale: isHovered ? 1.05 : 1,
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ filter: 'brightness(0.9)' }}
+          />
         </div>
 
-        {/* Content Section */}
-        <div className="px-8 py-6 space-y-3">
+        {/* Right Half - Content */}
+        <div className="w-1/2 flex flex-col justify-center p-8 bg-gradient-to-br from-[#0A0A0A] to-[#111111]">
+          {/* New Addition Badge */}
+          {project.isNew && (
+            <span className="inline-block w-fit px-3 py-1.5 bg-[#222222] text-white text-xs font-semibold rounded-full mb-4">
+              New Addition
+            </span>
+          )}
+
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white leading-tight">
+          <h3 className="text-2xl font-bold text-white leading-tight mb-3">
             {project.title}
           </h3>
 
-          {/* Description - 2 lines max */}
-          <p className="text-[#A1A1A1] text-sm leading-relaxed line-clamp-2">
+          {/* Category */}
+          <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-4">
+            {project.category}
+          </p>
+
+          {/* Description */}
+          <p className="text-[#A1A1A1] text-sm leading-relaxed mb-6 line-clamp-3">
             {project.description}
           </p>
 
-          {/* Bottom Section */}
-          <div className="flex items-center justify-between pt-2">
-            {/* New Addition Badge */}
-            {project.isNew && (
-              <span className="px-3 py-1.5 bg-[#222222] text-white text-xs font-semibold rounded-full">
-                New Addition
+          {/* Tags */}
+          <div className="flex gap-2 flex-wrap">
+            {project.tags.slice(0, 2).map((tag, i) => (
+              <span
+                key={i}
+                className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium"
+              >
+                {tag}
               </span>
-            )}
-            
-            {/* Category Pills */}
-            <div className="flex gap-2 flex-wrap">
-              {project.tags.slice(0, 2).map((tag, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </motion.div>
@@ -135,11 +117,11 @@ const PortfolioPage = () => {
   const projects = [
     {
       id: 1,
-      title: 'TechFlow Analytics',
-      category: 'SaaS Platform',
-      description: 'Plataforma de análise de dados empresariais que aumentou a eficiência operacional em 200% e reduziu custos em 45%.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
-      tags: ['SaaS', 'Dashboard'],
+      title: 'VistaHome',
+      category: 'Portal Imobiliário Premium',
+      description: 'Portal imobiliário de alto padrão gerando 120+ leads qualificados mensalmente através de SEO orgânico e tours virtuais 360°.',
+      image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ula6k21s_Captura%20de%20ecr%C3%A3%202026-04-06%20142454.png',
+      tags: ['Real Estate', 'SEO'],
       isNew: true,
     },
     {
@@ -333,173 +315,33 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Featured Project - Full Split Screen Showcase */}
-      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-black border-b border-white/10">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <span className="inline-block px-6 py-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-bold tracking-widest uppercase mb-4">
-              Projeto em Destaque
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight">
-              Case de <span className="text-cyan-400">Sucesso</span>
-            </h2>
-          </motion.div>
-
-          {/* 50/50 Split Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-[#0A0A0A] rounded-3xl overflow-hidden border border-white/10">
-            {/* Left Half - Full Website Screenshot */}
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative h-[600px] lg:h-[700px] overflow-hidden bg-black"
-            >
-              {/* Browser Chrome Header */}
-              <div className="absolute top-0 left-0 right-0 z-10 bg-[#0D0D0D] border-b border-white/10 px-4 py-3">
-                <div className="flex items-center gap-2">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                  </div>
-                  <div className="flex-1 ml-4 bg-[#1A1A1A] rounded-md px-3 py-1.5 text-xs text-white/30 border border-white/5">
-                    https://vistahome.pt
-                  </div>
-                </div>
-              </div>
-
-              {/* Full Website Screenshot */}
-              <div className="absolute top-[52px] left-0 right-0 bottom-0 overflow-hidden">
-                <img
-                  src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ula6k21s_Captura%20de%20ecr%C3%A3%202026-04-06%20142454.png"
-                  alt="VistaHome Website"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </motion.div>
-
-            {/* Right Half - Project Info Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col justify-center p-12 md:p-16 lg:p-20 bg-gradient-to-br from-[#0A0A0A] to-[#111111]"
-            >
-              {/* New Addition Badge */}
-              <span className="inline-block w-fit px-4 py-2 bg-[#1A1A1A] border border-cyan-500/30 text-cyan-400 text-xs font-semibold rounded-full mb-6 uppercase tracking-wider">
-                ✦ Novo Projeto
-              </span>
-
-              {/* Project Title */}
-              <h3 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight leading-tight">
-                VistaHome
-              </h3>
-
-              {/* Category */}
-              <p className="text-cyan-400 text-lg font-bold uppercase tracking-wider mb-6">
-                Portal Imobiliário Premium
-              </p>
-
-              {/* Description */}
-              <p className="text-[#A1A1A1] text-base leading-relaxed mb-8">
-                Portal imobiliário de alto padrão especializado em imóveis de luxo. 
-                Plataforma completa com sistema de busca avançada, tours virtuais 360°, 
-                e integração com CRM para gestão de leads. Gerando consistentemente 
-                <span className="text-white font-semibold"> 120+ leads qualificados</span> por mês através de 
-                <span className="text-cyan-400 font-semibold"> SEO orgânico</span>.
-              </p>
-
-              {/* Metrics Grid */}
-              <div className="grid grid-cols-3 gap-6 mb-10 pb-10 border-b border-white/10">
-                <div>
-                  <div className="text-3xl font-black text-cyan-400 mb-1">+200</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wide">Imóveis Listados</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-cyan-400 mb-1">+70</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wide">Clientes Satisfeitos</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-cyan-400 mb-1">$10M+</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wide">Valor em Negócios</div>
-                </div>
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-medium">
-                  Real Estate
-                </span>
-                <span className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-medium">
-                  SEO Avançado
-                </span>
-                <span className="px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-sm font-medium">
-                  Lead Generation
-                </span>
-              </div>
-
-              {/* CTA Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 uppercase tracking-wide text-sm w-fit"
-              >
-                Ver Caso Completo
-                <ExternalLink className="w-4 h-4 group-hover:rotate-45 transition-transform" />
-              </motion.button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Other Projects - Horizontal Carousel with Auto-Scroll */}
+      {/* Projects Horizontal Carousel with Auto-Scroll */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
-        <div className="max-w-[1600px] mx-auto px-8">
-          {/* Section Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">
-              Outros Projetos
-            </h2>
-            <p className="text-white/50 text-lg">Explore mais trabalhos premium</p>
-          </motion.div>
-
+        <div className="max-w-[1800px] mx-auto px-8">
           {/* Auto-Scrolling Container */}
           <motion.div 
             className="flex gap-8"
             animate={{
-              x: [0, -2400],
+              x: [0, -4800],
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 40,
                 ease: "linear",
               },
             }}
           >
-            {/* Original Projects (excluding first one since it's featured) */}
-            {projects.slice(1).map((project, index) => (
-              <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
+            {/* Original Projects */}
+            {projects.map((project, index) => (
+              <div key={`original-${project.id}`} className="flex-shrink-0 w-[700px]">
                 <ProjectCard project={project} index={index} />
               </div>
             ))}
             {/* Duplicate Projects for seamless loop */}
-            {projects.slice(1).map((project, index) => (
-              <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
+            {projects.map((project, index) => (
+              <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[700px]">
                 <ProjectCard project={project} index={index} />
               </div>
             ))}
