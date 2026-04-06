@@ -4,39 +4,27 @@ import { TrendingUp, Quote } from 'lucide-react';
 const ResultsSection = () => {
   const testimonials = [
     {
-      name: 'Carlos Mendes',
-      company: 'Mendes Consulting',
-      result: '+250% em leads qualificados em 3 meses',
+      quote: 'O novo design mudou o jogo: conseguimos +250% em leads qualificados nos primeiros 3 meses. Estrutura impecável e focada em conversão.',
       image: 'https://images.unsplash.com/photo-1599090738077-75d2187fd892?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHN1Y2Nlc3N8ZW58MHx8fHwxNzc0OTYxMTAwfDA&ixlib=rb-4.1.0&q=85',
     },
     {
-      name: 'Ana Silva',
-      company: 'Silva & Associados',
-      result: 'Faturação aumentou €80k no primeiro trimestre',
+      quote: 'A taxa de rejeição caiu drasticamente. Hoje, o nosso site retém o dobro dos utilizadores e gera confiança imediata no primeiro contacto.',
       image: 'https://images.pexels.com/photos/7792803/pexels-photo-7792803.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     {
-      name: 'Pedro Costa',
-      company: 'Costa Tech Solutions',
-      result: 'De 5 para 45 clientes em 6 meses',
+      quote: 'Implementámos o novo layout e vimos as vendas diretas crescerem 40% num trimestre. Design limpo, funcional e extremamente eficaz.',
       image: 'https://images.unsplash.com/photo-1758518729912-bf3a84c400e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHN1Y2Nlc3N8ZW58MHx8fHwxNzc0OTYxMTAwfDA&ixlib=rb-4.1.0&q=85',
     },
     {
-      name: 'Maria Rodrigues',
-      company: 'Rodrigues Imobiliária',
-      result: '€120k em vendas diretas via website',
+      quote: 'O tráfego orgânico disparou. O site não só ficou mais bonito, como a performance técnica colocou-nos no radar dos clientes certos.',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&q=85',
     },
     {
-      name: 'João Ferreira',
-      company: 'Ferreira Advocacia',
-      result: 'ROI de 420% no primeiro ano',
+      quote: 'Reduzimos o ciclo de venda graças à clareza do novo site. Recebemos pedidos de orçamento muito mais segmentados e prontos a fechar.',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85',
     },
     {
-      name: 'Sofia Almeida',
-      company: 'Almeida Marketing Digital',
-      result: 'Agenda cheia por 4 meses seguidos',
+      quote: 'O tempo de permanência no site subiu 180%. Os clientes navegam mais, entendem melhor o produto e o resultado reflete-se no volume de faturação.',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&q=85',
     },
   ];
@@ -86,23 +74,15 @@ const ResultsSection = () => {
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden mb-6 border-2 border-[#64CEFB]/30 group-hover:border-[#64CEFB] transition-colors duration-300">
                   <img
                     src={testimonial.image}
-                    alt={testimonial.name}
+                    alt="Cliente"
                     className="w-full h-full object-cover"
                   />
                 </div>
 
-                {/* Result */}
-                <p className="text-lg md:text-xl font-bold text-white mb-6 leading-tight">
-                  {testimonial.result}
+                {/* Quote */}
+                <p className="text-base md:text-lg text-white/90 leading-relaxed">
+                  {testimonial.quote}
                 </p>
-
-                {/* Name & Company */}
-                <div className="border-t border-white/10 pt-4">
-                  <p className="text-white/90 font-semibold mb-1">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-white/60 text-sm">{testimonial.company}</p>
-                </div>
               </div>
 
               {/* Glow effect on hover */}
