@@ -23,79 +23,72 @@
         -->
         <title>Emergent | Fullstack App</title>
         <style>
-            /* AGGRESSIVE badge removal and coverage */
+            /* ULTRA AGGRESSIVE badge removal */
             #emergent-badge,
-            a[href*="emergent.sh"][href*="badge"],
+            a[id*="emergent"],
+            a[href*="emergent.sh"],
             a[href*="utm_source=emergent-badge"] {
                 display: none !important;
                 visibility: hidden !important;
                 opacity: 0 !important;
                 pointer-events: none !important;
                 position: absolute !important;
-                left: -9999px !important;
+                left: -99999px !important;
+                top: -99999px !important;
                 width: 0 !important;
                 height: 0 !important;
+                z-index: -99999 !important;
             }
             
-            /* Create a black cover over the bottom-right corner */
+            /* Cover bottom-right corner with black overlay - BIGGER */
             body::after {
-                content: '';
+                content: '' !important;
                 position: fixed !important;
                 bottom: 0 !important;
                 right: 0 !important;
-                width: 200px !important;
-                height: 60px !important;
+                width: 250px !important;
+                height: 80px !important;
                 background: #000000 !important;
-                z-index: 999999 !important;
+                z-index: 2147483647 !important;
                 pointer-events: none !important;
             }
         </style>
         <script>
-            // AGGRESSIVE badge removal
+            // NUCLEAR BADGE REMOVAL - Run every 50ms
             (function() {
                 'use strict';
                 
                 function nukeBadge() {
-                    // Remove by ID
-                    const badge = document.getElementById('emergent-badge');
-                    if (badge) {
-                        badge.parentNode.removeChild(badge);
-                    }
-                    
-                    // Remove all Emergent links
-                    document.querySelectorAll('a[href*="emergent.sh"]').forEach(function(link) {
-                        if (link.textContent.toLowerCase().includes('emergent') || 
-                            link.textContent.toLowerCase().includes('made with')) {
-                            link.parentNode.removeChild(link);
+                    try {
+                        // By ID
+                        const badge = document.getElementById('emergent-badge');
+                        if (badge && badge.parentNode) {
+                            badge.parentNode.removeChild(badge);
                         }
-                    });
-                    
-                    // Remove by position (bottom-right corner)
-                    document.querySelectorAll('a[style*="position: fixed"]').forEach(function(el) {
-                        if (el.style.bottom || el.style.right) {
-                            el.parentNode.removeChild(el);
-                        }
-                    });
+                        
+                        // All Emergent links
+                        document.querySelectorAll('a[href*="emergent"]').forEach(function(el) {
+                            if (el.parentNode) el.parentNode.removeChild(el);
+                        });
+                        
+                        // Fixed positioned in bottom-right
+                        document.querySelectorAll('a').forEach(function(el) {
+                            const style = window.getComputedStyle(el);
+                            if (style.position === 'fixed') {
+                                const bottom = parseInt(style.bottom);
+                                const right = parseInt(style.right);
+                                if (!isNaN(bottom) && !isNaN(right) && bottom < 100 && right < 100) {
+                                    if (el.parentNode) el.parentNode.removeChild(el);
+                                }
+                            }
+                        });
+                    } catch (e) {}
                 }
                 
-                // Run immediately
-                nukeBadge();
+                // Run every 50ms
+                setInterval(nukeBadge, 50);
                 
-                // Run on DOM ready
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', nukeBadge);
-                } else {
-                    nukeBadge();
-                }
-                
-                // Run multiple times
-                setTimeout(nukeBadge, 100);
-                setTimeout(nukeBadge, 500);
-                setTimeout(nukeBadge, 1000);
-                setTimeout(nukeBadge, 2000);
-                setTimeout(nukeBadge, 3000);
-                
-                // Observe mutations aggressively
+                // Observer
                 const observer = new MutationObserver(nukeBadge);
                 observer.observe(document.documentElement, {
                     childList: true,
@@ -103,10 +96,11 @@
                     attributes: true
                 });
                 
-                // Block script injection
-                const originalAppendChild = Node.prototype.appendChild;
-                Node.prototype.appendChild = function(child) {
-                    if (child.tagName === 'A' && child.href && child.href.includes('emergent')) {
+                // Block appendChild
+                const originalAppendChild = Element.prototype.appendChild;
+                Element.prototype.appendChild = function(child) {
+                    if (child.nodeType === 1 && (child.id === 'emergent-badge' || 
+                        (child.href && child.href.includes('emergent.sh')))) {
                         return child;
                     }
                     return originalAppendChild.call(this, child);
