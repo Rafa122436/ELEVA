@@ -7,96 +7,101 @@ import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 import FloatingOrbs from '../components/FloatingOrbs';
 
-// Project Card Component with Premium Effects
+// Project Card Component with Browser Mockup & Auto-Scroll Effect
 const ProjectCard = ({ project, index }) => {
   const ref = useRef(null);
+  const imageRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -20 : 20 }}
-      animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
-      transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 hover:border-cyan-500/50 transition-all duration-500 ${
-        project.size === 'large' ? 'col-span-2 row-span-2' : ''
-      } ${project.size === 'wide' ? 'col-span-2' : ''} ${project.size === 'tall' ? 'row-span-2' : ''}`}
-      style={{ 
-        minHeight: project.size === 'large' ? '600px' : project.size === 'tall' ? '500px' : '300px',
-        backgroundColor: '#0A0A0A'
-      }}
+      className="group"
     >
-      {/* Project Image with Zoom Effect */}
       <motion.div
-        className="absolute inset-0"
-        animate={{ scale: isHovered ? 1.05 : 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        animate={{ scale: isHovered ? 1.02 : 1 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="bg-[#111111] rounded-[24px] overflow-hidden"
+        style={{
+          boxShadow: isHovered 
+            ? '0 20px 60px rgba(100, 206, 251, 0.15), 0 0 0 1px rgba(100, 206, 251, 0.1)'
+            : '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+        }}
       >
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover"
-          style={{ filter: isHovered ? 'saturate(1.2) brightness(1.1)' : 'saturate(0.9) brightness(0.8)' }}
-        />
-      </motion.div>
-
-      {/* Overlay with Project Info */}
-      <motion.div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm flex flex-col justify-end p-6 md:p-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isHovered ? 1 : 0 }}
-        transition={{ duration: 0.4 }}
-      >
-        <div className="space-y-4">
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, i) => (
-              <span
-                key={i}
-                className="px-3 py-1 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-bold uppercase tracking-wide"
-              >
-                {tag}
-              </span>
-            ))}
+        {/* Browser/Tablet Mockup Frame */}
+        <div className="relative bg-[#1A1A1A] px-8 pt-8 pb-4">
+          {/* Browser Chrome */}
+          <div className="bg-[#0D0D0D] rounded-t-xl overflow-hidden border border-white/5">
+            {/* Browser Top Bar */}
+            <div className="flex items-center gap-2 px-4 py-3 bg-[#0A0A0A] border-b border-white/5">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+              </div>
+              <div className="flex-1 ml-4 bg-[#1A1A1A] rounded-md px-3 py-1.5 text-[10px] text-white/30 border border-white/5">
+                https://{project.title.toLowerCase().replace(/\s+/g, '')}.com
+              </div>
+            </div>
+            
+            {/* Website Screenshot with Auto-Scroll */}
+            <div className="relative h-[280px] overflow-hidden bg-black">
+              <motion.img
+                ref={imageRef}
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto min-h-[400px] object-cover object-top"
+                animate={{ 
+                  y: isHovered ? -120 : 0,
+                }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+                style={{ filter: 'brightness(0.95)' }}
+              />
+            </div>
           </div>
+        </div>
 
-          {/* Project Title */}
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight">
+        {/* Content Section */}
+        <div className="px-8 py-6 space-y-3">
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-white leading-tight">
             {project.title}
           </h3>
 
-          {/* Category */}
-          <p className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">
-            {project.category}
-          </p>
-
-          {/* Description */}
-          <p className="text-white/70 text-sm md:text-base leading-relaxed">
+          {/* Description - 2 lines max */}
+          <p className="text-[#A1A1A1] text-sm leading-relaxed line-clamp-2">
             {project.description}
           </p>
 
-          {/* View Project Link */}
-          <motion.div
-            className="flex items-center gap-2 text-cyan-400 font-bold cursor-pointer group/link"
-            whileHover={{ x: 5 }}
-          >
-            <span className="uppercase text-sm tracking-wide">Ver Projeto</span>
-            <ExternalLink className="w-4 h-4 group-hover/link:rotate-45 transition-transform duration-300" />
-          </motion.div>
+          {/* Bottom Section */}
+          <div className="flex items-center justify-between pt-2">
+            {/* New Addition Badge */}
+            {project.isNew && (
+              <span className="px-3 py-1.5 bg-[#222222] text-white text-xs font-semibold rounded-full">
+                New Addition
+              </span>
+            )}
+            
+            {/* Category Pills */}
+            <div className="flex gap-2 flex-wrap">
+              {project.tags.slice(0, 2).map((tag, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </motion.div>
-
-      {/* Subtle Inner Glow Border */}
-      <div className="absolute inset-0 rounded-3xl pointer-events-none"
-        style={{
-          boxShadow: isHovered 
-            ? 'inset 0 0 0 1px rgba(34, 211, 238, 0.3), 0 0 40px rgba(34, 211, 238, 0.2)'
-            : 'inset 0 0 0 1px rgba(255, 255, 255, 0.05)'
-        }}
-      ></div>
     </motion.div>
   );
 };
@@ -119,57 +124,57 @@ const PortfolioPage = () => {
   const projects = [
     {
       id: 1,
-      title: 'TechFlow SaaS',
+      title: 'TechFlow Analytics',
       category: 'SaaS Platform',
-      description: 'Plataforma de gestão de projetos com IA integrada que aumentou a produtividade em 200%.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBkZXNpZ258ZW58MHx8fHwxNzc1MDYwMzc5fDA&ixlib=rb-4.1.0&q=85',
-      tags: ['Web Design', 'Custom Code', 'SEO'],
-      size: 'large',
+      description: 'Plataforma de análise de dados empresariais que aumentou a eficiência operacional em 200% e reduziu custos em 45%.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
+      tags: ['SaaS', 'Dashboard'],
+      isNew: true,
     },
     {
       id: 2,
-      title: 'LuxeStore',
-      category: 'E-commerce Premium',
-      description: 'Loja online de moda de luxo com conversão de 8.5% - 3x acima da média do setor.',
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwc3RvcmV8ZW58MHx8fHwxNzc1MDYwMzgxfDA&ixlib=rb-4.1.0&q=85',
+      title: 'LuxeStore Premium',
+      category: 'E-commerce',
+      description: 'E-commerce de moda de luxo com taxa de conversão de 8.5% - três vezes acima da média do setor de moda online.',
+      image: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
       tags: ['E-commerce', 'Branding'],
-      size: 'normal',
+      isNew: true,
     },
     {
       id: 3,
-      title: 'FitnessPro',
-      category: 'Web App',
-      description: 'Aplicação de treino personalizado com 50k+ utilizadores ativos mensalmente.',
-      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwYXBwfGVufDB8fHx8MTc3NTA2MDM4M3ww&ixlib=rb-4.1.0&q=85',
-      tags: ['Web Design', 'UX/UI'],
-      size: 'normal',
+      title: 'FitnessPro App',
+      category: 'Web Application',
+      description: 'Aplicação de treino personalizado com IA que alcançou 50 mil utilizadores ativos mensais em apenas 6 meses.',
+      image: 'https://images.unsplash.com/photo-1720962158883-b0f2021fb51e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
+      tags: ['Web App', 'UX/UI'],
+      isNew: false,
     },
     {
       id: 4,
       title: 'RealEstate Hub',
       category: 'Corporate Website',
-      description: 'Portal imobiliário que gera 120+ leads qualificados por mês através de SEO orgânico.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlfGVufDB8fHx8MTc3NTA2MDM4NXww&ixlib=rb-4.1.0&q=85',
-      tags: ['Web Design', 'SEO', 'Custom Code'],
-      size: 'wide',
+      description: 'Portal imobiliário de alto padrão gerando consistentemente 120+ leads qualificados por mês através de SEO orgânico.',
+      image: 'https://images.unsplash.com/photo-1642132652860-603f4e3c19b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHw0fHxtb2Rkern0lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
+      tags: ['Corporate', 'SEO'],
+      isNew: false,
     },
     {
       id: 5,
-      title: 'CloudSync',
-      category: 'SaaS Dashboard',
-      description: 'Dashboard de análise de dados cloud com interface intuitiva e tempos de resposta < 100ms.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxkYXRhJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc3NTA2MDM4N3ww&ixlib=rb-4.1.0&q=85',
-      tags: ['SaaS', 'Custom Code'],
-      size: 'tall',
+      title: 'CloudSync Dashboard',
+      category: 'SaaS Platform',
+      description: 'Dashboard de gestão cloud com interface intuitiva, tempos de resposta inferiores a 100ms e 99.9% de uptime.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
+      tags: ['SaaS', 'Cloud'],
+      isNew: true,
     },
     {
       id: 6,
-      title: 'BrandStudio',
+      title: 'BrandStudio Creative',
       category: 'Branding & Design',
-      description: 'Identidade visual completa para agência criativa com 95% de aprovação de clientes.',
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxicmFuZCUyMGRlc2lnbnxlbnwwfHx8fDE3NzUwNjAzODl8MA&ixlib=rb-4.1.0&q=85',
-      tags: ['Branding', 'Web Design'],
-      size: 'normal',
+      description: 'Identidade visual completa para agência criativa boutique com 95% de aprovação de clientes no primeiro pitch.',
+      image: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
+      tags: ['Branding', 'Design'],
+      isNew: false,
     },
   ];
 
@@ -316,10 +321,10 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Projects Grid - Bento/Masonry Style */}
-      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8">
+      {/* Projects Grid - Modern Showcase Style */}
+      <section className="py-24 md:py-32 px-4 md:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
