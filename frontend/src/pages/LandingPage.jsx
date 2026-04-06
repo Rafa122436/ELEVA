@@ -374,48 +374,75 @@ const LandingPage = () => {
         {/* Projects Carousel */}
         <div className="relative">
           <style>{scrollbarHideCSS}</style>
-          <div className="max-w-[1600px] mx-auto px-8">
-            <motion.div 
-              className="flex gap-8"
-              animate={{
-                x: [0, -1832],
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 45,
-                  ease: "linear",
-                },
-              }}
-            >
-              {/* Original Projects */}
-              {portfolioProjects.map((project, index) => (
-                <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
-                  <PortfolioCard project={project} index={index} />
-                </div>
-              ))}
-              {/* Duplicate Projects for seamless loop */}
-              {portfolioProjects.map((project, index) => (
-                <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
-                  <PortfolioCard project={project} index={index} />
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Auto-Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="mt-12 text-center"
-            >
-              <div className="flex items-center justify-center gap-3 text-white/40 text-sm">
-                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
-                <span className="uppercase tracking-wider">Auto-Scroll Ativo</span>
-                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
+            {/* Mobile: Swipeable, Desktop: Auto-scroll */}
+            <div className="block md:hidden">
+              {/* Mobile - Manual Swipe */}
+              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+                style={{
+                  WebkitOverflowScrolling: 'touch',
+                  scrollPaddingLeft: '16px'
+                }}
+              >
+                {portfolioProjects.map((project, index) => (
+                  <div key={project.id} className="flex-shrink-0 w-[85vw] sm:w-[400px] snap-center">
+                    <PortfolioCard project={project} index={index} />
+                  </div>
+                ))}
               </div>
-            </motion.div>
+              
+              {/* Swipe Indicator */}
+              <div className="text-center mt-4">
+                <div className="flex items-center justify-center gap-2 text-white/40 text-xs">
+                  <span>← Deslize →</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Desktop - Auto-scroll */}
+            <div className="hidden md:block">
+              <motion.div 
+                className="flex gap-8"
+                animate={{
+                  x: [0, -1832],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 45,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {/* Original Projects */}
+                {portfolioProjects.map((project, index) => (
+                  <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
+                    <PortfolioCard project={project} index={index} />
+                  </div>
+                ))}
+                {/* Duplicate Projects for seamless loop */}
+                {portfolioProjects.map((project, index) => (
+                  <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
+                    <PortfolioCard project={project} index={index} />
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* Auto-Scroll Indicator */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="mt-12 text-center"
+              >
+                <div className="flex items-center justify-center gap-3 text-white/40 text-sm">
+                  <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+                  <span className="uppercase tracking-wider">Auto-Scroll Ativo</span>
+                  <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
