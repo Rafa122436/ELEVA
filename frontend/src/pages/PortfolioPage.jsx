@@ -18,9 +18,10 @@ const scrollbarHideCSS = `
   }
 `;
 
-// Project Card Component with 50/50 Split Layout
+// Project Card Component with Browser Mockup (Vertical Layout)
 const ProjectCard = ({ project, index }) => {
   const ref = useRef(null);
+  const imageRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -37,57 +38,76 @@ const ProjectCard = ({ project, index }) => {
       <motion.div
         animate={{ scale: isHovered ? 1.02 : 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="bg-[#111111] rounded-[24px] overflow-hidden h-[500px] flex"
+        className="bg-[#111111] rounded-[24px] overflow-hidden"
         style={{
           boxShadow: isHovered 
             ? '0 20px 60px rgba(100, 206, 251, 0.15), 0 0 0 1px rgba(100, 206, 251, 0.1)'
             : '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
         }}
       >
-        {/* Left Half - Image Only */}
-        <div className="w-1/2 relative overflow-hidden bg-black">
-          <motion.img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-            animate={{ 
-              scale: isHovered ? 1.05 : 1,
-            }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            style={{ filter: 'brightness(0.9)' }}
-          />
+        {/* Top Half - Browser Mockup Frame */}
+        <div className="relative bg-[#1A1A1A] px-8 pt-8 pb-4">
+          {/* Browser Chrome */}
+          <div className="bg-[#0D0D0D] rounded-t-xl overflow-hidden border border-white/5">
+            {/* Browser Top Bar */}
+            <div className="flex items-center gap-2 px-4 py-3 bg-[#0A0A0A] border-b border-white/5">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+              </div>
+              <div className="flex-1 ml-4 bg-[#1A1A1A] rounded-md px-3 py-1.5 text-[10px] text-white/30 border border-white/5">
+                https://{project.title.toLowerCase().replace(/\s+/g, '')}.com
+              </div>
+            </div>
+            
+            {/* Website Screenshot with Auto-Scroll */}
+            <div className="relative h-[280px] overflow-hidden bg-black">
+              <motion.img
+                ref={imageRef}
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto min-h-[400px] object-cover object-top"
+                animate={{ 
+                  y: isHovered ? -120 : 0,
+                }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+                style={{ filter: 'brightness(0.95)' }}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Right Half - Content */}
-        <div className="w-1/2 flex flex-col justify-center p-8 bg-gradient-to-br from-[#0A0A0A] to-[#111111]">
+        {/* Bottom Half - Content Section */}
+        <div className="px-8 py-6 space-y-3">
           {/* New Addition Badge */}
           {project.isNew && (
-            <span className="inline-block w-fit px-3 py-1.5 bg-[#222222] text-white text-xs font-semibold rounded-full mb-4">
+            <span className="inline-block w-fit px-3 py-1.5 bg-[#222222] text-white text-xs font-semibold rounded-full">
               New Addition
             </span>
           )}
 
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white leading-tight mb-3">
+          <h3 className="text-2xl font-bold text-white leading-tight">
             {project.title}
           </h3>
 
           {/* Category */}
-          <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-4">
+          <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider">
             {project.category}
           </p>
 
-          {/* Description */}
-          <p className="text-[#A1A1A1] text-sm leading-relaxed mb-6 line-clamp-3">
+          {/* Description - 2 lines max */}
+          <p className="text-[#A1A1A1] text-sm leading-relaxed line-clamp-2">
             {project.description}
           </p>
 
           {/* Tags */}
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-2 flex-wrap pt-2">
             {project.tags.slice(0, 2).map((tag, i) => (
               <span
                 key={i}
-                className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium"
+                className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium"
               >
                 {tag}
               </span>
@@ -317,31 +337,31 @@ const PortfolioPage = () => {
 
       {/* Projects Horizontal Carousel with Auto-Scroll */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
-        <div className="max-w-[1800px] mx-auto px-8">
+        <div className="max-w-[1600px] mx-auto px-8">
           {/* Auto-Scrolling Container */}
           <motion.div 
             className="flex gap-8"
             animate={{
-              x: [0, -4800],
+              x: [0, -2900],
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 40,
+                duration: 35,
                 ease: "linear",
               },
             }}
           >
             {/* Original Projects */}
             {projects.map((project, index) => (
-              <div key={`original-${project.id}`} className="flex-shrink-0 w-[700px]">
+              <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
                 <ProjectCard project={project} index={index} />
               </div>
             ))}
             {/* Duplicate Projects for seamless loop */}
             {projects.map((project, index) => (
-              <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[700px]">
+              <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
                 <ProjectCard project={project} index={index} />
               </div>
             ))}
