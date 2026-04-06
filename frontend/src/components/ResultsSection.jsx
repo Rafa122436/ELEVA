@@ -9,11 +9,11 @@ const ResultsSection = () => {
     },
     {
       quote: 'A taxa de rejeição caiu drasticamente. Hoje, o nosso site retém o dobro dos utilizadores e gera confiança imediata no primeiro contacto.',
-      image: 'https://images.pexels.com/photos/7792803/pexels-photo-7792803.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/3u0tkg1s_Captura%20de%20ecr%C3%A3%202026-04-06%20162332.png',
     },
     {
       quote: 'Implementámos o novo layout e vimos as vendas diretas crescerem 40% num trimestre. Design limpo, funcional e extremamente eficaz.',
-      image: 'https://images.unsplash.com/photo-1758518729912-bf3a84c400e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHN1Y2Nlc3N8ZW58MHx8fHwxNzc0OTYxMTAwfDA&ixlib=rb-4.1.0&q=85',
+      image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ogpa8kic_Captura%20de%20ecr%C3%A3%202026-04-06%20162319.png',
     },
     {
       quote: 'O tráfego orgânico disparou. O site não só ficou mais bonito, como a performance técnica colocou-nos no radar dos clientes certos.',
