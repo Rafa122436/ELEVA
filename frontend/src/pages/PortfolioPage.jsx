@@ -137,39 +137,21 @@ const PortfolioPage = () => {
     },
     {
       id: 3,
-      title: 'FitnessPro App',
-      category: 'Web Application',
-      description: 'Aplicação de treino personalizado com IA que alcançou 50 mil utilizadores ativos mensais em apenas 6 meses.',
-      image: 'https://images.unsplash.com/photo-1720962158883-b0f2021fb51e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
-      tags: ['Web App', 'UX/UI'],
-      isNew: false,
-    },
-    {
-      id: 4,
       title: 'RealEstate Hub',
       category: 'Corporate Website',
       description: 'Portal imobiliário de alto padrão gerando consistentemente 120+ leads qualificados por mês através de SEO orgânico.',
-      image: 'https://images.unsplash.com/photo-1642132652860-603f4e3c19b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHw0fHxtb2Rkern0lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
+      image: 'https://images.unsplash.com/photo-1720962158883-b0f2021fb51e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
       tags: ['Corporate', 'SEO'],
       isNew: false,
     },
     {
-      id: 5,
+      id: 4,
       title: 'CloudSync Dashboard',
       category: 'SaaS Platform',
       description: 'Dashboard de gestão cloud com interface intuitiva, tempos de resposta inferiores a 100ms e 99.9% de uptime.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
       tags: ['SaaS', 'Cloud'],
       isNew: true,
-    },
-    {
-      id: 6,
-      title: 'BrandStudio Creative',
-      category: 'Branding & Design',
-      description: 'Identidade visual completa para agência criativa boutique com 95% de aprovação de clientes no primeiro pitch.',
-      image: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
-      tags: ['Branding', 'Design'],
-      isNew: false,
     },
   ];
 
@@ -317,20 +299,20 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Projects Horizontal Carousel with Auto-Scroll */}
+      {/* Projects Horizontal Carousel with Auto-Scroll - Slower Speed */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-8">
-          {/* Auto-Scrolling Container */}
+          {/* Auto-Scrolling Container - 4 Projects */}
           <motion.div 
             className="flex gap-8"
             animate={{
-              x: [0, -2900],
+              x: [0, -1832], // 4 projects: (450px width + 8px gap) * 4 = 1832px
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 35,
+                duration: 50, // Slower: 50 seconds per loop (was 35)
                 ease: "linear",
               },
             }}
