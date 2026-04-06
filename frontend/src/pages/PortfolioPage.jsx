@@ -153,33 +153,6 @@ const PortfolioPage = () => {
       tags: ['Wellness', 'Booking'],
       isNew: true,
     },
-    {
-      id: 5,
-      title: 'LuxeStore Premium',
-      category: 'E-commerce',
-      description: 'E-commerce de moda de luxo com taxa de conversão de 8.5% - três vezes acima da média do setor de moda online.',
-      image: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
-      tags: ['E-commerce', 'Branding'],
-      isNew: false,
-    },
-    {
-      id: 6,
-      title: 'RealEstate Hub',
-      category: 'Corporate Website',
-      description: 'Portal imobiliário de alto padrão gerando consistentemente 120+ leads qualificados por mês através de SEO orgânico.',
-      image: 'https://images.unsplash.com/photo-1720962158883-b0f2021fb51e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
-      tags: ['Corporate', 'SEO'],
-      isNew: false,
-    },
-    {
-      id: 7,
-      title: 'CloudSync Dashboard',
-      category: 'SaaS Platform',
-      description: 'Dashboard de gestão cloud com interface intuitiva, tempos de resposta inferiores a 100ms e 99.9% de uptime.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
-      tags: ['SaaS', 'Cloud'],
-      isNew: false,
-    },
   ];
 
   return (
@@ -326,20 +299,20 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Projects Horizontal Carousel with Auto-Scroll - 7 Projects */}
+      {/* Projects Horizontal Carousel with Auto-Scroll - 4 Projects */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-8">
-          {/* Auto-Scrolling Container - 7 Projects */}
+          {/* Auto-Scrolling Container - 4 Real Projects Only */}
           <motion.div 
             className="flex gap-8"
             animate={{
-              x: [0, -3206], // 7 projects: (450px width + 8px gap) * 7 = 3206px
+              x: [0, -1832], // 4 projects: (450px width + 8px gap) * 4 = 1832px
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 60, // Adjusted: 60 seconds for 7 projects
+                duration: 45, // Adjusted: 45 seconds for 4 projects
                 ease: "linear",
               },
             }}
