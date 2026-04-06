@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -47,34 +46,6 @@ const Footer = () => {
             <p className="text-[15px] text-white/60 leading-relaxed max-w-sm">
               Websites estratégicos que convertem visitantes em clientes de alto valor.
             </p>
-            
-            {/* Social Icons */}
-            <div className="flex items-center gap-4 pt-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 hover:bg-white/5 transition-all duration-300"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 hover:bg-white/5 transition-all duration-300"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 hover:bg-white/5 transition-all duration-300"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Column 2: Navigation */}
@@ -97,6 +68,14 @@ const Footer = () => {
                   className="text-[15px] text-white/70 hover:text-white transition-colors duration-300"
                 >
                   Sobre
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/portfolio"
+                  className="text-[15px] text-white/70 hover:text-white transition-colors duration-300"
+                >
+                  Portfolio
                 </Link>
               </li>
             </ul>
