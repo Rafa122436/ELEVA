@@ -25,10 +25,44 @@
         <style>
             /* Hide Emergent badge */
             #emergent-badge,
-            a[href*="emergent.sh"] {
+            a[href*="emergent.sh"][href*="badge"] {
                 display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
             }
         </style>
+        <script>
+            // Remove Emergent badge on load
+            window.addEventListener('DOMContentLoaded', function() {
+                function removeBadge() {
+                    const badge = document.getElementById('emergent-badge');
+                    if (badge) {
+                        badge.remove();
+                    }
+                    const emergentLinks = document.querySelectorAll('a[href*="emergent.sh"]');
+                    emergentLinks.forEach(link => {
+                        if (link.textContent.includes('Emergent') || link.textContent.includes('Made with')) {
+                            link.remove();
+                        }
+                    });
+                }
+                
+                // Run immediately
+                removeBadge();
+                
+                // Run again after delay to catch dynamically added badges
+                setTimeout(removeBadge, 500);
+                setTimeout(removeBadge, 1000);
+                setTimeout(removeBadge, 2000);
+                
+                // Observe for dynamically added badges
+                const observer = new MutationObserver(function(mutations) {
+                    removeBadge();
+                });
+                observer.observe(document.body, { childList: true, subtree: true });
+            });
+        </script>
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
     </head>
     <body>
