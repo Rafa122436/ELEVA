@@ -18,7 +18,7 @@ const scrollbarHideCSS = `
   }
 `;
 
-// Project Card Component with Browser Mockup (Vertical Layout)
+// Project Card Component - Image Full Top, Text Bottom
 const ProjectCard = ({ project, index }) => {
   const ref = useRef(null);
   const imageRef = useRef(null);
@@ -45,37 +45,19 @@ const ProjectCard = ({ project, index }) => {
             : '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
         }}
       >
-        {/* Top Half - Browser Mockup Frame */}
-        <div className="relative bg-[#1A1A1A] px-8 pt-8 pb-4">
-          {/* Browser Chrome */}
-          <div className="bg-[#0D0D0D] rounded-t-xl overflow-hidden border border-white/5">
-            {/* Browser Top Bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-[#0A0A0A] border-b border-white/5">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
-              </div>
-              <div className="flex-1 ml-4 bg-[#1A1A1A] rounded-md px-3 py-1.5 text-[10px] text-white/30 border border-white/5">
-                https://{project.title.toLowerCase().replace(/\s+/g, '')}.com
-              </div>
-            </div>
-            
-            {/* Website Screenshot with Auto-Scroll */}
-            <div className="relative h-[280px] overflow-hidden bg-black">
-              <motion.img
-                ref={imageRef}
-                src={project.image}
-                alt={project.title}
-                className="w-full h-auto min-h-[400px] object-cover object-top"
-                animate={{ 
-                  y: isHovered ? -120 : 0,
-                }}
-                transition={{ duration: 2.5, ease: "easeInOut" }}
-                style={{ filter: 'brightness(0.95)' }}
-              />
-            </div>
-          </div>
+        {/* Top Half - Full Image (No Frame) */}
+        <div className="relative h-[280px] overflow-hidden bg-black">
+          <motion.img
+            ref={imageRef}
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            animate={{ 
+              scale: isHovered ? 1.05 : 1,
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ filter: 'brightness(0.95)' }}
+          />
         </div>
 
         {/* Bottom Half - Content Section */}
