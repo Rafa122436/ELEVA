@@ -278,27 +278,6 @@ const PortfolioPage = () => {
         </div>
       </motion.section>
 
-      {/* Filter Bar */}
-      <section className="py-8 px-4 md:px-6 lg:px-8 border-b border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
-                  activeFilter === filter
-                    ? 'bg-cyan-500 text-black'
-                    : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Projects Horizontal Carousel with Auto-Scroll - 4 Projects */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-8">
