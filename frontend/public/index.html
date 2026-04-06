@@ -23,45 +23,95 @@
         -->
         <title>Emergent | Fullstack App</title>
         <style>
-            /* Hide Emergent badge */
+            /* AGGRESSIVE badge removal and coverage */
             #emergent-badge,
-            a[href*="emergent.sh"][href*="badge"] {
+            a[href*="emergent.sh"][href*="badge"],
+            a[href*="utm_source=emergent-badge"] {
                 display: none !important;
                 visibility: hidden !important;
                 opacity: 0 !important;
                 pointer-events: none !important;
+                position: absolute !important;
+                left: -9999px !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+            
+            /* Create a black cover over the bottom-right corner */
+            body::after {
+                content: '';
+                position: fixed !important;
+                bottom: 0 !important;
+                right: 0 !important;
+                width: 200px !important;
+                height: 60px !important;
+                background: #000000 !important;
+                z-index: 999999 !important;
+                pointer-events: none !important;
             }
         </style>
         <script>
-            // Remove Emergent badge on load
-            window.addEventListener('DOMContentLoaded', function() {
-                function removeBadge() {
+            // AGGRESSIVE badge removal
+            (function() {
+                'use strict';
+                
+                function nukeBadge() {
+                    // Remove by ID
                     const badge = document.getElementById('emergent-badge');
                     if (badge) {
-                        badge.remove();
+                        badge.parentNode.removeChild(badge);
                     }
-                    const emergentLinks = document.querySelectorAll('a[href*="emergent.sh"]');
-                    emergentLinks.forEach(link => {
-                        if (link.textContent.includes('Emergent') || link.textContent.includes('Made with')) {
-                            link.remove();
+                    
+                    // Remove all Emergent links
+                    document.querySelectorAll('a[href*="emergent.sh"]').forEach(function(link) {
+                        if (link.textContent.toLowerCase().includes('emergent') || 
+                            link.textContent.toLowerCase().includes('made with')) {
+                            link.parentNode.removeChild(link);
+                        }
+                    });
+                    
+                    // Remove by position (bottom-right corner)
+                    document.querySelectorAll('a[style*="position: fixed"]').forEach(function(el) {
+                        if (el.style.bottom || el.style.right) {
+                            el.parentNode.removeChild(el);
                         }
                     });
                 }
                 
                 // Run immediately
-                removeBadge();
+                nukeBadge();
                 
-                // Run again after delay to catch dynamically added badges
-                setTimeout(removeBadge, 500);
-                setTimeout(removeBadge, 1000);
-                setTimeout(removeBadge, 2000);
+                // Run on DOM ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', nukeBadge);
+                } else {
+                    nukeBadge();
+                }
                 
-                // Observe for dynamically added badges
-                const observer = new MutationObserver(function(mutations) {
-                    removeBadge();
+                // Run multiple times
+                setTimeout(nukeBadge, 100);
+                setTimeout(nukeBadge, 500);
+                setTimeout(nukeBadge, 1000);
+                setTimeout(nukeBadge, 2000);
+                setTimeout(nukeBadge, 3000);
+                
+                // Observe mutations aggressively
+                const observer = new MutationObserver(nukeBadge);
+                observer.observe(document.documentElement, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true
                 });
-                observer.observe(document.body, { childList: true, subtree: true });
-            });
+                
+                // Block script injection
+                const originalAppendChild = Node.prototype.appendChild;
+                Node.prototype.appendChild = function(child) {
+                    if (child.tagName === 'A' && child.href && child.href.includes('emergent')) {
+                        return child;
+                    }
+                    return originalAppendChild.call(this, child);
+                };
+            })();
         </script>
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
     </head>
