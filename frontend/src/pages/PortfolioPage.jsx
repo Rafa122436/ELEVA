@@ -128,15 +128,24 @@ const PortfolioPage = () => {
     },
     {
       id: 2,
+      title: 'Newy Plumbing',
+      category: 'Website Corporativo',
+      description: 'Solução completa de canalização nº1 em Newcastle com sistema de agendamento online e 5000+ clientes satisfeitos.',
+      image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/hntshac6_Gemini_Generated_Image_grxh62grxh62grxh.png',
+      tags: ['Corporate', 'Lead Gen'],
+      isNew: true,
+    },
+    {
+      id: 3,
       title: 'LuxeStore Premium',
       category: 'E-commerce',
       description: 'E-commerce de moda de luxo com taxa de conversão de 8.5% - três vezes acima da média do setor de moda online.',
       image: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
       tags: ['E-commerce', 'Branding'],
-      isNew: true,
+      isNew: false,
     },
     {
-      id: 3,
+      id: 4,
       title: 'RealEstate Hub',
       category: 'Corporate Website',
       description: 'Portal imobiliário de alto padrão gerando consistentemente 120+ leads qualificados por mês através de SEO orgânico.',
@@ -145,13 +154,13 @@ const PortfolioPage = () => {
       isNew: false,
     },
     {
-      id: 4,
+      id: 5,
       title: 'CloudSync Dashboard',
       category: 'SaaS Platform',
       description: 'Dashboard de gestão cloud com interface intuitiva, tempos de resposta inferiores a 100ms e 99.9% de uptime.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc3NTQ4MTE2MHww&ixlib=rb-4.1.0&q=85',
       tags: ['SaaS', 'Cloud'],
-      isNew: true,
+      isNew: false,
     },
   ];
 
@@ -299,20 +308,20 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Projects Horizontal Carousel with Auto-Scroll - Slower Speed */}
+      {/* Projects Horizontal Carousel with Auto-Scroll - 5 Projects */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-8">
-          {/* Auto-Scrolling Container - 4 Projects */}
+          {/* Auto-Scrolling Container - 5 Projects */}
           <motion.div 
             className="flex gap-8"
             animate={{
-              x: [0, -1832], // 4 projects: (450px width + 8px gap) * 4 = 1832px
+              x: [0, -2290], // 5 projects: (450px width + 8px gap) * 5 = 2290px
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 50, // Slower: 50 seconds per loop (was 35)
+                duration: 50, // Slower: 50 seconds per loop
                 ease: "linear",
               },
             }}
