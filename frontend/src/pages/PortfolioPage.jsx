@@ -131,7 +131,7 @@ const PortfolioPage = () => {
       title: 'Almeida Canalizações',
       category: 'Website Corporativo',
       description: 'Otimizou o funil de conversão local, gerando um crescimento de 30% no agendamento direto de serviços de emergência.',
-      image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/hntshac6_Gemini_Generated_Image_grxh62grxh62grxh.png',
+      image: 'https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/ocp1gzle_23d5ba27-c7ad-4df7-86d7-e168db7f5092.png',
       tags: ['Corporate', 'Lead Gen'],
       isNew: true,
     },
