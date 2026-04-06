@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
+        <meta name="description" content="ELEVA - Premium web design agency delivering high-end digital experiences" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
@@ -21,92 +21,7 @@
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run build`.
         -->
-        <title>Emergent | Fullstack App</title>
-        <style>
-            /* ULTRA AGGRESSIVE badge removal */
-            #emergent-badge,
-            a[id*="emergent"],
-            a[href*="emergent.sh"],
-            a[href*="utm_source=emergent-badge"] {
-                display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
-                position: absolute !important;
-                left: -99999px !important;
-                top: -99999px !important;
-                width: 0 !important;
-                height: 0 !important;
-                z-index: -99999 !important;
-            }
-            
-            /* Cover bottom-right corner with black overlay - BIGGER */
-            body::after {
-                content: '' !important;
-                position: fixed !important;
-                bottom: 0 !important;
-                right: 0 !important;
-                width: 250px !important;
-                height: 80px !important;
-                background: #000000 !important;
-                z-index: 2147483647 !important;
-                pointer-events: none !important;
-            }
-        </style>
-        <script>
-            // NUCLEAR BADGE REMOVAL - Run every 50ms
-            (function() {
-                'use strict';
-                
-                function nukeBadge() {
-                    try {
-                        // By ID
-                        const badge = document.getElementById('emergent-badge');
-                        if (badge && badge.parentNode) {
-                            badge.parentNode.removeChild(badge);
-                        }
-                        
-                        // All Emergent links
-                        document.querySelectorAll('a[href*="emergent"]').forEach(function(el) {
-                            if (el.parentNode) el.parentNode.removeChild(el);
-                        });
-                        
-                        // Fixed positioned in bottom-right
-                        document.querySelectorAll('a').forEach(function(el) {
-                            const style = window.getComputedStyle(el);
-                            if (style.position === 'fixed') {
-                                const bottom = parseInt(style.bottom);
-                                const right = parseInt(style.right);
-                                if (!isNaN(bottom) && !isNaN(right) && bottom < 100 && right < 100) {
-                                    if (el.parentNode) el.parentNode.removeChild(el);
-                                }
-                            }
-                        });
-                    } catch (e) {}
-                }
-                
-                // Run every 50ms
-                setInterval(nukeBadge, 50);
-                
-                // Observer
-                const observer = new MutationObserver(nukeBadge);
-                observer.observe(document.documentElement, {
-                    childList: true,
-                    subtree: true,
-                    attributes: true
-                });
-                
-                // Block appendChild
-                const originalAppendChild = Element.prototype.appendChild;
-                Element.prototype.appendChild = function(child) {
-                    if (child.nodeType === 1 && (child.id === 'emergent-badge' || 
-                        (child.href && child.href.includes('emergent.sh')))) {
-                        return child;
-                    }
-                    return originalAppendChild.call(this, child);
-                };
-            })();
-        </script>
+        <title>ELEVA | Premium Web Design Agency</title>
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
     </head>
     <body>
