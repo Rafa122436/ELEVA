@@ -71,12 +71,6 @@ const LandingPage = () => {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center gap-1 border border-gray-700 rounded-full px-4 py-2">
                 <Link
-                  to="/"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                >
-                  Início
-                </Link>
-                <Link
                   to="/services"
                   className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
                 >
@@ -88,24 +82,12 @@ const LandingPage = () => {
                 >
                   Sobre
                 </Link>
-                <a
-                  href="#resultados"
+                <Link
+                  to="/portfolio"
                   className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
                 >
-                  Resultados
-                </a>
-                <a
-                  href="#faq"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                >
-                  FAQ
-                </a>
-                <a
-                  href="#contato"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
-                >
-                  Contato
-                </a>
+                  Portfolio
+                </Link>
               </div>
 
               {/* Mobile Menu Button */}
@@ -126,13 +108,6 @@ const LandingPage = () => {
               <div className="lg:hidden mt-4 bg-black/90 backdrop-blur-lg rounded-2xl border border-gray-700 p-4">
                 <div className="flex flex-col gap-2">
                   <Link
-                    to="/"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Início
-                  </Link>
-                  <Link
                     to="/services"
                     className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
                     onClick={() => setMobileMenuOpen(false)}
@@ -146,27 +121,13 @@ const LandingPage = () => {
                   >
                     Sobre
                   </Link>
-                  <a
-                    href="#resultados"
+                  <Link
+                    to="/portfolio"
                     className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Resultados
-                  </a>
-                  <a
-                    href="#faq"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    FAQ
-                  </a>
-                  <a
-                    href="#contato"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Contato
-                  </a>
+                    Portfolio
+                  </Link>
                 </div>
               </div>
             )}
