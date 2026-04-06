@@ -45,13 +45,13 @@ const ProjectCard = ({ project, index }) => {
             : '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
         }}
       >
-        {/* Top Half - Full Image (No Frame) */}
-        <div className="relative h-[280px] overflow-hidden bg-black">
+        {/* Top Half - Full Image (No Frame) - Increased height to show first section */}
+        <div className="relative h-[350px] overflow-hidden bg-black">
           <motion.img
             ref={imageRef}
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
             animate={{ 
               scale: isHovered ? 1.05 : 1,
             }}
