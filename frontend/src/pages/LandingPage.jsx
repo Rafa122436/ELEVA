@@ -162,7 +162,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <motion.div 
         ref={heroRef}
-        className="relative min-h-[150vh] w-full bg-black overflow-hidden"
+        className="relative min-h-[85vh] md:min-h-[120vh] w-full bg-black overflow-hidden"
       >
         {/* Video Background */}
         <motion.video
@@ -264,7 +264,7 @@ const LandingPage = () => {
           {/* Main Content */}
           <motion.div 
             style={{ opacity }}
-            className="flex-1 flex flex-col justify-center items-start md:items-center px-4 md:px-6 lg:px-8 pt-24 md:pt-40 lg:pt-48"
+            className="flex-1 flex flex-col justify-center items-start md:items-center px-4 md:px-6 lg:px-8 pt-16 md:pt-32 lg:pt-40 pb-8 md:pb-16"
           >
             {/* Hero Section */}
             <div className="max-w-7xl mx-auto w-full text-left md:text-center">
