@@ -23,7 +23,6 @@ const ProjectCard = ({ project, index }) => {
   const ref = useRef(null);
   const imageRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
@@ -31,31 +30,23 @@ const ProjectCard = ({ project, index }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="group h-full"
+      className="group h-full pointer-events-none select-none"
     >
-      <motion.div
-        animate={{ scale: isHovered ? 1.02 : 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+      <div
         className="bg-[#111111] rounded-[24px] overflow-hidden h-full flex flex-col"
         style={{
-          boxShadow: isHovered 
-            ? '0 20px 60px rgba(100, 206, 251, 0.15), 0 0 0 1px rgba(100, 206, 251, 0.1)'
-            : '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
         }}
       >
         {/* Top Half - Full Image (No Frame) - Increased height to show first section */}
         <div className="relative h-[280px] md:h-[350px] overflow-hidden bg-black flex-shrink-0">
-          <motion.img
+          <img
             ref={imageRef}
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover object-top"
-            initial={{ scale: 1 }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
             style={{ filter: 'brightness(0.95)' }}
+            draggable="false"
           />
         </div>
 
@@ -95,7 +86,7 @@ const ProjectCard = ({ project, index }) => {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -253,78 +244,52 @@ const PortfolioPage = () => {
         </div>
       </motion.section>
 
-      {/* Projects Horizontal Carousel with Auto-Scroll - 4 Projects */}
+      {/* Projects Horizontal Carousel - ENDLESS AUTO-SCROLL (No Interaction) */}
       <section className="py-24 md:py-32 bg-black overflow-hidden">
         <style>{scrollbarHideCSS}</style>
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
-          {/* Mobile - Manual Swipe */}
-          <div className="block md:hidden">
-            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6"
-              style={{
-                WebkitOverflowScrolling: 'touch',
-                scrollPaddingLeft: '32px',
-                scrollPaddingRight: '32px'
-              }}
-            >
-              {projects.map((project, index) => (
-                <div key={project.id} className="flex-shrink-0 w-[90vw] max-w-[400px] snap-center first:ml-4 last:mr-4">
-                  <ProjectCard project={project} index={index} />
-                </div>
-              ))}
-            </div>
-            
-            {/* Swipe Indicator */}
-            <div className="text-center mt-2">
-              <div className="flex items-center justify-center gap-2 text-white/40 text-xs">
-                <span>← Deslize para ver mais →</span>
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 overflow-hidden pointer-events-none">
+          {/* Auto-Scrolling Container for ALL devices */}
+          <motion.div 
+            className="flex gap-6 md:gap-8"
+            animate={{
+              x: [0, -1832],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 40,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* Original Projects */}
+            {projects.map((project, index) => (
+              <div key={`original-${project.id}`} className="flex-shrink-0 w-[320px] sm:w-[380px] md:w-[450px]">
+                <ProjectCard project={project} index={index} />
               </div>
-            </div>
-          </div>
-
-          {/* Desktop - Auto-Scrolling Container - 4 Real Projects Only */}
-          <div className="hidden md:block">
-            <motion.div 
-              className="flex gap-8"
-              animate={{
-                x: [0, -1832], // 4 projects: (450px width + 8px gap) * 4 = 1832px
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 45, // Adjusted: 45 seconds for 4 projects
-                  ease: "linear",
-                },
-              }}
-            >
-              {/* Original Projects */}
-              {projects.map((project, index) => (
-                <div key={`original-${project.id}`} className="flex-shrink-0 w-[450px]">
-                  <ProjectCard project={project} index={index} />
-                </div>
-              ))}
-              {/* Duplicate Projects for seamless loop */}
-              {projects.map((project, index) => (
-                <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[450px]">
-                  <ProjectCard project={project} index={index} />
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Auto-Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="mt-12 text-center"
-            >
-              <div className="flex items-center justify-center gap-3 text-white/40 text-sm">
-                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
-                <span className="uppercase tracking-wider">Auto-Scroll Ativo</span>
-                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+            ))}
+            {/* Duplicate Projects for seamless loop */}
+            {projects.map((project, index) => (
+              <div key={`duplicate-${project.id}`} className="flex-shrink-0 w-[320px] sm:w-[380px] md:w-[450px]">
+                <ProjectCard project={project} index={index} />
               </div>
-            </motion.div>
-          </div>
+            ))}
+          </motion.div>
+
+          {/* Auto-Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="mt-8 md:mt-12 text-center pointer-events-auto"
+          >
+            <div className="flex items-center justify-center gap-3 text-white/40 text-xs md:text-sm">
+              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+              <span className="uppercase tracking-wider">Scroll Automático Ativo</span>
+              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
