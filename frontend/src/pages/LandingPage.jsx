@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -136,6 +136,7 @@ const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const heroRef = useRef(null);
+  const videoRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -146,6 +147,76 @@ const LandingPage = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
 
   const navLinks = ['Início', 'Serviços', 'Resultados', 'FAQ', 'Contato'];
+
+  // Garantir que o vídeo SEMPRE reproduza (especialmente em mobile)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Função para forçar play com retry
+    const forcePlay = async () => {
+      try {
+        // Garantir que está muted (requisito para autoplay em mobile)
+        video.muted = true;
+        video.setAttribute('playsinline', 'true');
+        video.setAttribute('webkit-playsinline', 'true');
+        
+        await video.play();
+      } catch (error) {
+        // Se falhar, tentar novamente após um delay
+        setTimeout(() => {
+          video.play().catch(() => {
+            // Última tentativa após interação do usuário
+          });
+        }, 300);
+      }
+    };
+
+    // Reproduzir quando o vídeo estiver pronto
+    const handleCanPlay = () => {
+      forcePlay();
+    };
+
+    // Garantir que nunca pause
+    const handlePause = (e) => {
+      // Prevenir pause manual
+      e.preventDefault();
+      forcePlay();
+    };
+
+    // Garantir que continue reproduzindo quando a página ficar visível novamente
+    const handleVisibilityChange = () => {
+      if (!document.hidden && video.paused) {
+        forcePlay();
+      }
+    };
+
+    // Garantir play após qualquer interação do usuário (para mobile)
+    const handleUserInteraction = () => {
+      if (video.paused) {
+        forcePlay();
+      }
+    };
+
+    // Tentar reproduzir imediatamente
+    forcePlay();
+
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('loadedmetadata', forcePlay);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener('touchstart', handleUserInteraction, { once: true });
+    document.addEventListener('click', handleUserInteraction, { once: true });
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('loadedmetadata', forcePlay);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      document.removeEventListener('touchstart', handleUserInteraction);
+      document.removeEventListener('click', handleUserInteraction);
+    };
+  }, []);
 
   return (
     <div className="bg-black">
@@ -158,6 +229,7 @@ const LandingPage = () => {
       >
         {/* Video Background */}
         <motion.video
+          ref={videoRef}
           style={{ scale }}
           autoPlay
           loop
@@ -167,6 +239,11 @@ const LandingPage = () => {
           disableRemotePlayback
           controlsList="nodownload nofullscreen noremoteplayback"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          preload="auto"
+          webkit-playsinline="true"
+          x5-video-player-type="h5"
+          x5-video-player-fullscreen="true"
+          x5-video-orientation="portraint"
         >
           <source
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
