@@ -72,6 +72,24 @@ const ServicesFAQ = () => {
             </motion.div>
           ))}
         </Accordion>
+
+        {/* CTA after FAQ */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 md:mt-16 text-center"
+        >
+          <p className="text-white/70 mb-6 text-sm md:text-base">
+            Ainda tem dúvidas? Vamos conversar.
+          </p>
+          <a 
+            href="/qualify"
+            className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-bold px-8 md:px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/25"
+          >
+            Agendar Consultoria Gratuita
+          </a>
+        </motion.div>
       </div>
     </section>
   );

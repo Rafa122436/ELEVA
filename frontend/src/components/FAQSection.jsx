@@ -80,9 +80,12 @@ const FAQSection = () => {
           <p className="text-white/70 mb-6 text-sm md:text-base">
             Ainda tem dúvidas? Vamos conversar.
           </p>
-          <button className="bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-8 md:px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-[#64CEFB]/25">
+          <a 
+            href="/qualify"
+            className="inline-block bg-[#64CEFB] hover:bg-[#64CEFB]/90 text-black font-bold px-8 md:px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-[#64CEFB]/25"
+          >
             Agendar Consultoria Gratuita
-          </button>
+          </a>
         </div>
       </div>
     </section>
