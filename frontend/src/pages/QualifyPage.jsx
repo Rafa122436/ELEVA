@@ -12,21 +12,43 @@ const QualifyPage = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
     
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        fullName: '',
-        companyAndSector: '',
-        phone: '',
-        revenue: ''
+    try {
+      // Enviar dados para o backend
+      const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      const response = await fetch(`${API_URL}/api/leads`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (!response.ok) {
+        throw new Error('Erro ao enviar formulário');
+      }
+
+      const result = await response.json();
+      console.log('Lead criado:', result);
+      
+      setSubmitted(true);
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          fullName: '',
+          companyAndSector: '',
+          phone: '',
+          revenue: ''
+        });
+      }, 3000);
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      alert('Erro ao enviar formulário. Por favor, tente novamente.');
+    }
   };
 
   const handleChange = (e) => {
