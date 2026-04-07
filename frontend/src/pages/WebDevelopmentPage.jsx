@@ -105,10 +105,6 @@ const WebDevelopmentPage = () => {
       answer: 'Implementamos SEO desde o primeiro dia: código semântico, meta tags otimizadas, URLs amigáveis, sitemap XML, schema markup e Core Web Vitals no verde. Tudo construído seguindo as melhores práticas do Google para ranking orgânico.',
     },
     {
-      question: 'Posso gerir o conteúdo sozinho?',
-      answer: 'Absolutamente! Entregamos um CMS intuitivo (WordPress ou sistema personalizado) com interface simples. Também damos formação completa para editar conteúdo, imagens e páginas sem precisar de conhecimento técnico.',
-    },
-    {
       question: 'Hosting e segurança estão incluídos?',
       answer: 'Sim. Oferecemos hosting premium otimizado, certificado SSL, backups automáticos diários, proteção contra malware e ataques DDoS, além de monitorização 24/7. A sua infraestrutura fica em mãos seguras.',
     },
