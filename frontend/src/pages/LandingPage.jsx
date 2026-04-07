@@ -186,7 +186,7 @@ const LandingPage = () => {
                 <img 
                   src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/4fxcadmm_0ae9043e-abb3-4116-ad86-d62d95e0c279.png"
                   alt="ELEVA"
-                  className="h-12 md:h-16 w-auto"
+                  className="h-16 md:h-20 w-auto"
                 />
               </Link>
 
