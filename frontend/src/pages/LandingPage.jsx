@@ -279,13 +279,13 @@ const LandingPage = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
-                    Angarie Clientes de
+                    Consiga Mais Clientes
                   </h1>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight md:leading-none uppercase">
-                    <ShinyText text="Alto Valor em" />
+                    <ShinyText text="de Alto Valor com" />
                   </h1>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-tight md:leading-none uppercase">
-                    Piloto Automático
+                    um Website que Vende por Si
                   </h1>
                 </motion.div>
 
