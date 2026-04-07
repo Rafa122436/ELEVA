@@ -9,6 +9,7 @@ import SEORankingPage from "./pages/SEORankingPage";
 import BrandingDigitalPage from "./pages/BrandingDigitalPage";
 import AboutPage from "./pages/AboutPage";
 import PortfolioPage from "./pages/PortfolioPage";
+import QualifyPage from "./pages/QualifyPage";
 
 // Component to scroll to top on route change
 function ScrollToTop() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/services/branding-digital" element={<BrandingDigitalPage />} />
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/qualify" element={<QualifyPage />} />
         </Routes>
       </BrowserRouter>
     </div>
