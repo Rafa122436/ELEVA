@@ -39,7 +39,7 @@ const PremiumHeader = () => {
             {/* Logo */}
             <Link to="/" className="relative z-10">
               <img
-                src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/e8xk7pen_Captura%20de%20ecr%C3%A3%202026-03-31%20170113.png"
+                src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/4fxcadmm_0ae9043e-abb3-4116-ad86-d62d95e0c279.png"
                 alt="ELEVA"
                 className="h-12 w-auto"
               />
