@@ -40,7 +40,7 @@ const Footer = () => {
               <img
                 src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/4fxcadmm_0ae9043e-abb3-4116-ad86-d62d95e0c279.png"
                 alt="ELEVA"
-                className="h-18 w-auto mb-4"
+                className="h-14 md:h-18 w-auto mb-4"
               />
             </Link>
             <p className="text-[15px] text-white/60 leading-relaxed max-w-sm">
