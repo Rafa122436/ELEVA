@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ShinyText from '../components/ShinyText';
 import SocialProofBar from '../components/SocialProofBar';
 import ResultsSection from '../components/ResultsSection';
@@ -134,6 +134,7 @@ const PortfolioCard = ({ project, index }) => {
 
 const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const heroRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -182,34 +183,37 @@ const LandingPage = () => {
           <nav className="w-full px-4 md:px-6 lg:px-8 py-4 md:py-6">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               {/* Logo */}
-              <Link to="/" className="flex items-center gap-2 md:gap-3">
+              <a 
+                onClick={() => navigate('/')} 
+                className="flex items-center gap-2 md:gap-3 cursor-pointer"
+              >
                 <img 
                   src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/4fxcadmm_0ae9043e-abb3-4116-ad86-d62d95e0c279.png"
                   alt="ELEVA"
                   className="h-16 md:h-20 w-auto"
                 />
-              </Link>
+              </a>
 
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center gap-1 border border-gray-700 rounded-full px-4 py-2">
-                <Link
-                  to="/services"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                <a
+                  onClick={() => navigate('/services')}
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5 cursor-pointer"
                 >
                   Serviços
-                </Link>
-                <Link
-                  to="/sobre"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                </a>
+                <a
+                  onClick={() => navigate('/sobre')}
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5 cursor-pointer"
                 >
                   Sobre
-                </Link>
-                <Link
-                  to="/portfolio"
-                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5"
+                </a>
+                <a
+                  onClick={() => navigate('/portfolio')}
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5 cursor-pointer"
                 >
                   Portfolio
-                </Link>
+                </a>
               </div>
 
               {/* Mobile Menu Button */}
@@ -229,27 +233,24 @@ const LandingPage = () => {
             {mobileMenuOpen && (
               <div className="lg:hidden mt-4 bg-black/90 backdrop-blur-lg rounded-2xl border border-gray-700 p-4">
                 <div className="flex flex-col gap-2">
-                  <Link
-                    to="/services"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
+                  <a
+                    onClick={() => { navigate('/services'); setMobileMenuOpen(false); }}
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2 cursor-pointer"
                   >
                     Serviços
-                  </Link>
-                  <Link
-                    to="/sobre"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
+                  </a>
+                  <a
+                    onClick={() => { navigate('/sobre'); setMobileMenuOpen(false); }}
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2 cursor-pointer"
                   >
                     Sobre
-                  </Link>
-                  <Link
-                    to="/portfolio"
-                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2"
-                    onClick={() => setMobileMenuOpen(false)}
+                  </a>
+                  <a
+                    onClick={() => { navigate('/portfolio'); setMobileMenuOpen(false); }}
+                    className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2 cursor-pointer"
                   >
                     Portfolio
-                  </Link>
+                  </a>
                 </div>
               </div>
             )}
@@ -420,12 +421,13 @@ const LandingPage = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <Link to="/portfolio">
-            <button className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-full transition-all duration-300 hover:scale-105 uppercase tracking-wide shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50">
-              Ver Todos os Projetos
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </button>
-          </Link>
+          <button 
+            onClick={() => navigate('/portfolio')}
+            className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-full transition-all duration-300 hover:scale-105 uppercase tracking-wide shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 cursor-pointer"
+          >
+            Ver Todos os Projetos
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+          </button>
         </motion.div>
       </section>
 

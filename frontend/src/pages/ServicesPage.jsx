@@ -1,7 +1,5 @@
 import React from 'react';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ServiceCardsGrid from '../components/ServiceCardsGrid';
 import ServicesFAQ from '../components/ServicesFAQ';
@@ -9,12 +7,9 @@ import ServicesCTA from '../components/ServicesCTA';
 import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 import FloatingOrbs from '../components/FloatingOrbs';
+import Header from '../components/Header';
 
 const ServicesPage = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navLinks = ['Início', 'Serviços', 'Resultados', 'FAQ', 'Contato'];
-
   return (
     <div className="bg-black">
       <CustomCursor />
@@ -22,60 +17,7 @@ const ServicesPage = () => {
       {/* Hero Section */}
       <div className="relative min-h-screen bg-black">
         {/* Navigation Bar */}
-        <nav className="w-full px-4 md:px-6 lg:px-8 py-4 md:py-6 relative z-20">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 md:gap-3">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_designpro-hero/artifacts/4fxcadmm_0ae9043e-abb3-4116-ad86-d62d95e0c279.png"
-                alt="ELEVA"
-                className="h-16 md:h-20 w-auto"
-              />
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1 border border-gray-700 rounded-full px-4 py-2">
-              <Link to="/services" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5">
-                Serviços
-              </Link>
-              <Link to="/sobre" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-1.5">
-                Sobre
-              </Link>
-              <Link to="/portfolio" className="text-sm text-white hover:text-white transition-colors duration-300 px-3 py-1.5">
-                Portfolio
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden text-white p-2"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden mt-4 bg-black/90 backdrop-blur-lg rounded-2xl border border-gray-700 p-4">
-              <div className="flex flex-col gap-2">
-                <Link to="/services" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2" onClick={() => setMobileMenuOpen(false)}>
-                  Serviços
-                </Link>
-                <Link to="/sobre" className="text-sm text-white/80 hover:text-white transition-colors duration-300 px-3 py-2" onClick={() => setMobileMenuOpen(false)}>
-                  Sobre
-                </Link>
-                <Link to="/portfolio" className="text-sm text-white hover:text-white transition-colors duration-300 px-3 py-2" onClick={() => setMobileMenuOpen(false)}>
-                  Portfolio
-                </Link>
-              </div>
-            </div>
-          )}
-        </nav>
+        <Header />
 
         {/* Hero Content */}
         <div className="flex items-center justify-center min-h-[35vh] px-4 md:px-6 lg:px-8 relative">
