@@ -37,10 +37,10 @@ const QualifyPage = () => {
   };
 
   const revenueOptions = [
-    { value: 'A', label: 'Até 2.500€', subtitle: 'Micro-negócios ou freelancers em início' },
-    { value: 'B', label: '2.500€ – 7.500€', subtitle: 'Negócios locais ou serviços independentes estáveis' },
-    { value: 'C', label: '7.500€ – 15.000€', subtitle: 'Pequenas empresas com estrutura' },
-    { value: 'D', label: 'Mais de 15.000€', subtitle: 'Empresas em fase de escala ou média dimensão' }
+    { value: 'A', label: 'Até 2.500€' },
+    { value: 'B', label: '2.500€ – 7.500€' },
+    { value: 'C', label: '7.500€ – 15.000€' },
+    { value: 'D', label: 'Mais de 15.000€' }
   ];
 
   return (
@@ -222,7 +222,7 @@ const QualifyPage = () => {
                               : 'bg-black/50 border-white/20 hover:border-white/40'
                           } border rounded-xl p-4 transition-all`}
                         >
-                          <div className="flex items-start gap-3">
+                          <div className="flex items-center gap-3">
                             <input
                               type="radio"
                               name="revenue"
@@ -230,15 +230,10 @@ const QualifyPage = () => {
                               checked={formData.revenue === option.value}
                               onChange={handleChange}
                               required
-                              className="mt-1 w-5 h-5 text-cyan-500 bg-black border-white/20 focus:ring-cyan-500 focus:ring-2"
+                              className="w-5 h-5 text-cyan-500 bg-black border-white/20 focus:ring-cyan-500 focus:ring-2"
                             />
-                            <div className="flex-1">
-                              <div className="text-white font-semibold mb-1">
-                                {option.label}
-                              </div>
-                              <div className="text-sm text-white/60">
-                                {option.subtitle}
-                              </div>
+                            <div className="text-white font-semibold">
+                              {option.label}
                             </div>
                           </div>
                         </label>
@@ -251,7 +246,7 @@ const QualifyPage = () => {
                     type="submit"
                     className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-black rounded-xl px-8 py-5 transition-all duration-300 hover:scale-[1.02] shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 text-lg mt-8"
                   >
-                    Agendar Chamada Gratuita
+                    Enviar
                   </button>
 
                   <p className="text-xs text-center text-white/50 mt-4">
