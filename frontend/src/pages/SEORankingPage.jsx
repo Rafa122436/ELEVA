@@ -250,7 +250,7 @@ const SEORankingPage = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <Link
-              to="/#contato"
+              to="/qualify"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 text-lg"
             >
               Auditar Meu Website
@@ -650,7 +650,7 @@ const SEORankingPage = () => {
             transition={{ delay: 0.3 }}
           >
             <Link
-              to="/#contato"
+              to="/qualify"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 hover:from-cyan-400 hover:via-blue-400 hover:to-cyan-400 text-black font-black px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 text-lg uppercase tracking-wide"
             >
               Começar a Rankear Agora
