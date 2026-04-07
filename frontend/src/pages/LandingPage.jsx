@@ -148,73 +148,102 @@ const LandingPage = () => {
 
   const navLinks = ['Início', 'Serviços', 'Resultados', 'FAQ', 'Contato'];
 
-  // Garantir que o vídeo SEMPRE reproduza (especialmente em mobile)
+  // FORÇAR VÍDEO A REPRODUZIR SEMPRE - SOLUÇÃO AGRESSIVA
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Função para forçar play com retry
-    const forcePlay = async () => {
-      try {
-        // Garantir que está muted (requisito para autoplay em mobile)
-        video.muted = true;
-        video.setAttribute('playsinline', 'true');
-        video.setAttribute('webkit-playsinline', 'true');
-        
-        await video.play();
-      } catch (error) {
-        // Se falhar, tentar novamente após um delay
-        setTimeout(() => {
-          video.play().catch(() => {
-            // Última tentativa após interação do usuário
-          });
-        }, 300);
-      }
-    };
+    let playInterval;
+    let isUserInteracted = false;
 
-    // Reproduzir quando o vídeo estiver pronto
-    const handleCanPlay = () => {
-      forcePlay();
-    };
-
-    // Garantir que nunca pause
-    const handlePause = (e) => {
-      // Prevenir pause manual
-      e.preventDefault();
-      forcePlay();
-    };
-
-    // Garantir que continue reproduzindo quando a página ficar visível novamente
-    const handleVisibilityChange = () => {
-      if (!document.hidden && video.paused) {
-        forcePlay();
-      }
-    };
-
-    // Garantir play após qualquer interação do usuário (para mobile)
-    const handleUserInteraction = () => {
+    // Função BRUTA para forçar play
+    const bruteForcePlay = () => {
+      if (!video) return;
+      
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute('playsinline', 'true');
+      video.setAttribute('webkit-playsinline', 'true');
+      
       if (video.paused) {
-        forcePlay();
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Silenciosamente ignorar erro se não tiver interação
+            if (isUserInteracted) {
+              setTimeout(bruteForcePlay, 100);
+            }
+          });
+        }
       }
     };
 
-    // Tentar reproduzir imediatamente
-    forcePlay();
+    // INTERVALO AGRESSIVO - verifica a cada 500ms se está pausado
+    playInterval = setInterval(() => {
+      if (video.paused) {
+        bruteForcePlay();
+      }
+    }, 500);
 
-    video.addEventListener('canplay', handleCanPlay);
-    video.addEventListener('pause', handlePause);
-    video.addEventListener('loadedmetadata', forcePlay);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    document.addEventListener('touchstart', handleUserInteraction, { once: true });
-    document.addEventListener('click', handleUserInteraction, { once: true });
+    // Eventos que SEMPRE tentam reproduzir
+    const events = [
+      'loadedmetadata',
+      'loadeddata', 
+      'canplay',
+      'canplaythrough',
+      'playing'
+    ];
 
+    events.forEach(event => {
+      video.addEventListener(event, bruteForcePlay);
+    });
+
+    // BLOQUEAR PAUSE - cancelar qualquer tentativa
+    const blockPause = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      bruteForcePlay();
+      return false;
+    };
+
+    video.addEventListener('pause', blockPause, { capture: true });
+    video.addEventListener('suspend', bruteForcePlay);
+    video.addEventListener('waiting', bruteForcePlay);
+
+    // Primeira interação do usuário
+    const enableFullPlay = () => {
+      isUserInteracted = true;
+      bruteForcePlay();
+    };
+
+    document.addEventListener('touchstart', enableFullPlay, { once: true, passive: true });
+    document.addEventListener('click', enableFullPlay, { once: true });
+    document.addEventListener('scroll', enableFullPlay, { once: true, passive: true });
+
+    // Quando a tab volta a ficar visível
+    const handleVisibility = () => {
+      if (!document.hidden) {
+        bruteForcePlay();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    // TENTAR IMEDIATAMENTE
+    setTimeout(bruteForcePlay, 100);
+    setTimeout(bruteForcePlay, 500);
+    setTimeout(bruteForcePlay, 1000);
+
+    // Cleanup
     return () => {
-      video.removeEventListener('canplay', handleCanPlay);
-      video.removeEventListener('pause', handlePause);
-      video.removeEventListener('loadedmetadata', forcePlay);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      document.removeEventListener('touchstart', handleUserInteraction);
-      document.removeEventListener('click', handleUserInteraction);
+      if (playInterval) clearInterval(playInterval);
+      events.forEach(event => {
+        video.removeEventListener(event, bruteForcePlay);
+      });
+      video.removeEventListener('pause', blockPause, { capture: true });
+      video.removeEventListener('suspend', bruteForcePlay);
+      video.removeEventListener('waiting', bruteForcePlay);
+      document.removeEventListener('visibilitychange', handleVisibility);
     };
   }, []);
 
@@ -227,7 +256,7 @@ const LandingPage = () => {
         ref={heroRef}
         className="relative min-h-[95vh] md:min-h-[120vh] w-full bg-black overflow-hidden"
       >
-        {/* Video Background */}
+        {/* Video Background - FORÇADO A NUNCA PAUSAR */}
         <motion.video
           ref={videoRef}
           style={{ scale }}
@@ -244,6 +273,9 @@ const LandingPage = () => {
           x5-video-player-type="h5"
           x5-video-player-fullscreen="true"
           x5-video-orientation="portraint"
+          onPause={(e) => { e.preventDefault(); e.target.play(); }}
+          onSuspend={(e) => { e.preventDefault(); e.target.play(); }}
+          onWaiting={(e) => { e.target.play(); }}
         >
           <source
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
