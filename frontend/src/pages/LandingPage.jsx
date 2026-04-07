@@ -153,7 +153,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <motion.div 
         ref={heroRef}
-        className="relative min-h-[85vh] md:min-h-[120vh] w-full bg-black overflow-hidden"
+        className="relative min-h-[95vh] md:min-h-[120vh] w-full bg-black overflow-hidden"
       >
         {/* Video Background */}
         <motion.video
