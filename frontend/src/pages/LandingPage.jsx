@@ -148,102 +148,85 @@ const LandingPage = () => {
 
   const navLinks = ['Início', 'Serviços', 'Resultados', 'FAQ', 'Contato'];
 
-  // FORÇAR VÍDEO A REPRODUZIR SEMPRE - SOLUÇÃO AGRESSIVA
+  // SOLUÇÃO ULTRA AGRESSIVA - VÍDEO NUNCA PAUSA
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    let playInterval;
-    let isUserInteracted = false;
+    let checkInterval;
+    let animationFrame;
+    let userInteracted = false;
 
-    // Função BRUTA para forçar play
-    const bruteForcePlay = () => {
+    // Força play BRUTALMENTE
+    const forcePlay = () => {
       if (!video) return;
       
-      video.muted = true;
-      video.playsInline = true;
-      video.setAttribute('playsinline', 'true');
-      video.setAttribute('webkit-playsinline', 'true');
-      
-      if (video.paused) {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Silenciosamente ignorar erro se não tiver interação
-            if (isUserInteracted) {
-              setTimeout(bruteForcePlay, 100);
-            }
-          });
-        }
-      }
+      try {
+        video.muted = true;
+        video.playsInline = true;
+        video.play().catch(() => {});
+      } catch (e) {}
     };
 
-    // INTERVALO AGRESSIVO - verifica a cada 500ms se está pausado
-    playInterval = setInterval(() => {
-      if (video.paused) {
-        bruteForcePlay();
+    // Loop AGRESSIVO usando requestAnimationFrame (60fps)
+    const keepPlaying = () => {
+      if (video && video.paused) {
+        forcePlay();
       }
-    }, 500);
+      animationFrame = requestAnimationFrame(keepPlaying);
+    };
+    keepPlaying();
 
-    // Eventos que SEMPRE tentam reproduzir
-    const events = [
-      'loadedmetadata',
-      'loadeddata', 
-      'canplay',
-      'canplaythrough',
-      'playing'
-    ];
+    // Intervalo adicional a cada 200ms
+    checkInterval = setInterval(() => {
+      if (video && video.paused) {
+        forcePlay();
+      }
+    }, 200);
 
-    events.forEach(event => {
-      video.addEventListener(event, bruteForcePlay);
-    });
-
-    // BLOQUEAR PAUSE - cancelar qualquer tentativa
-    const blockPause = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      bruteForcePlay();
+    // BLOQUEAR TODOS OS EVENTOS DE PAUSE
+    const killPause = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+      forcePlay();
       return false;
     };
 
-    video.addEventListener('pause', blockPause, { capture: true });
-    video.addEventListener('suspend', bruteForcePlay);
-    video.addEventListener('waiting', bruteForcePlay);
+    // Todos os eventos possíveis que podem pausar
+    ['pause', 'suspend', 'stalled', 'waiting', 'emptied', 'abort'].forEach(evt => {
+      video.addEventListener(evt, killPause, true);
+    });
 
-    // Primeira interação do usuário
-    const enableFullPlay = () => {
-      isUserInteracted = true;
-      bruteForcePlay();
+    // Forçar play em eventos de carregamento
+    ['loadstart', 'loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough'].forEach(evt => {
+      video.addEventListener(evt, forcePlay);
+    });
+
+    // Interação do usuário
+    const interact = () => {
+      userInteracted = true;
+      forcePlay();
     };
 
-    document.addEventListener('touchstart', enableFullPlay, { once: true, passive: true });
-    document.addEventListener('click', enableFullPlay, { once: true });
-    document.addEventListener('scroll', enableFullPlay, { once: true, passive: true });
+    ['touchstart', 'touchend', 'click', 'scroll', 'mousemove'].forEach(evt => {
+      document.addEventListener(evt, interact, { once: true, passive: true });
+    });
 
-    // Quando a tab volta a ficar visível
-    const handleVisibility = () => {
-      if (!document.hidden) {
-        bruteForcePlay();
-      }
-    };
+    // Visibilidade
+    const onVisible = () => !document.hidden && forcePlay();
+    document.addEventListener('visibilitychange', onVisible);
 
-    document.addEventListener('visibilitychange', handleVisibility);
+    // Tentar múltiplas vezes
+    [0, 100, 300, 500, 1000, 2000].forEach(delay => {
+      setTimeout(forcePlay, delay);
+    });
 
-    // TENTAR IMEDIATAMENTE
-    setTimeout(bruteForcePlay, 100);
-    setTimeout(bruteForcePlay, 500);
-    setTimeout(bruteForcePlay, 1000);
-
-    // Cleanup
     return () => {
-      if (playInterval) clearInterval(playInterval);
-      events.forEach(event => {
-        video.removeEventListener(event, bruteForcePlay);
-      });
-      video.removeEventListener('pause', blockPause, { capture: true });
-      video.removeEventListener('suspend', bruteForcePlay);
-      video.removeEventListener('waiting', bruteForcePlay);
-      document.removeEventListener('visibilitychange', handleVisibility);
+      if (checkInterval) clearInterval(checkInterval);
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      document.removeEventListener('visibilitychange', onVisible);
     };
   }, []);
 
@@ -256,7 +239,7 @@ const LandingPage = () => {
         ref={heroRef}
         className="relative min-h-[95vh] md:min-h-[120vh] w-full bg-black overflow-hidden"
       >
-        {/* Video Background - FORÇADO A NUNCA PAUSAR */}
+        {/* Video Background - IMPOSSÍVEL DE PAUSAR */}
         <motion.video
           ref={videoRef}
           style={{ scale }}
@@ -266,16 +249,21 @@ const LandingPage = () => {
           playsInline
           disablePictureInPicture
           disableRemotePlayback
-          controlsList="nodownload nofullscreen noremoteplayback"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
           preload="auto"
           webkit-playsinline="true"
           x5-video-player-type="h5"
           x5-video-player-fullscreen="true"
           x5-video-orientation="portraint"
-          onPause={(e) => { e.preventDefault(); e.target.play(); }}
+          x-webkit-airplay="deny"
+          onPause={(e) => { e.preventDefault(); e.stopPropagation(); e.target.play(); }}
           onSuspend={(e) => { e.preventDefault(); e.target.play(); }}
           onWaiting={(e) => { e.target.play(); }}
+          onStalled={(e) => { e.target.play(); }}
+          onEmptied={(e) => { e.target.play(); }}
+          onAbort={(e) => { e.target.play(); }}
+          onContextMenu={(e) => { e.preventDefault(); return false; }}
         >
           <source
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
