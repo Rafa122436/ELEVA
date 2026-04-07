@@ -15,19 +15,19 @@ const FAQSection = () => {
         'Implementamos sistemas de tracking e conversão desde o dia 1. Cada elemento do website é otimizado para captar e qualificar leads através de formulários estratégicos, CTAs claros e automações que segmentam o público. Além disso, fornecemos relatórios mensais com métricas claras de tráfego, conversões e ROI.',
     },
     {
-      question: 'Quanto tempo demora o processo completo?',
+      question: 'Em quanto tempo verei resultados?',
       answer:
-        'O lançamento do seu website acontece em 30-45 dias, dependendo da complexidade. Dividimos em fases: Estratégia e Design (7-10 dias), Desenvolvimento (15-20 dias), e Testes e Lançamento (5-7 dias). A otimização de SEO é contínua e começa a mostrar resultados a partir do 2º-3º mês.',
-    },
-    {
-      question: 'Vou ficar preso a mensalidades eternas?',
-      answer:
-        'Não. O website é 100% seu após o lançamento. Oferecemos apenas suporte e manutenção opcional (€99-199/mês) que inclui atualizações, backups e suporte técnico. Muitos clientes escolhem manter para garantir segurança e performance, mas é totalmente opcional.',
+        'Os primeiros resultados aparecem logo após o lançamento, com o website a captar leads desde o dia 1. O tráfego orgânico (SEO) começa a crescer a partir do 2º-3º mês. A maioria dos clientes vê ROI positivo entre 3-6 meses, dependendo do investimento em marketing. O importante é que o website fica a trabalhar para si 24/7, a qualificar leads e a gerar oportunidades de negócio.',
     },
     {
       question: 'O website funciona bem em telemóveis?',
       answer:
         'Absolutamente. Todos os nossos websites são desenvolvidos com abordagem mobile-first, o que significa que são desenhados primeiro para telemóveis e depois adaptados para desktop. Testamos em dezenas de dispositivos e navegadores para garantir experiência perfeita em qualquer ecrã.',
+    },
+    {
+      question: 'Qual é o passo seguinte para começarmos?',
+      answer:
+        'Simples: clique no botão abaixo para agendar uma chamada estratégica gratuita de 30 minutos. Vamos analisar o seu negócio, discutir objetivos e apresentar uma proposta personalizada. Sem compromisso, sem pressão — apenas uma conversa honesta sobre como podemos ajudar o seu negócio a crescer online.',
     },
   ];
 
